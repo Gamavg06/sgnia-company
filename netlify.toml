@@ -2,10 +2,10 @@
 [build]
   publish = "."
 
-# Redirecciones para SPA (Single Page Application)
+# Ruta limpia para la biografía del fundador
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
+  from = "/fundador"
+  to = "/fundador.html"
   status = 200
 
 # Encabezados de seguridad y optimización de caché
