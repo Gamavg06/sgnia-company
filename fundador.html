@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gamaliel Velázquez Galicia | Biografía Oficial y Fundador de SGNIA COMPANY</title>
+  <meta name="description" content="Biografía oficial de Gamaliel Velázquez Galicia: Fundador de SGNIA COMPANY, Desarrollador de Software Multiplataforma y estudiante de Ingeniería en Tecnologías de la Información (UTBIS). Nopalucan de la Granja, Puebla.">
+  <meta name="keywords" content="Gamaliel Velazquez Galicia, SGNIA COMPANY, Fundador SGNIA, Desarrollador de Software, UTBIS, C#, .NET, Kotlin, Python, Nopalucan de la Granja, Puebla">
+  <link rel="canonical" href="https://sgnia.xyz/fundador.html">
+
+  <!-- Open Graph / Meta etiquetas -->
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://sgnia.xyz/fundador.html">
+  <meta property="og:title" content="Gamaliel Velázquez Galicia | Biografía Oficial y Fundador de SGNIA COMPANY">
+  <meta property="og:description" content="Desarrollador de software multiplataforma y fundador de SGNIA COMPANY. Conoce su historia, formación en la UTBIS, valores familiares y proyectos.">
+  <meta property="og:image" content="https://sgnia.xyz/assets/Bannersgnia.png">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="twitter:domain" content="sgnia.xyz">
+  <meta property="twitter:url" content="https://sgnia.xyz/fundador.html">
+  <meta name="twitter:title" content="Gamaliel Velázquez Galicia | Fundador de SGNIA COMPANY">
+  <meta name="twitter:description" content="Desarrollador de software multiplataforma y fundador de SGNIA COMPANY.">
+  <meta name="twitter:image" content="https://sgnia.xyz/assets/Bannersgnia.png">
+  
+  <!-- Favicon oficial con el escudo de SGNIA COMPANY -->
+  <link rel="icon" type="image/png" href="assets/Logosgnia.png">
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              DEFAULT: '#12264A',
+              light: '#193363',
+              dark: '#071120',
+              space: '#050B14',
+              900: '#0B172C',
+              950: '#060E1C'
+            },
+            teal: {
+              DEFAULT: '#17948F',
+              light: '#21D1C6',
+              dark: '#12736F',
+              500: '#17948F',
+              400: '#21D1C6'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Cinematic CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Datos estructurados JSON-LD Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Gamaliel Velázquez Galicia",
+      "birthDate": "2006-12-25",
+      "birthPlace": {
+        "@type": "Place",
+        "name": "Nopalucan de la Granja, Puebla, México"
+      },
+      "jobTitle": "Fundador & Desarrollador de Software Multiplataforma",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "SGNIA COMPANY",
+        "url": "https://sgnia.xyz"
+      },
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Universidad Tecnológica Bilingüe Internacional y Sustentable de Puebla (UTBIS)"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Juan Jiménez 405, Centro",
+        "addressLocality": "Nopalucan de la Granja",
+        "addressRegion": "Puebla",
+        "postalCode": "75120",
+        "addressCountry": "MX"
+      },
+      "sameAs": [
+        "https://github.com/Gamavg06",
+        "https://www.tiktok.com/@sgn_ia"
+      ]
+    }
+  }
+  </script>
+</head>
+<body class="bg-[#050B14] text-slate-100 antialiased selection:bg-[#17948F] selection:text-white overflow-x-hidden relative">
+
+  <!-- Top Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- Background Interactive Particles & Wave Canvas -->
+  <canvas id="scene-canvas" class="fixed inset-0 pointer-events-none z-0 opacity-40"></canvas>
+
+  <!-- Ambient Cinematic Glows -->
+  <div class="fixed top-[-15%] left-[-10%] w-[500px] h-[500px] rounded-full bg-[#17948F]/15 blur-[140px] pointer-events-none z-0"></div>
+  <div class="fixed bottom-[-15%] right-[-10%] w-[500px] h-[500px] rounded-full bg-[#12264A]/30 blur-[150px] pointer-events-none z-0"></div>
+
+  <!-- ========================================================== -->
+  <!-- HEADER DE NAVEGACIÓN                                       -->
+  <!-- ========================================================== -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 py-4 bg-[#050B14]/85 backdrop-blur-md border-b border-white/10 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      
+      <!-- Brand Logo Link back to home -->
+      <a href="index.html" class="flex items-center gap-3 group" title="Volver a la portada de SGNIA COMPANY">
+        <div class="w-10 h-10 rounded-xl bg-white p-1.5 shadow-md shadow-[#21D1C6]/10 border border-white/20 group-hover:border-[#21D1C6] transition-all">
+          <img src="assets/Logosgnia.png" alt="Escudo SGNIA COMPANY" width="420" height="420" class="w-full h-full object-contain">
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-1.5">
+            <span class="text-sm font-extrabold tracking-wider text-white">SGNIA</span>
+            <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#17948F]/20 text-[#21D1C6] border border-[#21D1C6]/30 font-mono">COMPANY</span>
+          </div>
+          <span class="text-[10px] text-slate-400 font-mono tracking-tight">sgnia.xyz</span>
+        </div>
+      </a>
+
+      <!-- Quick Back Nav -->
+      <div class="flex items-center gap-3">
+        <a href="index.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 transition-all">
+          <svg class="w-4 h-4 text-[#21D1C6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+          </svg>
+          <span class="hidden sm:inline">Volver a</span> SGNIA COMPANY
+        </a>
+
+        <a href="https://wa.me/522761095688?text=Hola%20Gamaliel,%20leí%20tu%20biografía%20en%20SGNIA%20COMPANY%20y%20me%20gustaría%20contactarte." 
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-[#17948F] to-[#12264A] hover:from-[#21D1C6] hover:to-[#17948F] shadow-lg shadow-[#17948F]/20 border border-[#21D1C6]/30 transition-all">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z"/></svg>
+          <span>Escribir por WhatsApp</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ========================================================== -->
+  <!-- MAIN CONTENT: BIOGRAFÍA OFICIAL                            -->
+  <!-- ========================================================== -->
+  <main class="relative z-10 pt-32 pb-24">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+
+      <!-- Breadcrumbs -->
+      <nav class="flex items-center gap-2 text-xs font-mono text-slate-400">
+        <a href="index.html" class="hover:text-[#21D1C6] transition-colors">SGNIA COMPANY</a>
+        <span>/</span>
+        <span class="text-slate-500">Liderazgo</span>
+        <span>/</span>
+        <span class="text-[#21D1C6]">Gamaliel Velázquez Galicia</span>
+      </nav>
+
+      <!-- HERO PROFILE CARD -->
+      <div class="glass-panel p-8 sm:p-12 rounded-3xl relative overflow-hidden border border-white/10">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          
+          <!-- Avatar Monogram / Shield -->
+          <div class="md:col-span-4 flex flex-col items-center text-center">
+            <div class="relative w-36 h-36 sm:w-44 sm:h-44 rounded-3xl p-1 bg-gradient-to-tr from-[#17948F] via-[#21D1C6] to-[#12264A] shadow-[0_0_40px_rgba(33,209,198,0.3)]">
+              <div class="w-full h-full rounded-[22px] bg-[#071120] flex flex-col items-center justify-center relative overflow-hidden">
+                <div class="text-5xl sm:text-6xl font-extrabold font-mono tracking-wider text-transparent bg-clip-text bg-gradient-to-br from-white via-slate-100 to-[#21D1C6]">
+                  GV
+                </div>
+                <span class="text-[10px] font-mono tracking-widest text-[#21D1C6] uppercase mt-1">FOUNDER</span>
+              </div>
+            </div>
+
+            <!-- Social Links under avatar -->
+            <div class="flex items-center gap-2.5 mt-5">
+              <a href="https://github.com/Gamavg06" target="_blank" rel="noopener noreferrer" 
+                 class="w-9 h-9 rounded-xl bg-white/5 hover:bg-[#17948F] border border-white/10 flex items-center justify-center text-white transition-all"
+                 title="GitHub Oficial (@Gamavg06)">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              </a>
+              <a href="https://www.tiktok.com/@sgn_ia" target="_blank" rel="noopener noreferrer" 
+                 class="w-9 h-9 rounded-xl bg-white/5 hover:bg-[#17948F] border border-white/10 flex items-center justify-center text-white transition-all"
+                 title="TikTok Oficial (@sgn_ia)">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64c.298 0 .59.043.87.124V9.4a6.33 6.33 0 00-.87-.06A6.34 6.34 0 003 15.68a6.34 6.34 0 009.77 5.34 6.27 6.27 0 002.57-5.07V8.71a8.16 8.16 0 004.25 1.25V6.69z"/></svg>
+              </a>
+              <a href="mailto:contacto@sgnia.xyz" 
+                 class="w-9 h-9 rounded-xl bg-white/5 hover:bg-[#17948F] border border-white/10 flex items-center justify-center text-white transition-all"
+                 title="Correo Electrónico (contacto@sgnia.xyz)">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Profile Text Header -->
+          <div class="md:col-span-8 space-y-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#17948F]/20 border border-[#21D1C6]/30 text-[#21D1C6] text-xs font-mono">
+              <span class="w-2 h-2 rounded-full bg-[#21D1C6] animate-ping"></span>
+              <span>BIOGRAFÍA PROFESIONAL OFICIAL</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+              Gamaliel Velázquez Galicia
+            </h1>
+
+            <p class="text-base sm:text-lg text-[#21D1C6] font-semibold">
+              Desarrollador de Software Multiplataforma & Fundador de SGNIA COMPANY
+            </p>
+
+            <p class="text-xs sm:text-sm text-slate-300 font-mono">
+              Estudiante de Ingeniería en Tecnologías de la Información e Innovación Digital (UTBIS)
+            </p>
+
+            <!-- Quick Data Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs text-slate-300">
+              <div class="flex items-center gap-2 p-2.5 rounded-xl bg-white/5 border border-white/5">
+                <svg class="w-4 h-4 text-[#21D1C6] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                <span>Nacimiento: <strong>25 de Diciembre de 2006</strong></span>
+              </div>
+              <div class="flex items-center gap-2 p-2.5 rounded-xl bg-white/5 border border-white/5">
+                <svg class="w-4 h-4 text-[#21D1C6] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <a href="https://www.google.com/maps/search/?api=1&query=Juan+Jimenez+405,+Centro,+75120+Nopalucan+de+la+Granja,+Puebla,+Mexico" target="_blank" rel="noopener noreferrer" class="hover:text-[#21D1C6] transition-colors">
+                  <strong>Nopalucan de la Granja, Puebla, México</strong>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- SECCIÓN 1: HISTORIA & RAÍCES -->
+      <section class="glass-panel p-8 sm:p-10 rounded-3xl space-y-6 border border-white/10">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-[#21D1C6]/10 border border-[#21D1C6]/30 flex items-center justify-center text-[#21D1C6] font-mono font-bold text-sm">
+            01
+          </div>
+          <div>
+            <div class="text-xs font-mono text-[#21D1C6] uppercase">Raíces y Familia</div>
+            <h2 class="text-2xl font-bold text-white tracking-tight">Historia & La Fuerza de la Disciplina</h2>
+          </div>
+        </div>
+
+        <div class="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed font-light">
+          <p>
+            Nacido el <strong class="text-white font-medium">25 de diciembre de 2006</strong> en Nopalucan de la Granja, Puebla, Gamaliel creció en el seno de una familia trabajadora donde el esfuerzo honesto y la constancia han sido la mayor escuela de vida. Hijo de una madre dedicada a las labores del hogar y la limpieza, y de un padre albañil que construye con sus manos día con día, Gamaliel aprendió desde temprana edad que las cosas duraderas se edifican con disciplina, precisión y paciencia desde los cimientos.
+          </p>
+          <div class="p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-[#17948F]/15 via-white/5 to-[#12264A]/30 border-l-4 border-[#21D1C6] text-slate-200 italic font-normal">
+            "Guiado por el deseo de salir adelante y brindarle a sus padres la vida digna que merecen, Gamaliel convirtió la programación en su principal herramienta de superación. Creciendo en un hogar donde la tecnología y la robótica han sido pilares de constante aprendizaje, vio en el código la oportunidad de construir soluciones reales para empresas y negocios. Esa combinación de gratitud familiar, disciplina y visión dio vida a SGNIA COMPANY."
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 2: EL ORIGEN DEL NOMBRE SGNIA -->
+      <section class="glass-panel p-8 sm:p-10 rounded-3xl space-y-6 border border-white/10">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-[#21D1C6]/10 border border-[#21D1C6]/30 flex items-center justify-center text-[#21D1C6] font-mono font-bold text-sm">
+            02
+          </div>
+          <div>
+            <div class="text-xs font-mono text-[#21D1C6] uppercase">Identidad & Propósito</div>
+            <h2 class="text-2xl font-bold text-white tracking-tight">El Origen del Nombre: SGNIA COMPANY</h2>
+          </div>
+        </div>
+
+        <div class="space-y-6 text-slate-300 text-sm sm:text-base leading-relaxed font-light">
+          <div class="p-5 sm:p-6 rounded-2xl bg-white/5 border border-white/10 text-slate-200">
+            <p class="font-normal leading-relaxed">
+              <strong class="text-[#21D1C6]">Más allá de una identidad de marca, SGNIA representa una alianza de vida y propósito.</strong> Su nombre surge del acrónimo que entrelaza a <strong class="text-white">Sonia</strong> y <strong class="text-white">Gamaliel</strong>, simbolizando la motivación constante, el trabajo en equipo y el respaldo afectivo sobre los cuales se cimenta la empresa.
+            </p>
+          </div>
+
+          <!-- Tipografía y desglose de SGNIA -->
+          <div class="py-6 px-4 rounded-2xl bg-[#050B14]/90 border border-white/10 text-center font-mono">
+            <div class="text-4xl sm:text-6xl font-extrabold tracking-widest py-3">
+              <span class="text-[#21D1C6] drop-shadow-[0_0_20px_rgba(33,209,198,0.5)]">S</span>
+              <span class="text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)]">G</span>
+              <span class="text-[#21D1C6] drop-shadow-[0_0_20px_rgba(33,209,198,0.5)]">NIA</span>
+            </div>
+            <div class="text-xs text-slate-400 mt-2 font-sans tracking-wide">
+              Dos trazos entrelazados que avanzan juntos hacia arriba dentro del escudo corporativo.
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div class="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-1">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-[#21D1C6] shadow-[0_0_8px_#21D1C6]"></span>
+                <span class="font-bold text-white text-sm">S · NIA (Verde Teal)</span>
+              </div>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Representan a <strong>Sonia</strong>: la <span class="text-[#21D1C6] font-mono">S</span> inicial y el cierre <span class="text-[#21D1C6] font-mono">NIA</span>, envolviendo el nombre con afecto, motivación constante e inspiración.
+              </p>
+            </div>
+            <div class="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-1">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-white shadow-[0_0_8px_#ffffff]"></span>
+                <span class="font-bold text-white text-sm">G (Azul Marino / Blanco)</span>
+              </div>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Representa a <strong>Gamaliel</strong>: el pilar técnico central y ejecutor de las soluciones de ingeniería y desarrollo.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 3: FORMACIÓN ACADÉMICA -->
+      <section class="glass-panel p-8 sm:p-10 rounded-3xl space-y-6 border border-white/10">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-[#21D1C6]/10 border border-[#21D1C6]/30 flex items-center justify-center text-[#21D1C6] font-mono font-bold text-sm">
+            03
+          </div>
+          <div>
+            <div class="text-xs font-mono text-[#21D1C6] uppercase">Educación Universitaria</div>
+            <h2 class="text-2xl font-bold text-white tracking-tight">Formación Académica (UTBIS)</h2>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
+          
+          <div class="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-3 relative overflow-hidden">
+            <div class="text-xs font-mono px-2.5 py-1 rounded-md bg-[#21D1C6]/10 text-[#21D1C6] border border-[#21D1C6]/30 inline-block">
+              EN CURSO
+            </div>
+            <h3 class="text-lg font-bold text-white">Ingeniería en Tecnologías de la Información e Innovación Digital</h3>
+            <p class="text-xs sm:text-sm text-slate-400">
+              Universidad Tecnológica Bilingüe Internacional y Sustentable de Puebla (UTBIS)
+            </p>
+            <p class="text-xs text-slate-400 leading-relaxed pt-2 border-t border-white/10">
+              Enfoque en desarrollo de software avanzado, tecnologías emergentes, innovación sustentable y estándares internacionales.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-3 relative overflow-hidden">
+            <div class="text-xs font-mono px-2.5 py-1 rounded-md bg-white/10 text-white border border-white/20 inline-block">
+              TITULACIÓN TÉCNICA
+            </div>
+            <h3 class="text-lg font-bold text-white">T.S.U. en Desarrollo de Software Multiplataforma</h3>
+            <p class="text-xs sm:text-sm text-slate-400">
+              Universidad Tecnológica Bilingüe Internacional y Sustentable de Puebla (UTBIS)
+            </p>
+            <p class="text-xs text-slate-400 leading-relaxed pt-2 border-t border-white/10">
+              Formación integral en programación cliente-servidor, bases de datos relacionales, aplicaciones móviles nativas y buenas prácticas de ingeniería.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECCIÓN 4: COMPETENCIAS TÉCNICAS & STACK -->
+      <section class="glass-panel p-8 sm:p-10 rounded-3xl space-y-6 border border-white/10">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-[#21D1C6]/10 border border-[#21D1C6]/30 flex items-center justify-center text-[#21D1C6] font-mono font-bold text-sm">
+            04
+          </div>
+          <div>
+            <div class="text-xs font-mono text-[#21D1C6] uppercase">Capacidades de Ingeniería</div>
+            <h2 class="text-2xl font-bold text-white tracking-tight">Competencias Técnicas & Arsenal</h2>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+          
+          <div class="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-2">
+            <div class="text-xs font-mono text-[#21D1C6] uppercase font-semibold">Desarrollo Móvil Nativo</div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Construcción de aplicaciones para Android utilizando <strong>Kotlin</strong> y <strong>Jetpack Compose</strong>, persistencia de datos local con <strong>Room Database</strong> y consumo de APIs REST.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-2">
+            <div class="text-xs font-mono text-[#21D1C6] uppercase font-semibold">Backend & Sistemas Web</div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Desarrollo de arquitecturas empresariales con <strong>C# / .NET (ASP.NET Core)</strong> y <strong>PHP / Laravel</strong>, con manejo estricto de concurrencia y seguridad.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-2">
+            <div class="text-xs font-mono text-[#21D1C6] uppercase font-semibold">Bases de Datos & Persistencia</div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Diseño relacional, consultas complejas y optimización en <strong>SQL Server</strong>, <strong>MySQL</strong>, <strong>SQLite</strong> y plataformas en tiempo real como <strong>Supabase</strong>.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-2">
+            <div class="text-xs font-mono text-[#21D1C6] uppercase font-semibold">Sistemas, Redes & Automatización</div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Enrutamiento IP, subredes, configuración cliente-servidor, acceso remoto seguro y automatización de procesos mediante scripts en <strong>Python</strong>.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Badges de Tecnologías -->
+        <div class="pt-4 border-t border-white/10">
+          <div class="text-xs font-mono text-slate-400 mb-3 uppercase">Tecnologías Dominadas</div>
+          <div class="flex flex-wrap gap-2 text-xs font-mono">
+            <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-white">C#</span>
+            <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-white">.NET Core</span>
+            <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-white">Kotlin</span>
+            <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-white">Jetpack Compose</span>
+            <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-white">Python</span>
+            <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-white">PHP / Laravel</span>
+            <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-white">SQL Server</span>
+            <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-white">MySQL</span>
+            <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-white">Supabase</span>
+            <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-white">Java</span>
+            <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-white">JavaScript</span>
+            <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-white">Redes IP</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 5: PROYECTOS DESARROLLADOS -->
+      <section class="glass-panel p-8 sm:p-10 rounded-3xl space-y-6 border border-white/10">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-[#21D1C6]/10 border border-[#21D1C6]/30 flex items-center justify-center text-[#21D1C6] font-mono font-bold text-sm">
+            05
+          </div>
+          <div>
+            <div class="text-xs font-mono text-[#21D1C6] uppercase">Portafolio Tangible</div>
+            <h2 class="text-2xl font-bold text-white tracking-tight">Proyectos Reales Desarrollados</h2>
+          </div>
+        </div>
+
+        <div class="space-y-4 pt-2">
+          
+          <div class="p-5 rounded-2xl bg-white/5 border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div>
+              <div class="text-sm font-bold text-white">Hotel Booking System</div>
+              <div class="text-xs text-slate-400 mt-0.5">C# · .NET · SQL Server · Windows Forms</div>
+              <p class="text-xs text-slate-300 mt-2 font-light">
+                Sistema completo de reservas, control de habitaciones y reportería administrativa hotelera.
+              </p>
+            </div>
+            <a href="https://github.com/Gamavg06/HotelBookingSystem" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-[#17948F] border border-white/10 text-xs font-mono text-white transition-all shrink-0">
+              Ver Repo GitHub →
+            </a>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-white/5 border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div>
+              <div class="text-sm font-bold text-white">Portal Inmobiliario</div>
+              <div class="text-xs text-slate-400 mt-0.5">PHP · Laravel · MySQL · Bootstrap</div>
+              <p class="text-xs text-slate-300 mt-2 font-light">
+                Plataforma full-stack para publicación, filtrado y administración de bienes raíces.
+              </p>
+            </div>
+            <a href="https://github.com/Gamavg06/portalInmobiliario" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-[#17948F] border border-white/10 text-xs font-mono text-white transition-all shrink-0">
+              Ver Repo GitHub →
+            </a>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-white/5 border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div>
+              <div class="text-sm font-bold text-white">BioPlant</div>
+              <div class="text-xs text-slate-400 mt-0.5">Frontend Moderno · HTML5 · CSS3 · JS</div>
+              <p class="text-xs text-slate-300 mt-2 font-light">
+                Solución tecnológica enfocada en botánica, monitoreo y cuidado sustentable de plantas.
+              </p>
+            </div>
+            <a href="https://bioplant.netlify.app" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 rounded-xl bg-[#21D1C6]/10 hover:bg-[#21D1C6]/20 border border-[#21D1C6]/30 text-xs font-mono text-[#21D1C6] transition-all shrink-0">
+              Ver Demo en Vivo →
+            </a>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-white/5 border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div>
+              <div class="text-sm font-bold text-white">LearnMore</div>
+              <div class="text-xs text-slate-400 mt-0.5">Plataforma Web · JavaScript · UI Dinámica</div>
+              <p class="text-xs text-slate-300 mt-2 font-light">
+                Entorno interactivo para centralización de recursos y aprendizaje continuo.
+              </p>
+            </div>
+            <a href="https://learn-moree.netlify.app" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 rounded-xl bg-[#21D1C6]/10 hover:bg-[#21D1C6]/20 border border-[#21D1C6]/30 text-xs font-mono text-[#21D1C6] transition-all shrink-0">
+              Ver Demo en Vivo →
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECCIÓN 6: CONTACTO DIRECTO -->
+      <section class="glass-panel p-8 sm:p-12 rounded-3xl space-y-6 text-center border border-[#21D1C6]/30 relative overflow-hidden">
+        <div class="max-w-2xl mx-auto space-y-3">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#17948F]/20 text-[#21D1C6] text-xs font-mono">
+            <span>CANAL DIRECTO</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            ¿Tienes un proyecto en mente o deseas colaborar?
+          </h2>
+          <p class="text-sm text-slate-300 font-light">
+            Estoy disponible para cotizar desarrollos a medida, sistemas empresariales o aplicaciones móviles.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
+          <a href="https://wa.me/522761095688?text=Hola%20Gamaliel,%20leí%20tu%20biografía%20y%20me%20gustaría%20platicar%20sobre%20un%20proyecto." 
+             target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-[#17948F] to-[#12264A] hover:from-[#21D1C6] hover:to-[#17948F] shadow-lg shadow-[#17948F]/25 border border-[#21D1C6]/30 transition-all">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z"/></svg>
+            <span>WhatsApp (+52 276 109 5688)</span>
+          </a>
+
+          <a href="sms:+522761095688?body=Hola%20Gamaliel,%20me%20comunico%20desde%20tu%20biografía%20en%20SGNIA." 
+             class="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold text-slate-200 bg-white/5 hover:bg-white/10 border border-white/10 transition-all">
+            <svg class="w-4 h-4 text-[#21D1C6]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+            <span>Mensaje SMS</span>
+          </a>
+
+          <a href="mailto:contacto@sgnia.xyz" 
+             class="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold text-slate-200 bg-white/5 hover:bg-white/10 border border-white/10 transition-all">
+            <svg class="w-4 h-4 text-[#21D1C6]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <span>contacto@sgnia.xyz</span>
+          </a>
+        </div>
+
+        <div class="pt-6 border-t border-white/10 text-xs text-slate-400 font-mono">
+          Ubicación: <a href="https://www.google.com/maps/search/?api=1&query=Juan+Jimenez+405,+Centro,+75120+Nopalucan+de+la+Granja,+Puebla,+Mexico" target="_blank" rel="noopener noreferrer" class="text-[#21D1C6] hover:underline">Juan Jiménez 405, Centro, 75120 Nopalucan de la Granja, Puebla, México</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ========================================================== -->
+  <!-- FOOTER                                                     -->
+  <!-- ========================================================== -->
+  <footer class="border-t border-white/10 py-12 bg-[#050B14] relative z-10 text-xs font-mono text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <img src="assets/Logosgnia.png" alt="SGNIA" class="w-6 h-6 object-contain">
+        <span>© 2026 SGNIA COMPANY · Fundado por Gamaliel Velázquez Galicia</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="hover:text-[#21D1C6] transition-colors">Inicio</a>
+        <a href="index.html#proyectos" class="hover:text-[#21D1C6] transition-colors">Proyectos</a>
+        <a href="index.html#servicios" class="hover:text-[#21D1C6] transition-colors">Servicios</a>
+        <a href="index.html#contacto" class="hover:text-[#21D1C6] transition-colors">Contacto</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>
