@@ -1,0 +1,141 @@
+/* Custom Styles for SGNIA COMPANY Landing Page */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --color-navy: #12264A;
+  --color-navy-dark: #0B172C;
+  --color-navy-light: #193363;
+  --color-teal: #17948F;
+  --color-teal-light: #1EB3AD;
+  --color-teal-dark: #12736F;
+  --color-gray: #F1F5F9;
+  --color-white: #FFFFFF;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* Accessible focus visible styling */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #17948F;
+  outline-offset: 2px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #0B172C;
+}
+::-webkit-scrollbar-thumb {
+  background: #17948F;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1EB3AD;
+}
+
+/* Background Gradients & Grids */
+.bg-mesh-pattern {
+  background-image: 
+    radial-gradient(circle at 15% 45%, rgba(23, 148, 143, 0.14) 0%, transparent 45%),
+    radial-gradient(circle at 85% 30%, rgba(30, 179, 173, 0.10) 0%, transparent 40%),
+    radial-gradient(circle at 50% 90%, rgba(18, 38, 74, 0.7) 0%, transparent 55%);
+}
+
+.hero-grid-bg {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+.light-grid-bg {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(18, 38, 74, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(18, 38, 74, 0.035) 1px, transparent 1px);
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float-slow {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 6s ease-in-out 3s infinite;
+}
+
+/* Code card font */
+.font-mono-code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Card hover transitions */
+.service-card,
+.project-card,
+.tech-badge,
+.step-card {
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 30px -10px rgba(23, 148, 143, 0.18), 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 32px -10px rgba(18, 38, 74, 0.22);
+}
+
+.tech-badge:hover {
+  transform: translateY(-3px);
+  border-color: #17948F;
+  box-shadow: 0 10px 20px -5px rgba(23, 148, 143, 0.16);
+}
+
+.step-card:hover {
+  transform: translateY(-4px);
+  border-color: #17948F;
+}
+
+/* Badge tags */
+.tag-pill {
+  font-size: 0.75rem;
+  letter-spacing: 0.025em;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
