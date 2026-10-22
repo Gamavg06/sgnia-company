@@ -139,3 +139,11 @@ textarea:focus-visible {
     scroll-behavior: auto !important;
   }
 }
+
+/* Project filter active button fix for mobile and hover states */
+.project-filter-btn.active {
+  background-color: #12264A !important;
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}

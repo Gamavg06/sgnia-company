@@ -80,11 +80,11 @@ function initProjectFilters() {
   filterButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       filterButtons.forEach(b => {
-        b.classList.remove('bg-[#12264A]', 'text-white', 'shadow-sm');
-        b.classList.add('text-slate-600');
+        b.classList.remove('active');
+        b.classList.add('text-slate-600', 'font-semibold');
       });
-      btn.classList.add('bg-[#12264A]', 'text-white', 'shadow-sm');
-      btn.classList.remove('text-slate-600');
+      btn.classList.add('active');
+      btn.classList.remove('text-slate-600', 'font-semibold');
 
       const filterValue = btn.getAttribute('data-filter');
 
