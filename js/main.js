@@ -192,7 +192,7 @@ function initContactActions() {
       const { name, msg } = getFormValues();
       const subject = `Contacto desde web SGNIA - ${name || 'Proyecto'}`;
       const body = `Nombre: ${name}\n\nMensaje:\n${msg}\n`;
-      window.location.href = `mailto:contacto@sgnia.xyz?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = `mailto:gmlvega0025@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     });
   }
 }
