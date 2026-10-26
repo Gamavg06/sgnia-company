@@ -1,239 +1,195 @@
 /* ==========================================================================
-   SGNIA COMPANY - Futuristic Cinematic Experience & Scene Presentation CSS
-   Brand Identity: Navy (#12264A), Teal (#17948F), Deep Space (#050B14)
+   SGNIA COMPANY - Identidad de Autor y Diseño Editorial de Ingeniería
+   Paleta extraída del logo:
+   Azul Marino (#142A42) | Verde Teal (#1F8E8F) | Blanco (#FFFFFF)
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
 :root {
-  --color-navy: #12264A;
-  --color-navy-dark: #071120;
-  --color-navy-light: #193363;
-  --color-teal: #17948F;
-  --color-teal-light: #21D1C6;
-  --color-teal-dark: #12736F;
-  --color-space: #050B14;
+  --color-navy: #142A42;
+  --color-navy-dark: #0E1F31;
+  --color-navy-light: #1D3A5C;
+  --color-teal: #1F8E8F;
+  --color-teal-accessible-dark: #0F6364; /* Contraste > 4.5:1 sobre fondo claro */
+  --color-teal-accessible-light: #6BE5E8; /* Contraste > 8:1 sobre fondo azul marino */
+  --color-canvas: #F8FAFC;
+  --color-canvas-alt: #F1F5F9;
+  --color-white: #FFFFFF;
+  --color-border: #E2E8F0;
+  --color-border-dark: #223F60;
+  --color-text-main: #0F172A;
+  --color-text-muted: #475569;
 }
 
 html {
   scroll-behavior: smooth;
   font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  background-color: var(--color-space);
-  color: #F1F5F9;
+  background-color: var(--color-canvas);
+  color: var(--color-text-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Accessibility focus visible */
+/* Tipografía de títulos con la fuerza del logo */
+h1, h2, h3, h4, .font-heading {
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Accesibilidad y foco */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
-select:focus-visible,
 textarea:focus-visible {
   outline: 2px solid var(--color-teal);
   outline-offset: 3px;
 }
 
-/* Sleek Cyberpunk Scrollbar */
+/* Scrollbar sutil y limpio */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #050B14;
+  background: #F1F5F9;
 }
 ::-webkit-scrollbar-thumb {
-  background: #17948F;
+  background: #CBD5E1;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #21D1C6;
+  background: var(--color-teal);
 }
 
-/* Scroll Progress Bar at the top of the viewport */
-#scroll-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 3px;
-  width: 0%;
-  background: linear-gradient(90deg, #17948F, #21D1C6, #12264A, #21D1C6);
-  background-size: 200% 100%;
-  animation: shimmerProgress 3s linear infinite;
-  z-index: 100;
-  pointer-events: none;
-  box-shadow: 0 0 10px rgba(33, 209, 198, 0.7);
-}
-
-@keyframes shimmerProgress {
-  0% { background-position: 100% 0; }
-  100% { background-position: -100% 0; }
-}
-
-/* Interactive Background Canvas */
-#scene-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
+/* ==========================================================================
+   MOTIVO DE TRAZOS ENTRELAZADOS (DIVISORES DE SECCIÓN)
+   Dos trazos (Azul Marino y Verde Teal) que se cruzan y avanzan juntos
+   ========================================================================== */
+.intertwined-divider-container {
+  position: relative;
   width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.55;
-}
-
-/* Glassmorphism Panels */
-.glass-panel {
-  background: rgba(11, 23, 44, 0.72);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.glass-panel-hover {
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.glass-panel-hover:hover {
-  background: rgba(18, 38, 74, 0.85);
-  border-color: rgba(33, 209, 198, 0.45);
-  box-shadow: 0 20px 40px -15px rgba(23, 148, 143, 0.22), 0 0 20px rgba(33, 209, 198, 0.1);
-  transform: translateY(-4px);
-}
-
-/* Cinematic Video Slate / Frame */
-.video-frame {
-  position: relative;
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
-}
-
-.video-frame::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 1rem;
-  padding: 1px;
-  background: linear-gradient(135deg, rgba(33, 209, 198, 0.5), rgba(255, 255, 255, 0.05) 50%, rgba(18, 38, 74, 0.8));
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-  z-index: 20;
-}
-
-/* Glowing Neon Elements */
-.glow-teal-text {
-  text-shadow: 0 0 24px rgba(33, 209, 198, 0.45);
-}
-
-.glow-teal-box {
-  box-shadow: 0 0 30px rgba(23, 148, 143, 0.35);
-}
-
-/* Monospace Hud Badges */
-.hud-tag {
-  font-family: 'JetBrains Mono', monospace;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-/* Glowing Pulse Indicator (REC / ACTIVE) */
-.pulse-rec {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: #21D1C6;
-  box-shadow: 0 0 10px #21D1C6;
-  animation: pulseNeon 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-@keyframes pulseNeon {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.85); }
-}
-
-/* Floating HUD scene badge at bottom left on PC */
-#hud-scene-tracker {
-  position: fixed;
-  bottom: 24px;
-  left: 24px;
-  z-index: 40;
+  max-width: 640px;
+  margin: 0 auto;
+  overflow: visible;
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 10px;
-  padding: 8px 16px;
-  border-radius: 9999px;
-  background: rgba(5, 11, 20, 0.85);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(33, 209, 198, 0.25);
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  color: #21D1C6;
-  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  #hud-scene-tracker {
-    display: none;
-  }
+.intertwined-divider-svg {
+  width: 100%;
+  height: 38px;
+  overflow: visible;
 }
 
-/* Card hover animation */
-.cinema-card {
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+.divider-stroke-navy {
+  stroke: var(--color-navy);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  fill: none;
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  transition: stroke-dashoffset 1.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.cinema-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(33, 209, 198, 0.5);
-  box-shadow: 0 20px 35px -10px rgba(5, 11, 20, 0.8), 0 0 25px rgba(23, 148, 143, 0.18);
+.divider-stroke-teal {
+  stroke: var(--color-teal);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  fill: none;
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  transition: stroke-dashoffset 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
 }
 
-/* Scene Reveal on Scroll */
-.scene-section {
-  position: relative;
-  z-index: 10;
+/* Cuando entra en pantalla (activado por IntersectionObserver una sola vez) */
+.intertwined-divider-svg.is-visible .divider-stroke-navy,
+.intertwined-divider-svg.is-visible .divider-stroke-teal {
+  stroke-dashoffset: 0;
 }
 
-.reveal-on-scroll {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.reveal-on-scroll.revealed {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Filter button active state */
-.project-filter-btn.active {
-  background: linear-gradient(135deg, #12264A, #17948F) !important;
-  color: #FFFFFF !important;
-  font-weight: 700 !important;
-  box-shadow: 0 4px 14px rgba(23, 148, 143, 0.35) !important;
-  border-color: #21D1C6 !important;
-}
-
-/* Animated Gradient Text */
-.gradient-text-cinema {
-  background: linear-gradient(135deg, #FFFFFF 20%, #E2E8F0 50%, #21D1C6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Reduced Motion */
+/* Respeto estricto a prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
+  .divider-stroke-navy,
+  .divider-stroke-teal {
+    transition: none !important;
+    stroke-dashoffset: 0 !important;
   }
-  #scroll-progress {
-    animation: none;
-  }
-  .reveal-on-scroll {
+  .reveal-fade {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
   }
+}
+
+/* ==========================================================================
+   ESTRUCTURAS Y TARJETAS EDITORIALES LIMPIAS
+   ========================================================================== */
+.editorial-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04), 0 4px 12px rgba(15, 23, 42, 0.03);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.editorial-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(20, 42, 66, 0.08);
+  border-color: #CBD5E1;
+}
+
+/* Botones con los colores reales del logo */
+.btn-primary {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+.btn-primary:hover {
+  background-color: var(--color-navy-dark);
+  box-shadow: 0 4px 14px rgba(20, 42, 66, 0.2);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-navy);
+  border: 1.5px solid var(--color-border);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+.btn-secondary:hover {
+  border-color: var(--color-teal);
+  color: var(--color-teal-accessible-dark);
+  background-color: #F8FAFC;
+}
+
+/* Filtros de proyectos */
+.filter-btn {
+  color: var(--color-text-muted);
+  background-color: transparent;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  font-weight: 600;
+}
+.filter-btn:hover {
+  color: var(--color-navy);
+  background-color: var(--color-canvas-alt);
+}
+.filter-btn.active {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+  border-color: var(--color-navy);
+}
+
+/* Animaciones sutiles de entrada */
+.reveal-fade {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-fade.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
 }

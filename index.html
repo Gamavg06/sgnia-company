@@ -3,1314 +3,817 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SGNIA COMPANY | Desarrollo de Software, Soluciones Web/Móviles e Innovación Digital</title>
-  <meta name="description" content="SGNIA COMPANY: Desarrollo de software profesional con C#, .NET, Python, Kotlin y bases de datos empresariales. Fundado por Gamaliel Velazquez Galicia en Nopalucan de la Granja, Puebla.">
+  <title>SGNIA COMPANY | Software a Medida por Gamaliel Velázquez Galicia</title>
+  <meta name="description" content="SGNIA COMPANY: Desarrollo de software independiente, plataformas web y aplicaciones móviles construido por Gamaliel Velázquez Galicia en Nopalucan de la Granja, Puebla. C#, .NET, Python y Kotlin.">
   <meta name="keywords" content="SGNIA COMPANY, Gamaliel Velazquez Galicia, Desarrollo de Software, C#, .NET, Python, Kotlin, SQL Server, Laravel, Nopalucan, Puebla">
   <link rel="canonical" href="https://sgnia.xyz/">
 
-  <!-- Open Graph / Meta etiquetas para compartir en redes y WhatsApp -->
+  <!-- Open Graph / Meta etiquetas para redes -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sgnia.xyz/">
-  <meta property="og:title" content="SGNIA COMPANY | Desarrollo de Software e Innovación Digital">
-  <meta property="og:description" content="Desarrollo de software con C#, .NET, Python, Kotlin y bases de datos empresariales. Fundado por Gamaliel Velazquez Galicia.">
+  <meta property="og:title" content="SGNIA COMPANY | Software a Medida por Gamaliel Velázquez Galicia">
+  <meta property="og:description" content="Desarrollo de software independiente, plataformas web y aplicaciones móviles desde Nopalucan de la Granja, Puebla. C#, .NET, Python y Kotlin.">
   <meta property="og:image" content="https://sgnia.xyz/assets/Bannersgnia.png">
 
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta property="twitter:domain" content="sgnia.xyz">
   <meta property="twitter:url" content="https://sgnia.xyz/">
-  <meta name="twitter:title" content="SGNIA COMPANY | Desarrollo de Software e Innovación Digital">
-  <meta name="twitter:description" content="Desarrollo de software con C#, .NET, Python, Kotlin y bases de datos empresariales. Fundado por Gamaliel Velazquez Galicia.">
+  <meta name="twitter:title" content="SGNIA COMPANY | Software a Medida">
+  <meta name="twitter:description" content="Desarrollo de software independiente por Gamaliel Velázquez Galicia en Nopalucan de la Granja, Puebla.">
   <meta name="twitter:image" content="https://sgnia.xyz/assets/Bannersgnia.png">
   
   <!-- Favicon oficial con el escudo de SGNIA COMPANY -->
   <link rel="icon" type="image/png" href="assets/Logosgnia.png">
 
-  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <!-- Google Fonts: Outfit (Titulares) & Plus Jakarta Sans (Cuerpo) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CSS via CDN -->
+  <!-- Tailwind CSS via CDN con paleta oficial de SGNIA -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      darkMode: 'class',
       theme: {
         extend: {
           colors: {
-            navy: {
-              DEFAULT: '#12264A',
-              light: '#193363',
-              dark: '#071120',
-              space: '#050B14',
-              900: '#0B172C',
-              950: '#060E1C'
+            brandNavy: {
+              DEFAULT: '#142A42',
+              dark: '#0E1F31',
+              light: '#1D3A5C',
+              surface: '#0F2338'
             },
-            teal: {
-              DEFAULT: '#17948F',
-              light: '#21D1C6',
-              dark: '#12736F',
-              500: '#17948F',
-              400: '#21D1C6'
-            }
+            brandTeal: {
+              DEFAULT: '#1F8E8F',
+              dark: '#0F6364',
+              light: '#6BE5E8',
+              surface: '#EBF7F7'
+            },
+            canvasBg: '#F8FAFC',
+            canvasAlt: '#F1F5F9'
           },
           fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'monospace'],
+            heading: ['"Outfit"', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif']
           }
         }
       }
     }
   </script>
 
-  <!-- Custom Cinematic CSS -->
+  <!-- Estilos artesanales del proyecto -->
   <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Datos estructurados JSON-LD Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "SGNIA COMPANY",
+    "image": "https://sgnia.xyz/assets/Logosgnia.png",
+    "url": "https://sgnia.xyz/",
+    "telephone": "+522761095688",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Nopalucan de la Granja",
+      "addressRegion": "Puebla",
+      "addressCountry": "MX"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Gamaliel Velázquez Galicia",
+      "jobTitle": "Fundador & Desarrollador de Software",
+      "sameAs": [
+        "https://github.com/Gamavg06",
+        "https://www.tiktok.com/@sgn_ia"
+      ]
+    },
+    "description": "Desarrollo de software independiente, plataformas web empresariales y aplicaciones móviles con C#, .NET, Python y Kotlin."
+  }
+  </script>
 </head>
-<body class="bg-[#050B14] text-slate-100 antialiased selection:bg-[#17948F] selection:text-white overflow-x-hidden relative">
-
-  <!-- Top Progress Bar -->
-  <div id="scroll-progress"></div>
-
-  <!-- Background Interactive Particles & Wave Canvas -->
-  <canvas id="scene-canvas"></canvas>
-
-  <!-- HUD Scene Tracker Indicator (Bottom Left) -->
-  <div id="hud-scene-tracker">
-    <span class="pulse-rec"></span>
-    <span class="hud-tag text-slate-400">SCENE</span>
-    <span id="hud-scene-name" class="hud-tag text-[#21D1C6] font-bold">01 // OVERTURE</span>
-  </div>
+<body class="bg-canvasBg text-slate-800 antialiased selection:bg-brandNavy selection:text-white">
 
   <!-- ========================================================== -->
-  <!-- 1. HEADER FLOTANTE CON EFECTO CRISTAL                     -->
+  <!-- 1. CABECERA LIMPIA Y FIJA                                  -->
   <!-- ========================================================== -->
-  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 bg-[#050B14]/85 backdrop-blur-xl border-b border-white/10 shadow-2xl shadow-black/50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-      
-      <!-- Brand Logo con Escudo Oficial sobre fondo blanco protegido -->
-      <a href="#inicio" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-[#17948F] rounded-xl p-1">
-        <div class="w-10 h-10 rounded-xl bg-white p-1.5 shadow-md border border-slate-200 flex items-center justify-center shrink-0 transition-transform group-hover:scale-105">
-          <img src="assets/Logosgnia.png" alt="Escudo oficial de SGNIA COMPANY" width="420" height="420" class="w-full h-full object-contain">
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-200 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logotipo Oficial SGNIA COMPANY -->
+        <a href="#inicio" class="flex items-center gap-3 group focus:outline-none" aria-label="SGNIA COMPANY Inicio">
+          <img src="assets/Logosgnia.png" alt="Logotipo oficial de SGNIA COMPANY" width="48" height="48" class="w-11 h-11 object-contain transition-transform group-hover:scale-105">
+          <div class="flex flex-col">
+            <span class="font-heading font-extrabold text-xl tracking-tight text-brandNavy leading-none">SGNIA</span>
+            <span class="text-[11px] font-semibold tracking-wider text-brandTeal-dark uppercase mt-1">COMPANY</span>
+          </div>
+        </a>
+
+        <!-- Menú de Navegación de Escritorio -->
+        <nav class="hidden md:flex items-center space-x-1 lg:space-x-3 text-sm font-semibold text-slate-600">
+          <a href="#proyectos" class="px-3 py-2 rounded-lg hover:text-brandNavy hover:bg-slate-100 transition-colors">Proyectos</a>
+          <a href="#historia" class="px-3 py-2 rounded-lg hover:text-brandNavy hover:bg-slate-100 transition-colors">Historia & Raíces</a>
+          <a href="#taller" class="px-3 py-2 rounded-lg hover:text-brandNavy hover:bg-slate-100 transition-colors">El Taller</a>
+          <a href="#servicios" class="px-3 py-2 rounded-lg hover:text-brandNavy hover:bg-slate-100 transition-colors">Servicios</a>
+          <a href="fundador.html" class="px-3 py-2 rounded-lg text-brandNavy font-bold hover:bg-slate-100 transition-colors">Fundador</a>
+          <a href="#contacto" class="px-3 py-2 rounded-lg hover:text-brandNavy hover:bg-slate-100 transition-colors">Contacto</a>
+        </nav>
+
+        <!-- Redes y Botón de Contacto -->
+        <div class="flex items-center gap-2 sm:gap-3">
+          <a href="https://github.com/Gamavg06" target="_blank" rel="noopener noreferrer" 
+             class="w-10 h-10 rounded-xl border border-slate-200 text-slate-600 hover:text-brandNavy hover:border-brandNavy flex items-center justify-center transition-colors"
+             aria-label="GitHub de Gamaliel Velázquez" title="GitHub (@Gamavg06)">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          </a>
+
+          <a href="https://wa.me/522761095688?text=Hola%20Gamaliel,%20me%20gustar%C3%ADa%20cotizar%20un%20proyecto%20con%20SGNIA%20COMPANY." 
+             target="_blank" rel="noopener noreferrer"
+             class="btn-primary hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm shadow-sm">
+            <span>Contactar</span>
+            <svg class="w-4 h-4 text-brandTeal-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+
+          <!-- Botón Menú Móvil -->
+          <button id="mobile-menu-btn" type="button" class="md:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100" aria-label="Abrir menú" aria-expanded="false">
+            <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
         </div>
-        <div class="flex flex-col">
-          <span class="text-xl font-extrabold tracking-tight text-white flex items-center">
-            SGNIA <span class="text-[#21D1C6] ml-1.5 font-mono text-xs bg-[#17948F]/20 px-2 py-0.5 rounded border border-[#17948F]/40 tracking-wider">COMPANY</span>
-          </span>
-          <span class="text-[9px] text-slate-400 tracking-wider uppercase font-mono">Software & Innovación Digital</span>
-        </div>
-      </a>
 
-      <!-- Desktop Navigation Menu -->
-      <nav class="hidden md:flex items-center space-x-1 lg:space-x-2 bg-white/5 backdrop-blur-md px-3 py-1.5 rounded-2xl border border-white/10">
-        <a href="#inicio" class="nav-link px-3 py-1.5 text-xs font-semibold text-slate-300 hover:text-[#21D1C6] hover:bg-white/5 rounded-xl transition-all">Inicio</a>
-        <a href="#nosotros" class="nav-link px-3 py-1.5 text-xs font-semibold text-slate-300 hover:text-[#21D1C6] hover:bg-white/5 rounded-xl transition-all">Nosotros</a>
-        <a href="fundador.html" class="nav-link px-3 py-1.5 text-xs font-semibold text-[#21D1C6] hover:text-white hover:bg-white/5 rounded-xl transition-all">Fundador</a>
-        <a href="#metodologia" class="nav-link px-3 py-1.5 text-xs font-semibold text-slate-300 hover:text-[#21D1C6] hover:bg-white/5 rounded-xl transition-all">Proceso</a>
-        <a href="#servicios" class="nav-link px-3 py-1.5 text-xs font-semibold text-slate-300 hover:text-[#21D1C6] hover:bg-white/5 rounded-xl transition-all">Servicios</a>
-        <a href="#proyectos" class="nav-link px-3 py-1.5 text-xs font-semibold text-slate-300 hover:text-[#21D1C6] hover:bg-white/5 rounded-xl transition-all">Proyectos</a>
-        <a href="#tecnologias" class="nav-link px-3 py-1.5 text-xs font-semibold text-slate-300 hover:text-[#21D1C6] hover:bg-white/5 rounded-xl transition-all">Tecnologías</a>
-        <a href="#contacto" class="nav-link px-3 py-1.5 text-xs font-semibold text-slate-300 hover:text-[#21D1C6] hover:bg-white/5 rounded-xl transition-all">Contacto</a>
-      </nav>
-
-      <!-- CTA Button, Social Shortcut & Mobile Toggle -->
-      <div class="flex items-center gap-3">
-        <!-- TikTok Shortcut -->
-        <a href="https://www.tiktok.com/@sgn_ia" target="_blank" rel="noopener noreferrer" aria-label="TikTok SGNIA COMPANY"
-           class="hidden lg:inline-flex items-center justify-center w-9 h-9 rounded-xl bg-white/5 hover:bg-[#17948F] border border-white/10 text-white transition-all">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64c.298 0 .59.043.87.124V9.4a6.33 6.33 0 00-.87-.06A6.34 6.34 0 003 15.68a6.34 6.34 0 009.77 5.34 6.27 6.27 0 002.57-5.07V8.71a8.16 8.16 0 004.25 1.25V6.69z"/>
-          </svg>
-        </a>
-
-        <!-- GitHub Shortcut -->
-        <a href="https://github.com/Gamavg06" target="_blank" rel="noopener noreferrer" aria-label="GitHub Gamavg06"
-           class="hidden lg:inline-flex items-center justify-center w-9 h-9 rounded-xl bg-white/5 hover:bg-[#17948F] border border-white/10 text-white transition-all">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
-          </svg>
-        </a>
-
-        <!-- Botón Contactar -->
-        <a href="#contacto" class="hidden sm:inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-[#17948F] to-[#12264A] hover:from-[#21D1C6] hover:to-[#17948F] transition-all shadow-lg shadow-[#17948F]/25 border border-[#21D1C6]/30">
-          <span>Contactar</span>
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-          </svg>
-        </a>
-
-        <!-- Mobile Menu Toggle Button -->
-        <button id="mobile-menu-btn" aria-label="Abrir menú de navegación" class="md:hidden p-2 rounded-xl text-slate-300 hover:text-white bg-white/5 border border-white/10 transition-colors">
-          <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-          </svg>
-          <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
-        </button>
       </div>
-
     </div>
 
-    <!-- Mobile Dropdown Menu -->
-    <div id="mobile-menu" class="hidden md:hidden px-4 pt-3 pb-6 bg-[#071120]/95 backdrop-blur-2xl border-b border-white/10 space-y-2 mt-2">
-      <a href="#inicio" class="mobile-nav-link block px-3 py-2 rounded-lg text-sm font-medium text-slate-200 hover:bg-white/5 hover:text-[#21D1C6]">Inicio</a>
-      <a href="#nosotros" class="mobile-nav-link block px-3 py-2 rounded-lg text-sm font-medium text-slate-200 hover:bg-white/5 hover:text-[#21D1C6]">Nosotros</a>
-      <a href="fundador.html" class="block px-3 py-2 rounded-lg text-sm font-bold text-[#21D1C6] hover:bg-white/5 hover:text-white">Fundador (Biografía)</a>
-      <a href="#metodologia" class="mobile-nav-link block px-3 py-2 rounded-lg text-sm font-medium text-slate-200 hover:bg-white/5 hover:text-[#21D1C6]">Proceso</a>
-      <a href="#servicios" class="mobile-nav-link block px-3 py-2 rounded-lg text-sm font-medium text-slate-200 hover:bg-white/5 hover:text-[#21D1C6]">Servicios</a>
-      <a href="#proyectos" class="mobile-nav-link block px-3 py-2 rounded-lg text-sm font-medium text-slate-200 hover:bg-white/5 hover:text-[#21D1C6]">Proyectos</a>
-      <a href="#tecnologias" class="mobile-nav-link block px-3 py-2 rounded-lg text-sm font-medium text-slate-200 hover:bg-white/5 hover:text-[#21D1C6]">Tecnologías</a>
-      <a href="#contacto" class="mobile-nav-link block px-3 py-2 rounded-lg text-sm font-medium text-slate-200 hover:bg-white/5 hover:text-[#21D1C6]">Contacto</a>
-      
-      <div class="pt-3 border-t border-white/10 flex items-center justify-between">
-        <a href="#contacto" class="w-full text-center py-2.5 px-4 rounded-xl text-sm font-bold text-white bg-[#17948F] hover:bg-[#21D1C6] transition-colors">
-          Contactar a SGNIA
+    <!-- Menú Desplegable Móvil -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-2">
+      <a href="#proyectos" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-semibold text-slate-700 hover:bg-slate-100">Proyectos</a>
+      <a href="#historia" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-semibold text-slate-700 hover:bg-slate-100">Historia & Raíces</a>
+      <a href="#taller" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-semibold text-slate-700 hover:bg-slate-100">El Taller</a>
+      <a href="#servicios" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-semibold text-slate-700 hover:bg-slate-100">Servicios</a>
+      <a href="fundador.html" class="block px-3 py-2 rounded-lg text-base font-bold text-brandNavy hover:bg-slate-100">Fundador (Biografía)</a>
+      <a href="#contacto" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-semibold text-slate-700 hover:bg-slate-100">Contacto</a>
+      <div class="pt-3 border-t border-slate-200">
+        <a href="https://wa.me/522761095688?text=Hola%20Gamaliel,%20quiero%20cotizar%20un%20proyecto." target="_blank" rel="noopener noreferrer" class="btn-primary w-full py-3 rounded-xl flex items-center justify-center gap-2 text-sm">
+          <span>Escribir por WhatsApp</span>
         </a>
       </div>
     </div>
   </header>
 
   <!-- ========================================================== -->
-  <!-- ESCENA 01: HERO SCENE (OPENING OVERTURE)                   -->
+  <!-- 2. SECCIÓN 1: HERO (DIRECTO, LIMPIO Y HUMANO)              -->
   <!-- ========================================================== -->
-  <section id="inicio" class="scene-section relative min-h-screen flex items-center justify-center pt-28 pb-20 overflow-hidden">
-    
-    <!-- Ambient Radial Glows -->
-    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#17948F]/15 rounded-full blur-[140px] pointer-events-none"></div>
-    <div class="absolute bottom-10 right-10 w-[450px] h-[450px] bg-[#12264A]/30 rounded-full blur-[120px] pointer-events-none"></div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+  <section id="inicio" class="pt-36 pb-20 sm:pt-40 sm:pb-24 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
         
-        <!-- Left Hero Content -->
-        <div class="lg:col-span-7 space-y-6 text-center lg:text-left reveal-on-scroll">
-          
-          <!-- Scene Status Tag -->
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-[#21D1C6]/30 backdrop-blur-md text-xs font-mono text-[#21D1C6]">
-            <span class="pulse-rec"></span>
-            <span>SCENE 01 // SOLUCIONES DIGITALES DE ALTO IMPACTO</span>
+        <!-- Texto Principal del Hero -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-xs font-semibold text-brandNavy">
+            <span class="w-2 h-2 rounded-full bg-brandTeal"></span>
+            <span>Ingeniería de Software Independiente · Nopalucan de la Granja, Puebla</span>
           </div>
 
-          <!-- Main Cinema Headline -->
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-white">
-            Software que Protege <br>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#21D1C6] via-[#17948F] to-emerald-300">
-              y Hace Crecer tu Negocio
-            </span>
+          <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-brandNavy tracking-tight leading-[1.12]">
+            Software a medida, sistemas y plataformas construidas desde los cimientos.
           </h1>
 
-          <!-- Corporate Subtitle -->
-          <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
-            En <strong class="text-white font-semibold">SGNIA COMPANY</strong> desarrollamos plataformas web corporativas, aplicaciones móviles y soluciones de datos a la medida, acompañando cada proyecto desde el análisis técnico hasta la entrega en producción.
+          <p class="text-lg text-slate-600 leading-relaxed font-normal max-w-2xl">
+            Por <strong class="text-brandNavy font-semibold">Gamaliel Velázquez Galicia</strong>. Desarrollador de software multiplataforma. Creo soluciones con C#, .NET, Python, Kotlin y bases de datos relacionales, diseñadas para resolver necesidades reales con código estructurado y directo.
           </p>
 
-          <!-- Action Buttons -->
-          <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-            <a href="https://wa.me/522761095688?text=Hola%2C%20quiero%20cotizar%20un%20proyecto%20con%20SGNIA%20COMPANY"
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <a href="#proyectos" class="btn-primary inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm shadow-md">
+              <span>Explorar Proyectos</span>
+              <svg class="w-4 h-4 text-brandTeal-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+            </a>
+            <a href="https://wa.me/522761095688?text=Hola%20Gamaliel,%20le%C3%AD%20tu%20sitio%20web%20y%20me%20gustar%C3%ADa%20platicar%20sobre%20un%20proyecto." 
                target="_blank" rel="noopener noreferrer"
-               class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-2xl text-sm font-bold text-white bg-gradient-to-r from-[#17948F] to-[#12264A] hover:from-[#21D1C6] hover:to-[#17948F] transition-all shadow-xl shadow-[#17948F]/30 hover:-translate-y-0.5 border border-[#21D1C6]/40">
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z"/></svg>
+               class="btn-secondary inline-flex items-center gap-2 px-5 py-3.5 rounded-xl text-sm">
+              <svg class="w-4 h-4 text-brandTeal" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z"/></svg>
               <span>Escribir por WhatsApp</span>
             </a>
-
-            <a href="sms:+522761095688"
-               class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl text-sm font-semibold text-slate-200 bg-white/5 hover:bg-white/10 border border-white/10 transition-all hover:-translate-y-0.5">
-              <svg class="w-4 h-4 text-[#21D1C6]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
-              <span>Enviar SMS</span>
-            </a>
-
-            <a href="#proyectos" class="text-xs font-mono text-slate-400 hover:text-[#21D1C6] flex items-center gap-1 transition-colors pt-2 sm:pt-0">
-              <span>Ver Proyectos</span>
-              <svg class="w-3.5 h-3.5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-            </a>
           </div>
-
-          <!-- Ubicación Oficial con enlace a Google Maps -->
-          <div class="pt-4 flex items-center justify-center lg:justify-start gap-2 text-xs text-slate-400">
-            <svg class="w-4 h-4 text-[#21D1C6] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-            </svg>
-            <span>Ubicación:</span>
-            <a href="https://www.google.com/maps/search/?api=1&query=Juan+Jimenez+405,+Centro,+75120+Nopalucan+de+la+Granja,+Puebla,+Mexico" target="_blank" rel="noopener noreferrer"
-               class="font-semibold text-slate-200 hover:text-[#21D1C6] underline decoration-[#17948F]/50 underline-offset-2 transition-colors">
-              Juan Jiménez 405, Centro, 75120 Nopalucan de la Granja, Puebla, México
-            </a>
-          </div>
-
         </div>
 
-        <!-- Right Hero: Showcase Banner Pod (Video Slate Look) -->
-        <div class="lg:col-span-5 reveal-on-scroll">
-          <div class="relative mx-auto max-w-md lg:max-w-none">
-            
-            <!-- Glowing ambient behind card -->
-            <div class="absolute -inset-2 rounded-3xl bg-gradient-to-r from-[#17948F] via-[#21D1C6] to-[#12264A] opacity-35 blur-2xl"></div>
-            
-            <!-- Video Slate Card -->
-            <div class="relative rounded-3xl bg-[#0B172C]/90 p-6 sm:p-8 border border-white/15 backdrop-blur-2xl shadow-2xl flex flex-col items-center justify-center text-center">
-              
-              <!-- Video Slate Header Controls -->
-              <div class="w-full flex items-center justify-between pb-4 border-b border-white/10 text-[11px] font-mono text-slate-400">
-                <span class="inline-flex items-center gap-1.5 text-[#21D1C6]">
-                  <span class="pulse-rec"></span>
-                  REC [4K // 60FPS]
-                </span>
-                <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-slate-300">MASTER BRAND</span>
-              </div>
-
-              <!-- White Pod Container for Bannersgnia.png (Logo nunca se pierde en fondos oscuros) -->
-              <div class="w-full my-6 bg-white p-6 rounded-2xl shadow-xl border border-slate-200/90 flex items-center justify-center">
-                <img src="assets/Bannersgnia.png"
-                     alt="Banner oficial de SGNIA COMPANY con imagotipo y nombre de marca"
-                     width="1025"
-                     height="564"
-                     class="w-full max-w-xs h-auto object-contain">
-              </div>
-
-              <!-- Video Slate Metadata Footer -->
-              <div class="pt-3 border-t border-white/10 w-full flex items-center justify-between text-xs text-slate-400 font-mono">
-                <span class="text-slate-300 font-semibold">SGNIA COMPANY</span>
-                <span class="text-[#21D1C6]">PRODUCCIÓN OFICIAL</span>
-              </div>
-            </div>
-
-          </div>
+        <!-- Escudo Oficial Limpio (Sin marco ni caja artificial) -->
+        <div class="lg:col-span-5 flex flex-col items-center justify-center">
+          <img src="assets/Logosgnia.png" alt="Escudo oficial de SGNIA COMPANY" width="360" height="360" class="w-64 sm:w-80 h-auto object-contain drop-shadow-sm">
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ========================================================== -->
-  <!-- ESCENA 02: IDENTIDAD & ORIGEN DE MARCA                    -->
-  <!-- ========================================================== -->
-  <section id="nosotros" class="scene-section py-28 relative border-t border-white/10 bg-[#071120]/70">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      
-      <!-- Scene Header -->
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3 reveal-on-scroll">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#17948F]/15 border border-[#21D1C6]/30 text-[#21D1C6] text-xs font-mono">
-          <span class="pulse-rec"></span>
-          <span>SCENE 02 // EL ORIGEN DE LA MARCA</span>
-        </div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-          El Nombre Detrás de <span class="text-[#21D1C6]">SGNIA</span>
-        </h2>
-        <p class="text-slate-300 text-base leading-relaxed font-light max-w-2xl mx-auto">
-          Más allá de una identidad de marca, <strong class="text-white font-semibold">SGNIA</strong> representa una alianza de vida y propósito. Su nombre surge del acrónimo que entrelaza a <strong class="text-[#21D1C6] font-semibold">Sonia</strong> y <strong class="text-white font-semibold">Gamaliel</strong>, simbolizando la motivación constante, el trabajo en equipo y el respaldo afectivo sobre los cuales se cimenta la empresa.
-        </p>
-      </div>
-
-      <!-- Main Breakdown Grid -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-        
-        <!-- Tarjeta de Desglose de Letras -->
-        <div class="lg:col-span-7 glass-panel p-8 sm:p-10 rounded-3xl flex flex-col justify-between space-y-8 reveal-on-scroll">
-          <div>
-            <div class="text-xs font-mono tracking-wider text-slate-400 uppercase mb-4">Composición Tipográfica</div>
-            
-            <!-- Tipografía Cinematográfica Gigante de SGNIA -->
-            <div class="text-5xl sm:text-7xl font-extrabold tracking-widest text-center py-8 rounded-2xl bg-[#050B14]/80 border border-white/10 shadow-inner select-none font-mono">
-              <span class="text-[#21D1C6] drop-shadow-[0_0_20px_rgba(33,209,198,0.5)]">S</span>
-              <span class="text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)]">G</span>
-              <span class="text-[#21D1C6] drop-shadow-[0_0_20px_rgba(33,209,198,0.5)]">NIA</span>
-            </div>
-
-            <!-- Leyenda de Colores -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6">
-              <div class="flex items-start gap-3 p-3.5 rounded-xl bg-white/5 border border-white/5">
-                <span class="w-3.5 h-3.5 rounded-full bg-[#21D1C6] shadow-[0_0_8px_#21D1C6] shrink-0 mt-1"></span>
-                <div class="text-xs">
-                  <div class="font-bold text-white">S · NIA (Verde Teal)</div>
-                  <div class="text-slate-400 mt-0.5">Representan a <strong class="text-slate-200">Sonia</strong>: la <span class="text-[#21D1C6] font-mono">S</span> inicial y el cierre <span class="text-[#21D1C6] font-mono">NIA</span>.</div>
-                </div>
-              </div>
-              <div class="flex items-start gap-3 p-3.5 rounded-xl bg-white/5 border border-white/5">
-                <span class="w-3.5 h-3.5 rounded-full bg-white shadow-[0_0_8px_#ffffff] shrink-0 mt-1"></span>
-                <div class="text-xs">
-                  <div class="font-bold text-white">G (Azul Marino / Blanco)</div>
-                  <div class="text-slate-400 mt-0.5">Representa a <strong class="text-slate-200">Gamaliel</strong>: el pilar técnico central.</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- El Significado en el Logo -->
-          <div class="p-5 rounded-2xl bg-gradient-to-r from-[#17948F]/15 via-white/5 to-[#12264A]/30 border border-[#21D1C6]/30 space-y-2">
-            <div class="flex items-center gap-2 text-[#21D1C6] font-bold text-sm">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-              <span>El significado en nuestro escudo</span>
-            </div>
-            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-              El logotipo muestra dos trazos entrelazados (azul marino y verde teal) dentro de un escudo que avanzan juntos hacia arriba.
-            </p>
-            <p class="text-white text-xs sm:text-sm font-semibold pt-1">
-              La idea fundamental: <span class="text-[#21D1C6]">una marca, dos personas, software que protege y hace crecer tu negocio.</span>
-            </p>
-          </div>
-        </div>
-
-        <!-- Tarjeta de Biografía del Fundador -->
-        <div class="lg:col-span-5 glass-panel p-8 sm:p-10 rounded-3xl flex flex-col justify-between space-y-6 reveal-on-scroll">
-          <div class="space-y-4">
-            
-            <!-- Monograma GV -->
-            <div class="flex items-center gap-4">
-              <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-[#12264A] to-[#17948F] border border-[#21D1C6]/40 shadow-xl shadow-[#17948F]/20 flex items-center justify-center font-mono font-extrabold text-2xl text-white tracking-wider">
-                GV
-              </div>
-              <div>
-                <div class="text-xs font-mono text-[#21D1C6] uppercase">Liderazgo Técnico</div>
-                <div class="text-lg font-bold text-white">Gamaliel Velazquez Galicia</div>
-                <div class="text-xs text-slate-400">Fundador de SGNIA COMPANY</div>
-              </div>
-            </div>
-
-            <div class="space-y-3 border-t border-white/10 pt-4 text-xs sm:text-sm text-slate-300 font-light leading-relaxed">
-              <p>
-                Nacido el <strong class="text-white font-medium">25 de diciembre de 2006</strong> en Nopalucan de la Granja, Puebla. Hijo de una madre trabajadora dedicada a la limpieza en el hogar y un padre albañil que construye con sus manos, de quienes aprendió que las cosas duraderas se edifican con disciplina y esfuerzo honesto desde los cimientos.
-              </p>
-              <div class="p-3.5 rounded-xl bg-white/5 border border-white/10 text-slate-200 italic font-normal text-xs leading-relaxed">
-                "Guiado por el deseo de salir adelante y brindarle a sus padres la vida digna que merecen, Gamaliel convirtió la programación en su principal herramienta de superación... vio en el código la oportunidad de construir soluciones reales para empresas y negocios."
-              </div>
-              <p class="text-xs text-slate-400">
-                Estudiante de Ingeniería en TI e Innovación Digital (UTBIS). Radica en <a href="https://www.google.com/maps/search/?api=1&query=Juan+Jimenez+405,+Centro,+75120+Nopalucan+de+la+Granja,+Puebla,+Mexico" target="_blank" rel="noopener noreferrer" class="font-semibold text-[#21D1C6] hover:underline">Juan Jiménez 405, Centro, 75120 Nopalucan de la Granja, Puebla, México</a>.
-              </p>
-            </div>
-
-            <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono">
-              <span class="px-3 py-1 rounded-lg bg-white/5 text-slate-300 border border-white/10">C# & .NET</span>
-              <span class="px-3 py-1 rounded-lg bg-white/5 text-slate-300 border border-white/10">Python</span>
-              <span class="px-3 py-1 rounded-lg bg-white/5 text-slate-300 border border-white/10">Kotlin</span>
-              <span class="px-3 py-1 rounded-lg bg-white/5 text-slate-300 border border-white/10">SQL & NoSQL</span>
-            </div>
-
-            <!-- Botón hacia Biografía Completa -->
-            <div class="pt-4 border-t border-white/10">
-              <a href="fundador.html" class="inline-flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#17948F]/25 via-white/5 to-[#12264A]/30 hover:from-[#21D1C6]/30 hover:to-[#17948F]/40 border border-[#21D1C6]/40 text-[#21D1C6] hover:text-white text-xs font-bold tracking-wide transition-all shadow-md group">
-                <span>Conocer biografía completa de Gamaliel</span>
-                <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-              </a>
-            </div>
-          </div>
-
-          <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex items-center justify-between text-xs font-mono text-slate-400">
-            <span>DISPONIBLE PARA COTIZAR</span>
-            <span class="text-[#21D1C6] font-bold">PROYECTOS 2026</span>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
+  <!-- DIVISOR ENTRELAZADO (TRAZOS OFICIALES) -->
+  <div class="intertwined-divider-container py-4">
+    <svg class="intertwined-divider-svg" viewBox="0 0 600 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path class="divider-stroke-navy" d="M 10 18 Q 150 18 250 8 T 350 28 Q 450 18 590 18" />
+      <path class="divider-stroke-teal" d="M 10 18 Q 150 18 250 28 T 350 8 Q 450 18 590 18" />
+      <circle cx="300" cy="18" r="4.5" fill="#142A42" />
+      <circle cx="300" cy="18" r="2.5" fill="#1F8E8F" />
+    </svg>
+  </div>
 
   <!-- ========================================================== -->
-  <!-- ESCENA 03: PIPELINE DE TRABAJO (CÓMO TRABAJAMOS)           -->
+  <!-- 3. SECCIÓN 2: PROYECTOS EN PRODUCCIÓN (SHOWCASE INMEDIATO) -->
   <!-- ========================================================== -->
-  <section id="metodologia" class="scene-section py-28 relative border-t border-white/10 bg-[#050B14]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      
-      <!-- Scene Header -->
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3 reveal-on-scroll">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#17948F]/15 border border-[#21D1C6]/30 text-[#21D1C6] text-xs font-mono">
-          <span class="pulse-rec"></span>
-          <span>SCENE 03 // PIPELINE DE PRODUCCIÓN</span>
-        </div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-          Cómo Trabajamos
-        </h2>
-        <p class="text-slate-300 text-base leading-relaxed font-light">
-          Un proceso claro y transparente desde la primera llamada hasta la puesta en marcha.
-        </p>
-      </div>
-
-      <!-- 4 Pasos en Grid Cinematográfica -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        
-        <!-- Paso 1 -->
-        <div class="glass-panel glass-panel-hover p-6 rounded-3xl relative overflow-hidden group reveal-on-scroll">
-          <div class="text-4xl font-extrabold font-mono text-[#21D1C6]/20 group-hover:text-[#21D1C6]/60 transition-colors mb-3">01</div>
-          <h3 class="text-lg font-bold text-white group-hover:text-[#21D1C6] transition-colors mb-2">Escuchamos</h3>
-          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed font-light">
-            Analizamos tus necesidades, objetivos y contexto operativo.
-          </p>
-        </div>
-
-        <!-- Paso 2 -->
-        <div class="glass-panel glass-panel-hover p-6 rounded-3xl relative overflow-hidden group reveal-on-scroll">
-          <div class="text-4xl font-extrabold font-mono text-[#21D1C6]/20 group-hover:text-[#21D1C6]/60 transition-colors mb-3">02</div>
-          <h3 class="text-lg font-bold text-white group-hover:text-[#21D1C6] transition-colors mb-2">Proponemos</h3>
-          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed font-light">
-            Diseñamos una arquitectura técnica clara, eficiente y a tu medida.
-          </p>
-        </div>
-
-        <!-- Paso 3 -->
-        <div class="glass-panel glass-panel-hover p-6 rounded-3xl relative overflow-hidden group reveal-on-scroll">
-          <div class="text-4xl font-extrabold font-mono text-[#21D1C6]/20 group-hover:text-[#21D1C6]/60 transition-colors mb-3">03</div>
-          <h3 class="text-lg font-bold text-white group-hover:text-[#21D1C6] transition-colors mb-2">Desarrollamos</h3>
-          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed font-light">
-            Construimos software robusto y escalable con código limpio y probado.
-          </p>
-        </div>
-
-        <!-- Paso 4 -->
-        <div class="glass-panel glass-panel-hover p-6 rounded-3xl relative overflow-hidden group reveal-on-scroll">
-          <div class="text-4xl font-extrabold font-mono text-[#21D1C6]/20 group-hover:text-[#21D1C6]/60 transition-colors mb-3">04</div>
-          <h3 class="text-lg font-bold text-white group-hover:text-[#21D1C6] transition-colors mb-2">Entregamos</h3>
-          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed font-light">
-            Desplegamos la solución funcionando y te acompañamos en su adopción.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ========================================================== -->
-  <!-- ESCENA 04: NUESTROS SERVICIOS (SUITE DE INGENIERÍA)        -->
-  <!-- ========================================================== -->
-  <section id="servicios" class="scene-section py-28 relative border-t border-white/10 bg-[#071120]/80">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      
-      <!-- Scene Header -->
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3 reveal-on-scroll">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#17948F]/15 border border-[#21D1C6]/30 text-[#21D1C6] text-xs font-mono">
-          <span class="pulse-rec"></span>
-          <span>SCENE 04 // CAPACIDADES DE INGENIERÍA</span>
-        </div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-          Nuestros Servicios
-        </h2>
-        <p class="text-slate-300 text-base leading-relaxed font-light">
-          Ingeniería de software adaptada a requerimientos empresariales con tecnologías modernas y estándares de calidad.
-        </p>
-      </div>
-
-      <!-- 4 Tarjetas de Servicios -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        
-        <!-- 1. Desarrollo Web Empresarial -->
-        <div class="glass-panel glass-panel-hover p-8 rounded-3xl flex flex-col justify-between space-y-6 group reveal-on-scroll">
-          <div class="space-y-4">
-            <div class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#21D1C6] group-hover:bg-[#17948F] group-hover:text-white transition-all shadow-lg">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-            </div>
-            <h3 class="text-lg font-bold text-white group-hover:text-[#21D1C6] transition-colors">
-              Desarrollo Web Empresarial
-            </h3>
-            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed font-light">
-              Plataformas web corporativas, portales administrativos y APIs estructuradas con arquitecturas limpias y seguras.
-            </p>
-          </div>
-          <div class="pt-4 border-t border-white/10 flex flex-wrap gap-1.5 font-mono text-[11px]">
-            <span class="px-2.5 py-1 rounded-md bg-white/5 text-[#21D1C6] border border-white/10">ASP.NET Core</span>
-            <span class="px-2.5 py-1 rounded-md bg-white/5 text-[#21D1C6] border border-white/10">Laravel</span>
-            <span class="px-2.5 py-1 rounded-md bg-white/5 text-[#21D1C6] border border-white/10">C#</span>
-          </div>
-        </div>
-
-        <!-- 2. Aplicaciones Móviles -->
-        <div class="glass-panel glass-panel-hover p-8 rounded-3xl flex flex-col justify-between space-y-6 group reveal-on-scroll">
-          <div class="space-y-4">
-            <div class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#21D1C6] group-hover:bg-[#17948F] group-hover:text-white transition-all shadow-lg">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
-            </div>
-            <h3 class="text-lg font-bold text-white group-hover:text-[#21D1C6] transition-colors">
-              Aplicaciones Móviles
-            </h3>
-            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed font-light">
-              Desarrollo de aplicaciones nativas y multiplataforma con interfaces reactivas y sincronización en la nube.
-            </p>
-          </div>
-          <div class="pt-4 border-t border-white/10 flex flex-wrap gap-1.5 font-mono text-[11px]">
-            <span class="px-2.5 py-1 rounded-md bg-white/5 text-[#21D1C6] border border-white/10">Kotlin</span>
-            <span class="px-2.5 py-1 rounded-md bg-white/5 text-[#21D1C6] border border-white/10">Compose</span>
-            <span class="px-2.5 py-1 rounded-md bg-white/5 text-[#21D1C6] border border-white/10">Flutter</span>
-          </div>
-        </div>
-
-        <!-- 3. Arquitectura de Datos & Backend -->
-        <div class="glass-panel glass-panel-hover p-8 rounded-3xl flex flex-col justify-between space-y-6 group reveal-on-scroll">
-          <div class="space-y-4">
-            <div class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#21D1C6] group-hover:bg-[#17948F] group-hover:text-white transition-all shadow-lg">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path></svg>
-            </div>
-            <h3 class="text-lg font-bold text-white group-hover:text-[#21D1C6] transition-colors">
-              Arquitectura de Datos & Backend
-            </h3>
-            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed font-light">
-              Diseño de esquemas relacionales, optimización de consultas, particionamiento y replicación de datos en tiempo real.
-            </p>
-          </div>
-          <div class="pt-4 border-t border-white/10 flex flex-wrap gap-1.5 font-mono text-[11px]">
-            <span class="px-2.5 py-1 rounded-md bg-white/5 text-[#21D1C6] border border-white/10">SQL Server</span>
-            <span class="px-2.5 py-1 rounded-md bg-white/5 text-[#21D1C6] border border-white/10">MySQL</span>
-            <span class="px-2.5 py-1 rounded-md bg-white/5 text-[#21D1C6] border border-white/10">Supabase</span>
-          </div>
-        </div>
-
-        <!-- 4. Automatización e Integración de IA -->
-        <div class="glass-panel glass-panel-hover p-8 rounded-3xl flex flex-col justify-between space-y-6 group reveal-on-scroll">
-          <div class="space-y-4">
-            <div class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#21D1C6] group-hover:bg-[#17948F] group-hover:text-white transition-all shadow-lg">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-            </div>
-            <h3 class="text-lg font-bold text-white group-hover:text-[#21D1C6] transition-colors">
-              Automatización & IA
-            </h3>
-            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed font-light">
-              Scripts de automatización, pipelines de procesamiento de datos y conexión de modelos de inteligencia artificial a tus flujos.
-            </p>
-          </div>
-          <div class="pt-4 border-t border-white/10 flex flex-wrap gap-1.5 font-mono text-[11px]">
-            <span class="px-2.5 py-1 rounded-md bg-white/5 text-[#21D1C6] border border-white/10">Python</span>
-            <span class="px-2.5 py-1 rounded-md bg-white/5 text-[#21D1C6] border border-white/10">FastAPI</span>
-            <span class="px-2.5 py-1 rounded-md bg-white/5 text-[#21D1C6] border border-white/10">Modelos IA</span>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ========================================================== -->
-  <!-- ESCENA 05: PORTAFOLIO / REEL DE PROYECTOS (7 PROYECTOS)    -->
-  <!-- ========================================================== -->
-  <section id="proyectos" class="scene-section py-28 relative border-t border-white/10 bg-[#050B14]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      
-      <!-- Section Header with Filters -->
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 reveal-on-scroll">
-        <div class="space-y-2">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#17948F]/15 border border-[#21D1C6]/30 text-[#21D1C6] text-xs font-mono">
-            <span class="pulse-rec"></span>
-            <span>SCENE 05 // SHOWCASE REEL</span>
-          </div>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Proyectos con <span class="text-[#21D1C6]">Demo en Vivo</span>
-          </h2>
-          <p class="text-slate-300 text-sm max-w-xl font-light">
-            Proyectos alojados en GitHub Pages con código fuente público y demostración funcional en vivo.
-          </p>
-        </div>
-
-        <!-- Filter Buttons (Active button stays pure white) -->
-        <div class="flex flex-wrap items-center gap-2 bg-[#0B172C] p-1.5 rounded-2xl border border-white/10 shadow-lg">
-          <button class="project-filter-btn active px-4 py-2 text-xs rounded-xl transition-all font-mono" data-filter="all">Todos (7)</button>
-          <button class="project-filter-btn px-4 py-2 text-xs rounded-xl text-slate-300 hover:text-white transition-all font-mono" data-filter="web">Plataformas Web</button>
-          <button class="project-filter-btn px-4 py-2 text-xs rounded-xl text-slate-300 hover:text-white transition-all font-mono" data-filter="interactivo">Interactivos & Creativos</button>
-        </div>
-      </div>
-
-      <!-- Grid con los 7 Proyectos Reales -->
-      <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        
-        <!-- 1. HotelBookingSystem2.0 -->
-        <div class="project-card cinema-card group glass-panel rounded-3xl overflow-hidden flex flex-col justify-between reveal-on-scroll" data-category="web">
-          <div>
-            <div class="relative h-48 bg-[#050B14] overflow-hidden border-b border-white/10">
-              <img src="assets/hotelbookingsystem.png"
-                   alt="Captura de pantalla de HotelBookingSystem2.0"
-                   loading="lazy"
-                   class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#071120] via-transparent to-black/30"></div>
-              <div class="absolute top-3 right-3 flex items-center gap-1.5 font-mono">
-                <span class="px-2.5 py-1 rounded-md bg-[#17948F] text-white font-semibold text-[10px] shadow-sm">Web / Reservas</span>
-                <span class="px-2 py-0.5 rounded-md bg-black/60 backdrop-blur-xs text-slate-300 text-[10px]">v2.0</span>
-              </div>
-              <div class="absolute bottom-3 left-4 right-4">
-                <div class="text-base font-bold text-white drop-shadow-md group-hover:text-[#21D1C6] transition-colors">
-                  HotelBookingSystem2.0
-                </div>
-              </div>
-            </div>
-            <div class="p-6 space-y-3">
-              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed font-light">
-                Sistema de reservas para hotel mejorado, enfocado en administración de habitaciones, tarifas y experiencia de reserva fluida.
-              </p>
-              <div class="flex flex-wrap gap-1.5 pt-1 font-mono text-[11px]">
-                <span class="px-2.5 py-1 rounded-md bg-white/5 text-slate-300 border border-white/10">Web App</span>
-                <span class="px-2.5 py-1 rounded-md bg-white/5 text-slate-300 border border-white/10">Reservas</span>
-                <span class="px-2.5 py-1 rounded-md bg-[#17948F]/20 text-[#21D1C6] border border-[#17948F]/30">GitHub Pages</span>
-              </div>
-            </div>
-          </div>
-          <div class="p-6 pt-0 flex items-center gap-2">
-            <a href="https://gamavg06.github.io/HotelBookingSystem2.0" target="_blank" rel="noopener noreferrer"
-               class="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-[#17948F] to-[#12264A] hover:from-[#21D1C6] hover:to-[#17948F] transition-all shadow-md">
-              <span>Demo en Vivo</span>
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-            </a>
-            <a href="https://github.com/Gamavg06/HotelBookingSystem2.0" target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center justify-center p-2.5 rounded-xl text-slate-300 bg-white/5 hover:bg-white/10 border border-white/10 transition-colors" aria-label="Repositorio HotelBookingSystem2.0">
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- 2. portal-inmobiliario -->
-        <div class="project-card cinema-card group glass-panel rounded-3xl overflow-hidden flex flex-col justify-between reveal-on-scroll" data-category="web">
-          <div>
-            <div class="relative h-48 bg-[#050B14] overflow-hidden border-b border-white/10">
-              <img src="assets/portalInmobiliario.png"
-                   alt="Captura de pantalla de portal-inmobiliario"
-                   loading="lazy"
-                   class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#071120] via-transparent to-black/30"></div>
-              <div class="absolute top-3 right-3 font-mono">
-                <span class="px-2.5 py-1 rounded-md bg-[#17948F] text-white font-semibold text-[10px] shadow-sm">Laravel 11 & Mapas</span>
-              </div>
-              <div class="absolute bottom-3 left-4 right-4">
-                <div class="text-base font-bold text-white drop-shadow-md group-hover:text-[#21D1C6] transition-colors">
-                  portal-inmobiliario
-                </div>
-              </div>
-            </div>
-            <div class="p-6 space-y-3">
-              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed font-light">
-                Directorio y portal inmobiliario con Laravel 11, mapas interactivos con Leaflet.js y clima en tiempo real con OpenWeatherMap.
-              </p>
-              <div class="flex flex-wrap gap-1.5 pt-1 font-mono text-[11px]">
-                <span class="px-2.5 py-1 rounded-md bg-white/5 text-slate-300 border border-white/10">Laravel 11</span>
-                <span class="px-2.5 py-1 rounded-md bg-white/5 text-slate-300 border border-white/10">Leaflet.js</span>
-                <span class="px-2.5 py-1 rounded-md bg-white/5 text-slate-300 border border-white/10">OpenWeather</span>
-              </div>
-            </div>
-          </div>
-          <div class="p-6 pt-0 flex items-center gap-2">
-            <span class="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl text-xs font-semibold text-amber-300 bg-amber-500/10 border border-amber-500/30 cursor-default" title="Servidor en mantenimiento temporal">
-              <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-              <span>Demo en Mantenimiento</span>
-            </span>
-            <a href="https://github.com/Gamavg06/portal-inmobiliario" target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center justify-center gap-1.5 p-2.5 px-3 rounded-xl text-xs font-bold text-white bg-white/5 hover:bg-[#17948F] border border-white/10 transition-all" aria-label="Repositorio portal-inmobiliario" title="Ver código en GitHub">
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-              <span>Ver Repo</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- 3. LearnMore -->
-        <div class="project-card cinema-card group glass-panel rounded-3xl overflow-hidden flex flex-col justify-between reveal-on-scroll" data-category="web">
-          <div>
-            <div class="relative h-48 bg-[#050B14] overflow-hidden border-b border-white/10">
-              <img src="assets/learnmore.png"
-                   alt="Captura de pantalla de LearnMore"
-                   loading="lazy"
-                   class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#071120] via-transparent to-black/30"></div>
-              <div class="absolute top-3 right-3 font-mono">
-                <span class="px-2.5 py-1 rounded-md bg-[#17948F] text-white font-semibold text-[10px] shadow-sm">Educación / Web</span>
-              </div>
-              <div class="absolute bottom-3 left-4 right-4">
-                <div class="text-base font-bold text-white drop-shadow-md group-hover:text-[#21D1C6] transition-colors">
-                  LearnMore
-                </div>
-              </div>
-            </div>
-            <div class="p-6 space-y-3">
-              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed font-light">
-                Sistema estructurado de guías y recursos de aprendizaje para estudiantes, diseñado para facilitar el estudio continuo.
-              </p>
-              <div class="flex flex-wrap gap-1.5 pt-1 font-mono text-[11px]">
-                <span class="px-2.5 py-1 rounded-md bg-white/5 text-slate-300 border border-white/10">EdTech</span>
-                <span class="px-2.5 py-1 rounded-md bg-white/5 text-slate-300 border border-white/10">Guías Estudiantiles</span>
-              </div>
-            </div>
-          </div>
-          <div class="p-6 pt-0 flex items-center gap-2">
-            <a href="https://gamavg06.github.io/LearnMore" target="_blank" rel="noopener noreferrer"
-               class="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-[#17948F] to-[#12264A] hover:from-[#21D1C6] hover:to-[#17948F] transition-all shadow-md">
-              <span>Demo en Vivo</span>
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-            </a>
-            <a href="https://github.com/Gamavg06/LearnMore" target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center justify-center p-2.5 rounded-xl text-slate-300 bg-white/5 hover:bg-white/10 border border-white/10 transition-colors" aria-label="Repositorio LearnMore">
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- 4. BioPlantBrayansCompany -->
-        <div class="project-card cinema-card group glass-panel rounded-3xl overflow-hidden flex flex-col justify-between reveal-on-scroll" data-category="interactivo">
-          <div>
-            <div class="relative h-48 bg-[#050B14] overflow-hidden border-b border-white/10">
-              <img src="assets/bioplant.png"
-                   alt="Captura de pantalla de BioPlantBrayansCompany"
-                   loading="lazy"
-                   class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#071120] via-transparent to-black/30"></div>
-              <div class="absolute top-3 right-3 font-mono">
-                <span class="px-2.5 py-1 rounded-md bg-[#17948F] text-white font-semibold text-[10px] shadow-sm">Educativo & Interactivo</span>
-              </div>
-              <div class="absolute bottom-3 left-4 right-4">
-                <div class="text-base font-bold text-white drop-shadow-md group-hover:text-[#21D1C6] transition-colors">
-                  BioPlantBrayansCompany
-                </div>
-              </div>
-            </div>
-            <div class="p-6 space-y-3">
-              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed font-light">
-                Proyecto interactivo y educativo enfocado en el cuidado responsable de la vegetación: «Cuida a tu planta como lo haces con tu mascota».
-              </p>
-              <div class="flex flex-wrap gap-1.5 pt-1 font-mono text-[11px]">
-                <span class="px-2.5 py-1 rounded-md bg-white/5 text-slate-300 border border-white/10">Interactivo</span>
-                <span class="px-2.5 py-1 rounded-md bg-white/5 text-slate-300 border border-white/10">Concientización</span>
-              </div>
-            </div>
-          </div>
-          <div class="p-6 pt-0 flex items-center gap-2">
-            <a href="https://gamavg06.github.io/BioPlantBrayansCompany" target="_blank" rel="noopener noreferrer"
-               class="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-[#17948F] to-[#12264A] hover:from-[#21D1C6] hover:to-[#17948F] transition-all shadow-md">
-              <span>Demo en Vivo</span>
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-            </a>
-            <a href="https://github.com/Gamavg06/BioPlantBrayansCompany" target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center justify-center p-2.5 rounded-xl text-slate-300 bg-white/5 hover:bg-white/10 border border-white/10 transition-colors" aria-label="Repositorio BioPlantBrayansCompany">
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- 5. Portafolio-Personal -->
-        <div class="project-card cinema-card group glass-panel rounded-3xl overflow-hidden flex flex-col justify-between reveal-on-scroll" data-category="web">
-          <div>
-            <div class="relative h-48 bg-[#050B14] overflow-hidden border-b border-white/10">
-              <img src="assets/portafolio.png"
-                   alt="Captura de pantalla de Portafolio-Personal"
-                   loading="lazy"
-                   class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#071120] via-transparent to-black/30"></div>
-              <div class="absolute top-3 right-3 font-mono">
-                <span class="px-2.5 py-1 rounded-md bg-[#17948F] text-white font-semibold text-[10px] shadow-sm">Web Personal</span>
-              </div>
-              <div class="absolute bottom-3 left-4 right-4">
-                <div class="text-base font-bold text-white drop-shadow-md group-hover:text-[#21D1C6] transition-colors">
-                  Portafolio-Personal
-                </div>
-              </div>
-            </div>
-            <div class="p-6 space-y-3">
-              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed font-light">
-                Sitio web de portafolio profesional para exhibir habilidades técnicas, experiencia y proyectos desarrollados.
-              </p>
-              <div class="flex flex-wrap gap-1.5 pt-1 font-mono text-[11px]">
-                <span class="px-2.5 py-1 rounded-md bg-white/5 text-slate-300 border border-white/10">Portafolio</span>
-                <span class="px-2.5 py-1 rounded-md bg-white/5 text-slate-300 border border-white/10">Frontend</span>
-              </div>
-            </div>
-          </div>
-          <div class="p-6 pt-0 flex items-center gap-2">
-            <a href="https://gamavg06.github.io/Portafolio-Personal" target="_blank" rel="noopener noreferrer"
-               class="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-[#17948F] to-[#12264A] hover:from-[#21D1C6] hover:to-[#17948F] transition-all shadow-md">
-              <span>Demo en Vivo</span>
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-            </a>
-            <a href="https://github.com/Gamavg06/Portafolio-Personal" target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center justify-center p-2.5 rounded-xl text-slate-300 bg-white/5 hover:bg-white/10 border border-white/10 transition-colors" aria-label="Repositorio Portafolio-Personal">
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- 6. Galaxia_flores_amarillas -->
-        <div class="project-card cinema-card group glass-panel rounded-3xl overflow-hidden flex flex-col justify-between reveal-on-scroll" data-category="interactivo">
-          <div>
-            <div class="relative h-48 bg-[#050B14] overflow-hidden border-b border-white/10">
-              <img src="assets/Galaxia.png"
-                   alt="Captura de pantalla de Galaxia_flores_amarillas"
-                   loading="lazy"
-                   class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#071120] via-transparent to-black/30"></div>
-              <div class="absolute top-3 right-3 font-mono">
-                <span class="px-2.5 py-1 rounded-md bg-[#12264A] text-white font-semibold text-[10px] shadow-sm border border-slate-700">Animación & Canvas</span>
-              </div>
-              <div class="absolute bottom-3 left-4 right-4">
-                <div class="text-base font-bold text-white drop-shadow-md group-hover:text-amber-300 transition-colors">
-                  Galaxia_flores_amarillas
-                </div>
-              </div>
-            </div>
-            <div class="p-6 space-y-3">
-              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed font-light">
-                Animación interactiva y visual con efectos dinámicos de flores amarillas generadas en tiempo real en el navegador.
-              </p>
-              <div class="flex flex-wrap gap-1.5 pt-1 font-mono text-[11px]">
-                <span class="px-2.5 py-1 rounded-md bg-white/5 text-slate-300 border border-white/10">Animación</span>
-                <span class="px-2.5 py-1 rounded-md bg-white/5 text-slate-300 border border-white/10">JavaScript</span>
-              </div>
-            </div>
-          </div>
-          <div class="p-6 pt-0 flex items-center gap-2">
-            <a href="https://gamavg06.github.io/Galaxia_flores_amarillas" target="_blank" rel="noopener noreferrer"
-               class="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-[#17948F] to-[#12264A] hover:from-[#21D1C6] hover:to-[#17948F] transition-all shadow-md">
-              <span>Demo en Vivo</span>
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-            </a>
-            <a href="https://github.com/Gamavg06/Galaxia_flores_amarillas" target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center justify-center p-2.5 rounded-xl text-slate-300 bg-white/5 hover:bg-white/10 border border-white/10 transition-colors" aria-label="Repositorio Galaxia_flores_amarillas">
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- 7. Happy_birthday -->
-        <div class="project-card cinema-card group glass-panel rounded-3xl overflow-hidden flex flex-col justify-between reveal-on-scroll" data-category="interactivo">
-          <div>
-            <div class="relative h-48 bg-[#050B14] overflow-hidden border-b border-white/10">
-              <img src="assets/happybirthday.png"
-                   alt="Captura de pantalla de Happy_birthday"
-                   loading="lazy"
-                   class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#071120] via-transparent to-black/30"></div>
-              <div class="absolute top-3 right-3 font-mono">
-                <span class="px-2.5 py-1 rounded-md bg-[#17948F] text-white font-semibold text-[10px] shadow-sm">Web Interactiva</span>
-              </div>
-              <div class="absolute bottom-3 left-4 right-4">
-                <div class="text-base font-bold text-white drop-shadow-md group-hover:text-[#21D1C6] transition-colors">
-                  Happy_birthday
-                </div>
-              </div>
-            </div>
-            <div class="p-6 space-y-3">
-              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed font-light">
-                Página interactiva y personalizada de felicitación de cumpleaños con animaciones festivas y mensajes dedicados.
-              </p>
-              <div class="flex flex-wrap gap-1.5 pt-1 font-mono text-[11px]">
-                <span class="px-2.5 py-1 rounded-md bg-white/5 text-slate-300 border border-white/10">Interactiva</span>
-                <span class="px-2.5 py-1 rounded-md bg-white/5 text-slate-300 border border-white/10">Frontend</span>
-              </div>
-            </div>
-          </div>
-          <div class="p-6 pt-0 flex items-center gap-2">
-            <a href="https://gamavg06.github.io/Happy_birthday" target="_blank" rel="noopener noreferrer"
-               class="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-[#17948F] to-[#12264A] hover:from-[#21D1C6] hover:to-[#17948F] transition-all shadow-md">
-              <span>Demo en Vivo</span>
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-            </a>
-            <a href="https://github.com/Gamavg06/Happy_birthday" target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center justify-center p-2.5 rounded-xl text-slate-300 bg-white/5 hover:bg-white/10 border border-white/10 transition-colors" aria-label="Repositorio Happy_birthday">
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-            </a>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ========================================================== -->
-  <!-- ESCENA 06: TECH STACK / ARSENAL TECNOLÓGICO                -->
-  <!-- ========================================================== -->
-  <section id="tecnologias" class="scene-section py-28 relative border-t border-white/10 bg-[#071120]/70">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      
-      <!-- Scene Header -->
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3 reveal-on-scroll">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#17948F]/15 border border-[#21D1C6]/30 text-[#21D1C6] text-xs font-mono">
-          <span class="pulse-rec"></span>
-          <span>SCENE 06 // TECH ARSENAL</span>
-        </div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-          Tecnologías Principales
-        </h2>
-        <p class="text-slate-300 text-base leading-relaxed font-light">
-          Herramientas y lenguajes empleados para desarrollo seguro, robusto y escalable.
-        </p>
-      </div>
-
-      <!-- Tech Grid -->
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">
-        
-        <!-- C# -->
-        <div class="glass-panel glass-panel-hover p-5 rounded-2xl flex flex-col items-center text-center space-y-2 group reveal-on-scroll">
-          <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 font-mono font-bold text-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-            C#
-          </div>
-          <div class="text-sm font-bold text-white">C#</div>
-          <div class="text-[10px] font-mono text-slate-400">Backend & Enterprise</div>
-        </div>
-
-        <!-- Python -->
-        <div class="glass-panel glass-panel-hover p-5 rounded-2xl flex flex-col items-center text-center space-y-2 group reveal-on-scroll">
-          <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 font-mono font-bold text-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-            Py
-          </div>
-          <div class="text-sm font-bold text-white">Python</div>
-          <div class="text-[10px] font-mono text-slate-400">IA & Automatización</div>
-        </div>
-
-        <!-- Kotlin -->
-        <div class="glass-panel glass-panel-hover p-5 rounded-2xl flex flex-col items-center text-center space-y-2 group reveal-on-scroll">
-          <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 text-orange-400 font-mono font-bold text-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-            Kt
-          </div>
-          <div class="text-sm font-bold text-white">Kotlin</div>
-          <div class="text-[10px] font-mono text-slate-400">Mobile Android</div>
-        </div>
-
-        <!-- JavaScript -->
-        <div class="glass-panel glass-panel-hover p-5 rounded-2xl flex flex-col items-center text-center space-y-2 group reveal-on-scroll">
-          <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 font-mono font-bold text-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-            JS
-          </div>
-          <div class="text-sm font-bold text-white">JavaScript</div>
-          <div class="text-[10px] font-mono text-slate-400">Frontend & Dinámico</div>
-        </div>
-
-        <!-- PHP -->
-        <div class="glass-panel glass-panel-hover p-5 rounded-2xl flex flex-col items-center text-center space-y-2 group reveal-on-scroll">
-          <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 font-mono font-bold text-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-            PHP
-          </div>
-          <div class="text-sm font-bold text-white">PHP</div>
-          <div class="text-[10px] font-mono text-slate-400">Laravel Platforms</div>
-        </div>
-
-        <!-- .NET -->
-        <div class="glass-panel glass-panel-hover p-5 rounded-2xl flex flex-col items-center text-center space-y-2 group reveal-on-scroll">
-          <div class="w-12 h-12 rounded-xl bg-violet-500/10 border border-violet-500/20 text-violet-400 font-mono font-bold text-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-            .NET
-          </div>
-          <div class="text-sm font-bold text-white">.NET Core</div>
-          <div class="text-[10px] font-mono text-slate-400">Enterprise Apps</div>
-        </div>
-
-        <!-- SQL Server / MySQL -->
-        <div class="glass-panel glass-panel-hover p-5 rounded-2xl flex flex-col items-center text-center space-y-2 group reveal-on-scroll">
-          <div class="w-12 h-12 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-400 font-mono font-bold text-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-            SQL
-          </div>
-          <div class="text-sm font-bold text-white">SQL Server / MySQL</div>
-          <div class="text-[10px] font-mono text-slate-400">Data Architecture</div>
-        </div>
-
-        <!-- Supabase -->
-        <div class="glass-panel glass-panel-hover p-5 rounded-2xl flex flex-col items-center text-center space-y-2 group reveal-on-scroll">
-          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-mono font-bold text-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-            ⚡
-          </div>
-          <div class="text-sm font-bold text-white">Supabase</div>
-          <div class="text-[10px] font-mono text-slate-400">Realtime Cloud DB</div>
-        </div>
-
-        <!-- Figma -->
-        <div class="glass-panel glass-panel-hover p-5 rounded-2xl flex flex-col items-center text-center space-y-2 group reveal-on-scroll">
-          <div class="w-12 h-12 rounded-xl bg-pink-500/10 border border-pink-500/20 text-pink-400 font-mono font-bold text-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-            Fg
-          </div>
-          <div class="text-sm font-bold text-white">Figma</div>
-          <div class="text-[10px] font-mono text-slate-400">UI/UX Design</div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ========================================================== -->
-  <!-- ESCENA 07: CONTACTO DIRECTO (FINAL SCENE / CONNECT)       -->
-  <!-- ========================================================== -->
-  <section id="contacto" class="scene-section py-28 relative border-t border-white/10 bg-[#050B14]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-        
-        <!-- Columna Izquierda: Información Directa y Banner Oficial -->
-        <div class="lg:col-span-5 space-y-6 reveal-on-scroll">
-          
-          <!-- Banner Oficial sobre fondo blanco protegido -->
-          <div class="bg-white p-5 rounded-2xl shadow-2xl border border-slate-200 flex items-center justify-center">
-            <img src="assets/Bannersgnia.png"
-                 alt="Banner oficial de SGNIA COMPANY"
-                 width="1025"
-                 height="564"
-                 class="w-full max-w-xs h-auto object-contain">
-          </div>
-
-          <div class="space-y-2">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#17948F]/15 border border-[#21D1C6]/30 text-[#21D1C6] text-xs font-mono">
-              <span class="pulse-rec"></span>
-              <span>SCENE 07 // CONTACTO DIRECTO</span>
-            </div>
-            <h2 class="text-3xl font-extrabold text-white tracking-tight">
-              Iniciemos tu Proyecto
-            </h2>
-            <p class="text-slate-300 text-sm leading-relaxed font-light">
-              Atención personalizada por WhatsApp, SMS o correo electrónico. Acompañamos cada fase desde la idea hasta el despliegue funcional.
-            </p>
-          </div>
-
-          <!-- Tarjetas de Datos de Contacto Reales -->
-          <div class="space-y-3 font-mono text-xs">
-            
-            <!-- Responsable -->
-            <div class="glass-panel p-4 rounded-2xl flex items-center gap-3">
-              <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#21D1C6] shrink-0">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
-              </div>
-              <div>
-                <div class="text-[10px] text-slate-400">Responsable</div>
-                <div class="font-bold text-white font-sans text-sm">Gamaliel Velazquez Galicia</div>
-              </div>
-            </div>
-
-            <!-- Teléfono -->
-            <div class="glass-panel p-4 rounded-2xl flex items-center gap-3">
-              <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#21D1C6] shrink-0">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-              </div>
-              <div>
-                <div class="text-[10px] text-slate-400">Teléfono (Atención por SMS o WhatsApp)</div>
-                <a href="tel:+522761095688" class="font-bold text-white hover:text-[#21D1C6] transition-colors text-sm">
-                  +52 276 109 5688
-                </a>
-              </div>
-            </div>
-
-            <!-- Correo -->
-            <div class="glass-panel p-4 rounded-2xl flex items-center gap-3">
-              <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#21D1C6] shrink-0">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-              </div>
-              <div>
-                <div class="text-[10px] text-slate-400">Correo Electrónico</div>
-                <a href="mailto:gmlvega0025@gmail.com" class="font-bold text-white hover:text-[#21D1C6] transition-colors text-sm break-all font-sans">
-                  gmlvega0025@gmail.com
-                </a>
-              </div>
-            </div>
-
-            <!-- Ubicación Oficial -->
-            <div class="glass-panel p-4 rounded-2xl flex items-center gap-3">
-              <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#21D1C6] shrink-0">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-              </div>
-              <div>
-                <div class="text-[10px] text-slate-400">Ubicación Oficial</div>
-                <a href="https://www.google.com/maps/search/?api=1&query=Juan+Jimenez+405,+Centro,+75120+Nopalucan+de+la+Granja,+Puebla,+Mexico" target="_blank" rel="noopener noreferrer"
-                   class="text-xs font-semibold text-white hover:text-[#21D1C6] underline decoration-[#17948F]/50 underline-offset-2 transition-colors font-sans leading-snug block">
-                  Juan Jiménez 405, Centro, 75120 Nopalucan de la Granja, Puebla, México
-                </a>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Enlaces Sociales -->
-          <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono">
-            <a href="https://www.tiktok.com/@sgn_ia" target="_blank" rel="noopener noreferrer"
-               class="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-[#17948F] text-slate-200 hover:text-white border border-white/10 transition-all inline-flex items-center gap-2">
-              <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64c.298 0 .59.043.87.124V9.4a6.33 6.33 0 00-.87-.06A6.34 6.34 0 003 15.68a6.34 6.34 0 009.77 5.34 6.27 6.27 0 002.57-5.07V8.71a8.16 8.16 0 004.25 1.25V6.69z"/></svg>
-              <span>TikTok @sgn_ia</span>
-            </a>
-            <a href="https://github.com/Gamavg06" target="_blank" rel="noopener noreferrer"
-               class="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-[#17948F] text-slate-200 hover:text-white border border-white/10 transition-all inline-flex items-center gap-2">
-              <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-              <span>GitHub @Gamavg06</span>
-            </a>
-          </div>
-
-          <!-- Botones de Acción Directa -->
-          <div class="pt-2 flex flex-col gap-2.5">
-            <a href="https://wa.me/522761095688?text=Hola%2C%20quiero%20cotizar%20un%20proyecto%20con%20SGNIA%20COMPANY"
-               target="_blank" rel="noopener noreferrer"
-               class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-[#17948F] to-[#12264A] hover:from-[#21D1C6] hover:to-[#17948F] transition-all shadow-lg shadow-[#17948F]/25 border border-[#21D1C6]/30">
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z"/></svg>
-              <span>Escribir por WhatsApp</span>
-            </a>
-            <a href="sms:+522761095688"
-               class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-semibold text-slate-200 bg-white/5 hover:bg-white/10 border border-white/10 transition-all">
-              <svg class="w-4 h-4 text-[#21D1C6]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
-              <span>Enviar SMS</span>
-            </a>
-          </div>
-
-        </div>
-
-        <!-- Columna Derecha: Formulario con 3 Botones de Envío -->
-        <div class="lg:col-span-7 glass-panel p-8 sm:p-10 rounded-3xl space-y-6 reveal-on-scroll">
-          <div>
-            <h3 class="text-xl font-bold text-white">Envíanos un mensaje</h3>
-            <p class="text-slate-400 text-xs mt-1 font-light">Completa los campos y selecciona tu canal de contacto preferido para abrir la conversación.</p>
-          </div>
-
-          <form id="contact-form" class="space-y-4" novalidate>
-            
-            <!-- Campo Nombre -->
-            <div>
-              <label for="contact-name" class="block text-xs font-mono font-medium text-slate-300 mb-1">
-                NOMBRE COMPLETO <span class="text-[#21D1C6]">*</span>
-              </label>
-              <input type="text" id="contact-name" name="name" required
-                     placeholder="Tu nombre"
-                     class="w-full px-4 py-3 rounded-xl bg-[#050B14]/80 border border-white/10 text-white placeholder-slate-500 text-sm focus:border-[#21D1C6] focus:ring-1 focus:ring-[#21D1C6] transition-all outline-none">
-              <p id="name-error" class="hidden text-rose-400 text-xs mt-1 font-medium"></p>
-            </div>
-
-            <!-- Campo Correo -->
-            <div>
-              <label for="contact-email" class="block text-xs font-mono font-medium text-slate-300 mb-1">
-                CORREO ELECTRÓNICO <span class="text-[#21D1C6]">*</span>
-              </label>
-              <input type="email" id="contact-email" name="email" required
-                     placeholder="correo@ejemplo.com"
-                     class="w-full px-4 py-3 rounded-xl bg-[#050B14]/80 border border-white/10 text-white placeholder-slate-500 text-sm focus:border-[#21D1C6] focus:ring-1 focus:ring-[#21D1C6] transition-all outline-none">
-              <p id="email-error" class="hidden text-rose-400 text-xs mt-1 font-medium"></p>
-            </div>
-
-            <!-- Tipo de Proyecto -->
-            <div>
-              <label for="contact-service" class="block text-xs font-mono font-medium text-slate-300 mb-1">
-                TIPO DE PROYECTO
-              </label>
-              <select id="contact-service" name="service"
-                      class="w-full px-4 py-3 rounded-xl bg-[#050B14]/80 border border-white/10 text-white text-sm focus:border-[#21D1C6] focus:ring-1 focus:ring-[#21D1C6] transition-all outline-none">
-                <option value="Desarrollo Web Empresarial" class="bg-[#050B14]">Desarrollo Web Empresarial</option>
-                <option value="Aplicaciones Móviles" class="bg-[#050B14]">Aplicaciones Móviles (Android / Multiplataforma)</option>
-                <option value="Arquitectura de Datos & Backend" class="bg-[#050B14]">Arquitectura de Datos & Backend</option>
-                <option value="Automatización e Integración de IA" class="bg-[#050B14]">Automatización e Integración de IA</option>
-                <option value="Sistema de Reservas / Web App" class="bg-[#050B14]">Sistema de Reservas / Web App</option>
-                <option value="Consultoría Técnica General" class="bg-[#050B14]">Consultoría Técnica General</option>
-              </select>
-            </div>
-
-            <!-- Mensaje -->
-            <div>
-              <label for="contact-message" class="block text-xs font-mono font-medium text-slate-300 mb-1">
-                MENSAJE <span class="text-[#21D1C6]">*</span>
-              </label>
-              <textarea id="contact-message" name="message" rows="4" required
-                        placeholder="Describe brevemente lo que requieres desarrollar..."
-                        class="w-full px-4 py-3 rounded-xl bg-[#050B14]/80 border border-white/10 text-white placeholder-slate-500 text-sm focus:border-[#21D1C6] focus:ring-1 focus:ring-[#21D1C6] transition-all outline-none resize-none"></textarea>
-              <p id="message-error" class="hidden text-rose-400 text-xs mt-1 font-medium"></p>
-            </div>
-
-            <!-- Tres Botones de Envío -->
-            <div class="pt-2 space-y-2">
-              <div class="text-xs text-slate-400 font-mono">Selecciona por cuál canal prefieres enviar tu mensaje:</div>
-              
-              <div class="grid grid-cols-1 gap-2 pt-1">
-                
-                <!-- Botón 1: WhatsApp -->
-                <button type="button" id="btn-send-whatsapp"
-                        class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-[#17948F] to-[#12264A] hover:from-[#21D1C6] hover:to-[#17948F] transition-all shadow-md border border-[#21D1C6]/30">
-                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z"/></svg>
-                  <span>Enviar por WhatsApp</span>
-                </button>
-
-                <!-- Botón 2: SMS -->
-                <button type="button" id="btn-send-sms"
-                        class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-semibold text-slate-200 bg-white/5 hover:bg-white/10 border border-white/10 transition-all">
-                  <svg class="w-4 h-4 text-[#21D1C6]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
-                  <span>Enviar por SMS</span>
-                </button>
-
-                <!-- Botón 3: Correo -->
-                <button type="button" id="btn-send-email"
-                        class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-semibold text-slate-200 bg-white/5 hover:bg-white/10 border border-white/10 transition-all">
-                  <svg class="w-4 h-4 text-[#21D1C6]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                  <span>Enviar por Correo</span>
-                </button>
-
-              </div>
-            </div>
-
-          </form>
-
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ========================================================== -->
-  <!-- FOOTER CINEMATOGRÁFICO                                     -->
-  <!-- ========================================================== -->
-  <footer class="scene-section border-t border-white/10 bg-[#03070E] py-14 relative z-10">
+  <section id="proyectos" class="py-20 bg-canvasBg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start mb-10 pb-10 border-b border-white/10">
-        
-        <!-- Brand Info -->
-        <div class="md:col-span-5 space-y-3">
-          <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-xl bg-white p-1 shadow-md border border-slate-200 flex items-center justify-center shrink-0">
-              <img src="assets/Logosgnia.png" alt="Escudo oficial de SGNIA COMPANY" width="420" height="420" class="w-full h-full object-contain">
-            </div>
-            <span class="text-xl font-extrabold tracking-tight text-white flex items-center">
-              SGNIA <span class="text-[#21D1C6] ml-1.5 font-mono text-xs bg-[#17948F]/20 px-2 py-0.5 rounded border border-[#17948F]/40 tracking-wider">COMPANY</span>
-            </span>
-          </div>
-          <p class="text-slate-400 text-xs leading-relaxed max-w-sm font-light">
-            Desarrollo de software profesional, plataformas web, móviles e innovación digital con arquitectura escalable.
+      <!-- Encabezado de Sección -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div class="space-y-2">
+          <span class="text-xs font-bold uppercase tracking-wider text-brandTeal-dark">Portafolio & Código Público</span>
+          <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-brandNavy">
+            Proyectos con Código y Demos en Vivo
+          </h2>
+          <p class="text-slate-600 text-base max-w-2xl">
+            Sistemas reales con repositorios públicos en GitHub y demostraciones interactivas alojadas en la web.
           </p>
-          <div class="text-xs font-mono text-slate-400 space-y-1 pt-1">
-            <div><strong class="text-white">Fundador:</strong> Gamaliel Velazquez Galicia</div>
-            <div>
-              <strong class="text-white">Ubicación:</strong>
-              <a href="https://www.google.com/maps/search/?api=1&query=Juan+Jimenez+405,+Centro,+75120+Nopalucan+de+la+Granja,+Puebla,+Mexico" target="_blank" rel="noopener noreferrer" class="hover:text-[#21D1C6] underline decoration-[#17948F]/40 transition-colors">
-                Juan Jiménez 405, Centro, 75120 Nopalucan de la Granja, Puebla, México
+        </div>
+
+        <!-- Filtros de Categoría -->
+        <div class="flex items-center gap-1.5 p-1 bg-white border border-slate-200 rounded-xl self-start md:self-auto shadow-sm">
+          <button type="button" class="filter-btn active px-3.5 py-1.5 rounded-lg text-xs" data-filter="all">Todos (7)</button>
+          <button type="button" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs" data-filter="web">Web & Sistemas</button>
+          <button type="button" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs" data-filter="interactive">Interactivos & Canvas</button>
+        </div>
+      </div>
+
+      <!-- Cuadrícula Asimétrica de Proyectos -->
+      <div class="space-y-8">
+        
+        <!-- PROYECTO ESTRELLA (FORMATO HORIZONTAL COMPLETO): Hotel Booking System -->
+        <article class="project-item editorial-card rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-0" data-category="web">
+          <div class="lg:col-span-7 bg-slate-900 overflow-hidden relative min-h-[260px] sm:min-h-[340px]">
+            <img src="assets/hotelbookingsystem.png" alt="Captura del sistema HotelBookingSystem" class="w-full h-full object-cover object-top" loading="lazy">
+          </div>
+          <div class="lg:col-span-5 p-8 sm:p-10 flex flex-col justify-between space-y-6 bg-white">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold uppercase tracking-wider text-brandTeal-dark">Sistema de Gestión · v2.0</span>
+                <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 border border-slate-200">Desktop & Web</span>
+              </div>
+              <h3 class="font-heading text-2xl font-bold text-brandNavy">Hotel Booking System</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Plataforma completa para administración hotelera, reserva de habitaciones, control de huéspedes y reportería contable desarrollada con arquitectura sólida y base de datos relacional.
+              </p>
+              <div class="pt-2 text-xs font-semibold text-slate-500 border-t border-slate-100">
+                <span class="text-brandNavy">Tecnologías:</span> C#, .NET, SQL Server, Windows Forms, GitHub Pages
+              </div>
+            </div>
+            
+            <div class="flex items-center gap-3 pt-4">
+              <a href="https://gamavg06.github.io/HotelBookingSystem2.0" target="_blank" rel="noopener noreferrer" class="btn-primary flex-1 py-2.5 px-4 rounded-xl text-xs text-center flex items-center justify-center gap-1.5">
+                <span>Demo en Vivo</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+              <a href="https://github.com/Gamavg06/HotelBookingSystem2.0" target="_blank" rel="noopener noreferrer" class="btn-secondary py-2.5 px-4 rounded-xl text-xs flex items-center gap-1.5" title="Repositorio de código">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                <span>Código</span>
               </a>
             </div>
           </div>
+        </article>
+
+        <!-- CUADRÍCULA EDITORIAL DE 2 COLUMNAS PARA EL RESTO DE PROYECTOS -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <!-- 2. Portal Inmobiliario -->
+          <article class="project-item editorial-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="web">
+            <div>
+              <div class="h-52 bg-slate-100 overflow-hidden border-b border-slate-200">
+                <img src="assets/portalInmobiliario.png" alt="Portal Inmobiliario" class="w-full h-full object-cover object-top" loading="lazy">
+              </div>
+              <div class="p-6 space-y-3">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-bold uppercase tracking-wider text-brandTeal-dark">Plataforma Web</span>
+                  <span class="text-[11px] font-semibold text-amber-800 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">Demo en Mantenimiento</span>
+                </div>
+                <h3 class="font-heading text-xl font-bold text-brandNavy">Portal Inmobiliario</h3>
+                <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                  Directorio de bienes raíces con catálogo estructurado, integración de mapas interactivos (Leaflet.js) y consumo de APIs de clima en tiempo real.
+                </p>
+                <div class="pt-2 text-xs font-semibold text-slate-500 border-t border-slate-100">
+                  <span class="text-brandNavy">Tecnologías:</span> Laravel 11, PHP, MySQL, Leaflet.js, OpenWeather API
+                </div>
+              </div>
+            </div>
+            <div class="p-6 pt-0">
+              <a href="https://github.com/Gamavg06/portal-inmobiliario" target="_blank" rel="noopener noreferrer" class="btn-secondary w-full py-2.5 px-4 rounded-xl text-xs flex items-center justify-center gap-2">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                <span>Explorar Repositorio en GitHub</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 3. LearnMore -->
+          <article class="project-item editorial-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="web">
+            <div>
+              <div class="h-52 bg-slate-100 overflow-hidden border-b border-slate-200">
+                <img src="assets/learnmore.png" alt="Plataforma LearnMore" class="w-full h-full object-cover object-top" loading="lazy">
+              </div>
+              <div class="p-6 space-y-3">
+                <span class="text-xs font-bold uppercase tracking-wider text-brandTeal-dark">Educación & Recursos</span>
+                <h3 class="font-heading text-xl font-bold text-brandNavy">LearnMore</h3>
+                <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                  Sistema estructurado para centralización de recursos de estudio, guías técnicas e interfaz ágil diseñada para optimizar el aprendizaje continuo.
+                </p>
+                <div class="pt-2 text-xs font-semibold text-slate-500 border-t border-slate-100">
+                  <span class="text-brandNavy">Tecnologías:</span> JavaScript, HTML5, CSS3 Moderno, Responsive Design
+                </div>
+              </div>
+            </div>
+            <div class="p-6 pt-0 flex items-center gap-3">
+              <a href="https://gamavg06.github.io/LearnMore" target="_blank" rel="noopener noreferrer" class="btn-primary flex-1 py-2.5 px-4 rounded-xl text-xs text-center flex items-center justify-center gap-1.5">
+                <span>Demo en Vivo</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+              <a href="https://github.com/Gamavg06/LearnMore" target="_blank" rel="noopener noreferrer" class="btn-secondary py-2.5 px-4 rounded-xl text-xs flex items-center gap-1.5" title="Repositorio">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                <span>Código</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 4. BioPlant -->
+          <article class="project-item editorial-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="interactive">
+            <div>
+              <div class="h-52 bg-slate-100 overflow-hidden border-b border-slate-200">
+                <img src="assets/bioplant.png" alt="BioPlant Brayans Company" class="w-full h-full object-cover object-top" loading="lazy">
+              </div>
+              <div class="p-6 space-y-3">
+                <span class="text-xs font-bold uppercase tracking-wider text-brandTeal-dark">Botánica & Monitoreo</span>
+                <h3 class="font-heading text-xl font-bold text-brandNavy">BioPlant</h3>
+                <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                  Herramienta interactiva y educativa diseñada para el seguimiento, registro y cuidado sustentable de especies vegetales.
+                </p>
+                <div class="pt-2 text-xs font-semibold text-slate-500 border-t border-slate-100">
+                  <span class="text-brandNavy">Tecnologías:</span> JavaScript, CSS3, Maquetación Dinámica
+                </div>
+              </div>
+            </div>
+            <div class="p-6 pt-0 flex items-center gap-3">
+              <a href="https://gamavg06.github.io/BioPlantBrayansCompany" target="_blank" rel="noopener noreferrer" class="btn-primary flex-1 py-2.5 px-4 rounded-xl text-xs text-center flex items-center justify-center gap-1.5">
+                <span>Demo en Vivo</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+              <a href="https://github.com/Gamavg06/BioPlantBrayansCompany" target="_blank" rel="noopener noreferrer" class="btn-secondary py-2.5 px-4 rounded-xl text-xs flex items-center gap-1.5" title="Repositorio">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                <span>Código</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 5. Galaxia Flores Amarillas -->
+          <article class="project-item editorial-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="interactive">
+            <div>
+              <div class="h-52 bg-slate-900 overflow-hidden border-b border-slate-200">
+                <img src="assets/Galaxia.png" alt="Galaxia interactiva con Canvas" class="w-full h-full object-cover object-center" loading="lazy">
+              </div>
+              <div class="p-6 space-y-3">
+                <span class="text-xs font-bold uppercase tracking-wider text-brandTeal-dark">Animación & Canvas</span>
+                <h3 class="font-heading text-xl font-bold text-brandNavy">Galaxia 3D Interactiva</h3>
+                <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                  Experiencia tridimensional generada mediante algoritmos matemáticos en HTML5 Canvas con partículas y renderizado dinámico a 60 FPS.
+                </p>
+                <div class="pt-2 text-xs font-semibold text-slate-500 border-t border-slate-100">
+                  <span class="text-brandNavy">Tecnologías:</span> HTML5 Canvas, JavaScript Nativo, Matemáticas Vectoriales
+                </div>
+              </div>
+            </div>
+            <div class="p-6 pt-0 flex items-center gap-3">
+              <a href="https://gamavg06.github.io/Galaxia_flores_amarillas" target="_blank" rel="noopener noreferrer" class="btn-primary flex-1 py-2.5 px-4 rounded-xl text-xs text-center flex items-center justify-center gap-1.5">
+                <span>Demo en Vivo</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+              <a href="https://github.com/Gamavg06/Galaxia_flores_amarillas" target="_blank" rel="noopener noreferrer" class="btn-secondary py-2.5 px-4 rounded-xl text-xs flex items-center gap-1.5" title="Repositorio">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                <span>Código</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 6. Happy Birthday -->
+          <article class="project-item editorial-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="interactive">
+            <div>
+              <div class="h-52 bg-slate-900 overflow-hidden border-b border-slate-200">
+                <img src="assets/happybirthday.png" alt="Happy Birthday Canvas" class="w-full h-full object-cover object-center" loading="lazy">
+              </div>
+              <div class="p-6 space-y-3">
+                <span class="text-xs font-bold uppercase tracking-wider text-brandTeal-dark">Animación & Canvas</span>
+                <h3 class="font-heading text-xl font-bold text-brandNavy">Happy Birthday Interactivo</h3>
+                <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                  Experiencia digital festiva con efectos visuales programados en código puro, optimizada para rendimiento fluido en móviles.
+                </p>
+                <div class="pt-2 text-xs font-semibold text-slate-500 border-t border-slate-100">
+                  <span class="text-brandNavy">Tecnologías:</span> HTML5 Canvas, Animación Vectorial, JavaScript
+                </div>
+              </div>
+            </div>
+            <div class="p-6 pt-0 flex items-center gap-3">
+              <a href="https://gamavg06.github.io/Happy_birthday" target="_blank" rel="noopener noreferrer" class="btn-primary flex-1 py-2.5 px-4 rounded-xl text-xs text-center flex items-center justify-center gap-1.5">
+                <span>Demo en Vivo</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+              <a href="https://github.com/Gamavg06/Happy_birthday" target="_blank" rel="noopener noreferrer" class="btn-secondary py-2.5 px-4 rounded-xl text-xs flex items-center gap-1.5" title="Repositorio">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                <span>Código</span>
+              </a>
+            </div>
+          </article>
+
         </div>
 
-        <!-- Quick Links -->
-        <div class="md:col-span-4 space-y-2">
-          <div class="text-xs font-mono uppercase text-white font-bold tracking-wider">Navegación</div>
-          <div class="grid grid-cols-2 gap-2 text-xs text-slate-400">
-            <a href="#inicio" class="hover:text-[#21D1C6] transition-colors">01 Inicio</a>
-            <a href="#nosotros" class="hover:text-[#21D1C6] transition-colors">02 Nosotros</a>
-            <a href="#metodologia" class="hover:text-[#21D1C6] transition-colors">03 Proceso</a>
-            <a href="#servicios" class="hover:text-[#21D1C6] transition-colors">04 Servicios</a>
-            <a href="#proyectos" class="hover:text-[#21D1C6] transition-colors">05 Proyectos</a>
-            <a href="#tecnologias" class="hover:text-[#21D1C6] transition-colors">06 Tecnologías</a>
-            <a href="#contacto" class="hover:text-[#21D1C6] transition-colors">07 Contacto</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DIVISOR ENTRELAZADO -->
+  <div class="intertwined-divider-container py-4">
+    <svg class="intertwined-divider-svg" viewBox="0 0 600 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path class="divider-stroke-navy" d="M 10 18 Q 150 18 250 8 T 350 28 Q 450 18 590 18" />
+      <path class="divider-stroke-teal" d="M 10 18 Q 150 18 250 28 T 350 8 Q 450 18 590 18" />
+      <circle cx="300" cy="18" r="4.5" fill="#142A42" />
+      <circle cx="300" cy="18" r="2.5" fill="#1F8E8F" />
+    </svg>
+  </div>
+
+  <!-- ========================================================== -->
+  <!-- 4. SECCIÓN 3: HISTORIA Y RAÍCES (IDENTIDAD REAL DE AUTOR)  -->
+  <!-- ========================================================== -->
+  <section id="historia" class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="space-y-3 text-center sm:text-left">
+        <span class="text-xs font-bold uppercase tracking-wider text-brandTeal-dark">Origen & Propósito</span>
+        <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-brandNavy">
+          Historia, Raíces y la Alianza SGNIA
+        </h2>
+        <p class="text-slate-600 text-base max-w-2xl leading-relaxed">
+          Detrás de cada línea de código hay valores de familia, perseverancia y una meta clara construida con esfuerzo honesto.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+        
+        <!-- Bloque 1: Raíces Familiares -->
+        <div class="md:col-span-7 space-y-5 text-slate-700 text-sm sm:text-base leading-relaxed">
+          <p>
+            Originario de <strong class="text-brandNavy font-semibold">Nopalucan de la Granja, Puebla</strong>, crecí en el seno de una familia trabajadora donde el esfuerzo constante ha sido la mayor escuela. Hijo de una madre dedicada a las labores del hogar y la limpieza, y de un padre albañil que edifica con sus manos día con día, aprendí desde temprana edad que las obras duraderas se construyen con disciplina, precisión y paciencia desde los cimientos.
+          </p>
+          
+          <div class="p-5 sm:p-6 rounded-2xl bg-slate-50 border-l-4 border-brandTeal space-y-2">
+            <p class="text-slate-800 font-medium italic">
+              "Guiado por el deseo de salir adelante y brindarle a mis padres la vida digna que merecen, convertí la programación en mi principal herramienta de superación. Creciendo en un hogar donde la tecnología y la robótica han sido pilares de constante aprendizaje junto a mi hermano, vi en el código la oportunidad de construir soluciones reales para empresas y negocios."
+            </p>
+            <span class="block text-xs font-bold text-brandNavy not-italic mt-2">— Gamaliel Velázquez Galicia</span>
+          </div>
+
+          <p>
+            Actualmente curso la <strong class="text-brandNavy font-semibold">Ingeniería en Tecnologías de la Información e Innovación Digital</strong> en la Universidad Tecnológica Bilingüe Internacional y Sustentable de Puebla (UTBIS), contando con el título de <strong class="text-brandNavy font-semibold">T.S.U. en Desarrollo de Software Multiplataforma</strong>.
+          </p>
+
+          <div class="pt-2">
+            <a href="fundador.html" class="inline-flex items-center gap-2 text-sm font-bold text-brandNavy hover:text-brandTeal-dark transition-colors group">
+              <span>Leer biografía oficial completa de Gamaliel</span>
+              <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
           </div>
         </div>
 
-        <!-- Direct Actions -->
-        <div class="md:col-span-3 space-y-2 text-xs">
-          <div class="text-xs font-mono uppercase text-white font-bold tracking-wider">Canales Directos</div>
-          <div class="space-y-1.5 text-slate-400 font-mono">
-            <div>WhatsApp: <a href="https://wa.me/522761095688" target="_blank" rel="noopener noreferrer" class="text-[#21D1C6] hover:underline">+52 276 109 5688</a></div>
-            <div>Email: <a href="mailto:gmlvega0025@gmail.com" class="text-[#21D1C6] hover:underline break-all">gmlvega0025@gmail.com</a></div>
-            <div>Web: <a href="https://sgnia.xyz" class="text-white hover:underline">sgnia.xyz</a></div>
+        <!-- Bloque 2: El Origen de SGNIA (Sonia & Gamaliel) -->
+        <div class="md:col-span-5 editorial-card p-6 sm:p-8 rounded-2xl space-y-5 bg-white">
+          <div class="flex items-center gap-3">
+            <img src="assets/Logosgnia.png" alt="Escudo SGNIA" class="w-8 h-8 object-contain">
+            <h3 class="font-heading text-lg font-bold text-brandNavy">¿Por qué SGNIA?</h3>
+          </div>
+          
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Más allá de una identidad de marca, <strong class="text-brandNavy">SGNIA representa una alianza de vida y propósito</strong>. Su nombre surge del acrónimo que entrelaza a <strong class="text-brandNavy">Sonia</strong> y <strong class="text-brandNavy">Gamaliel</strong>, simbolizando la motivación constante, el trabajo en equipo y el respaldo afectivo sobre los cuales se cimenta la empresa.
+          </p>
+
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-3 text-xs">
+            <div class="flex items-start gap-2.5">
+              <span class="w-3 h-3 rounded-full bg-brandTeal shrink-0 mt-0.5"></span>
+              <div>
+                <strong class="text-brandNavy">S · NIA:</strong> Representan a <strong class="text-slate-800">Sonia</strong> (la S inicial y el cierre NIA), envolviendo el nombre con afecto y motivación.
+              </div>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <span class="w-3 h-3 rounded-full bg-brandNavy shrink-0 mt-0.5"></span>
+              <div>
+                <strong class="text-brandNavy">G:</strong> Representa a <strong class="text-slate-800">Gamaliel</strong>, el núcleo de desarrollo de software y ejecución de ingeniería.
+              </div>
+            </div>
+          </div>
+
+          <p class="text-xs text-slate-500 italic">
+            El escudo refleja dos trazos entrelazados (verde teal y azul marino) que ascienden juntos hacia la misma meta.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DIVISOR ENTRELAZADO -->
+  <div class="intertwined-divider-container py-4">
+    <svg class="intertwined-divider-svg" viewBox="0 0 600 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path class="divider-stroke-navy" d="M 10 18 Q 150 18 250 8 T 350 28 Q 450 18 590 18" />
+      <path class="divider-stroke-teal" d="M 10 18 Q 150 18 250 28 T 350 8 Q 450 18 590 18" />
+      <circle cx="300" cy="18" r="4.5" fill="#142A42" />
+      <circle cx="300" cy="18" r="2.5" fill="#1F8E8F" />
+    </svg>
+  </div>
+
+  <!-- ========================================================== -->
+  <!-- 5. SECCIÓN 4: EL TALLER (METODOLOGÍA EN AZUL MARINO SÓLIDO) -->
+  <!-- ========================================================== -->
+  <section id="taller" class="py-20 bg-brandNavy text-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Encabezado de Sección en Contraste -->
+      <div class="max-w-3xl mb-16 space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-brandTeal-light">Metodología de Trabajo</span>
+        <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-white">
+          El Taller: Cómo se Construye Cada Solución
+        </h2>
+        <p class="text-slate-300 text-base leading-relaxed font-light">
+          Un proceso directo, sin intermediarios ni burocracia. Trato personal desde la primera conversación hasta la entrega en producción.
+        </p>
+      </div>
+
+      <!-- 4 Fases con líneas de dibujo técnico -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Fase 1 -->
+        <div class="p-6 rounded-2xl bg-brandNavy-surface border border-slate-700 space-y-3">
+          <div class="font-heading text-3xl font-extrabold text-brandTeal-light">01</div>
+          <h3 class="font-heading text-lg font-bold text-white">Escuchar</h3>
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed font-light">
+            Analizamos tu negocio, tus cuellos de botella y tus objetivos reales sin tecnicismos innecesarios.
+          </p>
+        </div>
+
+        <!-- Fase 2 -->
+        <div class="p-6 rounded-2xl bg-brandNavy-surface border border-slate-700 space-y-3">
+          <div class="font-heading text-3xl font-extrabold text-brandTeal-light">02</div>
+          <h3 class="font-heading text-lg font-bold text-white">Proponer</h3>
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed font-light">
+            Definimos la arquitectura técnica, el modelo de datos, los tiempos de entrega y el alcance exacto.
+          </p>
+        </div>
+
+        <!-- Fase 3 -->
+        <div class="p-6 rounded-2xl bg-brandNavy-surface border border-slate-700 space-y-3">
+          <div class="font-heading text-3xl font-extrabold text-brandTeal-light">03</div>
+          <h3 class="font-heading text-lg font-bold text-white">Desarrollar</h3>
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed font-light">
+            Programación limpia y estructurada con pruebas constantes, interfaces intuitivas y bases de datos robustas.
+          </p>
+        </div>
+
+        <!-- Fase 4 -->
+        <div class="p-6 rounded-2xl bg-brandNavy-surface border border-slate-700 space-y-3">
+          <div class="font-heading text-3xl font-extrabold text-brandTeal-light">04</div>
+          <h3 class="font-heading text-lg font-bold text-white">Entregar</h3>
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed font-light">
+            Puesta en marcha en servidores seguros, capacitación de uso y soporte continuo post-lanzamiento.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================== -->
+  <!-- 6. SECCIÓN 5: SERVICIOS (CON TECNOLOGÍAS EN LÍNEA SIMPLE)  -->
+  <!-- ========================================================== -->
+  <section id="servicios" class="py-20 bg-canvasBg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mb-12 space-y-2">
+        <span class="text-xs font-bold uppercase tracking-wider text-brandTeal-dark">Capacidades Técnicas</span>
+        <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-brandNavy">
+          Servicios de Ingeniería de Software
+        </h2>
+        <p class="text-slate-600 text-base">
+          Desarrollo a la medida para negocios, empresas y proyectos que requieren estabilidad y buen código.
+        </p>
+      </div>
+
+      <!-- Lista Editorial de Servicios -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Servicio 1: Web Empresarial -->
+        <div class="editorial-card p-6 sm:p-8 rounded-2xl space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-brandNavy font-bold">
+              <svg class="w-5 h-5 text-brandTeal-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <h3 class="font-heading text-xl font-bold text-brandNavy">Desarrollo Web Empresarial</h3>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Plataformas web corporativas, portales administrativos a medida, sistemas de gestión interna y aplicaciones web seguras con arquitecturas escalables.
+          </p>
+          <div class="pt-3 border-t border-slate-100 text-xs font-semibold text-slate-500">
+            <span class="text-brandNavy">Tecnologías:</span> C#, ASP.NET Core, Laravel, PHP, HTML5, Tailwind CSS
+          </div>
+        </div>
+
+        <!-- Servicio 2: Aplicaciones Móviles -->
+        <div class="editorial-card p-6 sm:p-8 rounded-2xl space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-brandNavy font-bold">
+              <svg class="w-5 h-5 text-brandTeal-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+            </div>
+            <h3 class="font-heading text-xl font-bold text-brandNavy">Aplicaciones Móviles Nativas</h3>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Construcción de aplicaciones nativas para Android con interfaces fluidas, sincronización en tiempo real y persistencia local para trabajar sin conexión.
+          </p>
+          <div class="pt-3 border-t border-slate-100 text-xs font-semibold text-slate-500">
+            <span class="text-brandNavy">Tecnologías:</span> Kotlin, Jetpack Compose, Room Database, SQLite, APIs REST
+          </div>
+        </div>
+
+        <!-- Servicio 3: Bases de Datos & Backend -->
+        <div class="editorial-card p-6 sm:p-8 rounded-2xl space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-brandNavy font-bold">
+              <svg class="w-5 h-5 text-brandTeal-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/></svg>
+            </div>
+            <h3 class="font-heading text-xl font-bold text-brandNavy">Arquitectura de Datos & Backend</h3>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Diseño de esquemas relacionales, optimización de consultas, particionamiento, integridad de transacciones y consumo seguro de APIs en la nube.
+          </p>
+          <div class="pt-3 border-t border-slate-100 text-xs font-semibold text-slate-500">
+            <span class="text-brandNavy">Tecnologías:</span> SQL Server, MySQL, SQLite, Supabase, Entity Framework
+          </div>
+        </div>
+
+        <!-- Servicio 4: Automatización & Scripting -->
+        <div class="editorial-card p-6 sm:p-8 rounded-2xl space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-brandNavy font-bold">
+              <svg class="w-5 h-5 text-brandTeal-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <h3 class="font-heading text-xl font-bold text-brandNavy">Automatización de Procesos</h3>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Desarrollo de scripts para eliminar tareas repetitivas, procesamiento y limpieza de datos, extracción de información y conexión automatizada de servicios.
+          </p>
+          <div class="pt-3 border-t border-slate-100 text-xs font-semibold text-slate-500">
+            <span class="text-brandNavy">Tecnologías:</span> Python, Scripts de Automatización, Web Scraping, APIs
           </div>
         </div>
 
       </div>
 
-      <div class="flex flex-col sm:flex-row items-center justify-between text-[11px] font-mono text-slate-500 gap-3">
-        <div>&copy; 2026 SGNIA COMPANY. Todos los derechos reservados.</div>
-        <div class="flex items-center gap-4">
-          <a href="https://www.tiktok.com/@sgn_ia" target="_blank" rel="noopener noreferrer" class="hover:text-[#21D1C6] transition-colors">TikTok</a>
-          <a href="https://github.com/Gamavg06" target="_blank" rel="noopener noreferrer" class="hover:text-[#21D1C6] transition-colors">GitHub</a>
-          <a href="https://sgnia.xyz" class="hover:text-[#21D1C6] transition-colors">sgnia.xyz</a>
+    </div>
+  </section>
+
+  <!-- DIVISOR ENTRELAZADO -->
+  <div class="intertwined-divider-container py-4">
+    <svg class="intertwined-divider-svg" viewBox="0 0 600 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path class="divider-stroke-navy" d="M 10 18 Q 150 18 250 8 T 350 28 Q 450 18 590 18" />
+      <path class="divider-stroke-teal" d="M 10 18 Q 150 18 250 28 T 350 8 Q 450 18 590 18" />
+      <circle cx="300" cy="18" r="4.5" fill="#142A42" />
+      <circle cx="300" cy="18" r="2.5" fill="#1F8E8F" />
+    </svg>
+  </div>
+
+  <!-- ========================================================== -->
+  <!-- 7. SECCIÓN 6: CONTACTO DIRECTO                             -->
+  <!-- ========================================================== -->
+  <section id="contacto" class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="editorial-card p-8 sm:p-12 rounded-3xl border border-slate-200">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <!-- Información y Canales -->
+          <div class="lg:col-span-6 space-y-6">
+            <div class="space-y-2">
+              <span class="text-xs font-bold uppercase tracking-wider text-brandTeal-dark">Contacto Directo</span>
+              <h2 class="font-heading text-3xl font-extrabold text-brandNavy">
+                ¿Platicamos sobre tu próximo proyecto?
+              </h2>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Cuéntame qué necesitas construir o resolver. Recibirás una respuesta directa, un análisis técnico inicial y una propuesta clara sin compromiso.
+              </p>
+            </div>
+
+            <div class="space-y-3 text-sm">
+              <a href="https://wa.me/522761095688?text=Hola%20Gamaliel,%20quiero%20cotizar%20un%20proyecto%20con%20SGNIA." 
+                 target="_blank" rel="noopener noreferrer"
+                 class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-50 border border-slate-200 hover:border-brandNavy transition-colors group">
+                <div class="w-9 h-9 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-brandTeal-dark group-hover:bg-brandNavy group-hover:text-white transition-colors">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z"/></svg>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-500 font-semibold">WhatsApp Directo</div>
+                  <div class="font-bold text-brandNavy">+52 276 109 5688</div>
+                </div>
+              </a>
+
+              <a href="mailto:contacto@sgnia.xyz" 
+                 class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-50 border border-slate-200 hover:border-brandNavy transition-colors group">
+                <div class="w-9 h-9 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-brandTeal-dark group-hover:bg-brandNavy group-hover:text-white transition-colors">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-500 font-semibold">Correo Electrónico</div>
+                  <div class="font-bold text-brandNavy">contacto@sgnia.xyz</div>
+                </div>
+              </a>
+
+              <div class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+                <div class="w-9 h-9 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-brandTeal-dark">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-500 font-semibold">Ubicación</div>
+                  <div class="font-bold text-brandNavy">Nopalucan de la Granja, Puebla, México</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formulario Directo -->
+          <div class="lg:col-span-6 bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-200 space-y-4">
+            <h3 class="font-heading font-bold text-lg text-brandNavy">Enviar Mensaje Rápido</h3>
+            
+            <div class="space-y-3">
+              <div>
+                <label for="contact-name" class="block text-xs font-semibold text-slate-700 mb-1">Tu Nombre o Empresa</label>
+                <input type="text" id="contact-name" class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-300 text-sm text-slate-900 focus:outline-none focus:border-brandNavy" placeholder="Ej. Carlos Martínez">
+              </div>
+
+              <div>
+                <label for="contact-message" class="block text-xs font-semibold text-slate-700 mb-1">¿Qué tipo de proyecto deseas desarrollar?</label>
+                <textarea id="contact-message" rows="3" class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-300 text-sm text-slate-900 focus:outline-none focus:border-brandNavy resize-none" placeholder="Cuéntame brevemente sobre tu idea, plataforma o sistema..."></textarea>
+              </div>
+
+              <div class="pt-2 flex flex-col sm:flex-row gap-2">
+                <button type="button" id="btn-send-whatsapp" class="btn-primary flex-1 py-3 px-4 rounded-xl text-xs flex items-center justify-center gap-2">
+                  <span>Enviar por WhatsApp</span>
+                </button>
+                <button type="button" id="btn-send-email" class="btn-secondary py-3 px-4 rounded-xl text-xs flex items-center justify-center gap-2">
+                  <span>Por Correo</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
         </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================== -->
+  <!-- 8. PIE DE PÁGINA EDITORIAL                                 -->
+  <!-- ========================================================== -->
+  <footer class="py-12 bg-white border-t border-slate-200 text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      
+      <div class="flex items-center gap-3">
+        <img src="assets/Logosgnia.png" alt="SGNIA" class="w-7 h-7 object-contain">
+        <div>
+          <span class="font-heading font-bold text-brandNavy">SGNIA COMPANY</span>
+          <span class="block text-[11px] text-slate-500">Desarrollo de software por Gamaliel Velázquez Galicia · Nopalucan de la Granja, Puebla</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-6 font-semibold text-slate-600">
+        <a href="#proyectos" class="hover:text-brandNavy transition-colors">Proyectos</a>
+        <a href="#historia" class="hover:text-brandNavy transition-colors">Historia</a>
+        <a href="fundador.html" class="hover:text-brandNavy transition-colors">Fundador</a>
+        <a href="https://github.com/Gamavg06" target="_blank" rel="noopener noreferrer" class="hover:text-brandNavy transition-colors">GitHub</a>
+        <a href="https://www.tiktok.com/@sgn_ia" target="_blank" rel="noopener noreferrer" class="hover:text-brandNavy transition-colors">TikTok</a>
       </div>
 
     </div>
   </footer>
 
-  <!-- Floating Scroll To Top Button -->
-  <button id="scroll-top-btn" aria-label="Volver arriba"
-          class="fixed bottom-6 right-6 z-40 p-3 rounded-2xl bg-gradient-to-tr from-[#12264A] to-[#17948F] text-white shadow-xl shadow-[#17948F]/25 border border-[#21D1C6]/30 hover:scale-110 active:scale-95 transition-all opacity-0 pointer-events-none translate-y-4">
-    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
-    </svg>
+  <!-- Botón Flotante Volver Arriba -->
+  <button id="scroll-top-btn" type="button" 
+          class="fixed bottom-6 right-6 z-40 p-3 rounded-xl bg-white border border-slate-200 text-brandNavy shadow-lg opacity-0 pointer-events-none translate-y-4 transition-all hover:bg-slate-50 focus:outline-none"
+          aria-label="Volver arriba">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"/></svg>
   </button>
 
-  <!-- Interactive Logic -->
+  <!-- Scripts -->
   <script src="js/main.js"></script>
 </body>
 </html>
