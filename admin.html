@@ -149,7 +149,12 @@
     </div>
 
     <div class="flex items-center gap-3 text-xs">
-      <div id="db-status-badge" class="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 text-[11px] font-medium border border-slate-200">
+      <button id="btn-config-header" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 bg-slate-50 text-slate-700 hover:text-brandNavy hover:bg-slate-100 font-semibold transition-colors" title="Configurar conexión con Turso">
+        <span>⚙️</span>
+        <span class="hidden sm:inline">Configurar Turso</span>
+      </button>
+
+      <div id="db-status-badge" class="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 text-[11px] font-medium border border-slate-200 cursor-pointer hover:bg-slate-200" title="Click para configurar Turso">
         <span class="w-2 h-2 rounded-full bg-amber-400" id="db-status-dot"></span>
         <span id="db-status-text">Modo Local</span>
       </div>
@@ -517,7 +522,12 @@
       cfgUrl.value = localStorage.getItem('sgnia_turso_url') || '';
       cfgToken.value = localStorage.getItem('sgnia_turso_token') || '';
 
+      const btnConfigHeader = document.getElementById('btn-config-header');
+      const dbStatusBadge = document.getElementById('db-status-badge');
+
       btnConfigToggle.addEventListener('click', () => configModal.classList.remove('hidden'));
+      if (btnConfigHeader) btnConfigHeader.addEventListener('click', () => configModal.classList.remove('hidden'));
+      if (dbStatusBadge) dbStatusBadge.addEventListener('click', () => configModal.classList.remove('hidden'));
       btnConfigClose.addEventListener('click', () => configModal.classList.add('hidden'));
 
       btnTest.addEventListener('click', async () => {
