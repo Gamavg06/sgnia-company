@@ -611,10 +611,11 @@
 
         if (hasTurso) {
           try {
+            const numId = (!id || isNaN(parseInt(id, 10))) ? id : parseInt(id, 10);
             if (id) {
               await queryTurso(
                 `UPDATE proyectos SET titulo=?, categoria=?, subtitulo=?, tecnologias=?, descripcion=?, github_url=?, demo_url=?, imagen_url=?, destacado=?, en_mantenimiento=? WHERE id=?`,
-                [projectObj.titulo, projectObj.categoria, projectObj.subtitulo, projectObj.tecnologias, projectObj.descripcion, projectObj.github_url, projectObj.demo_url, projectObj.imagen_url, projectObj.destacado, projectObj.en_mantenimiento, id]
+                [projectObj.titulo, projectObj.categoria, projectObj.subtitulo, projectObj.tecnologias, projectObj.descripcion, projectObj.github_url, projectObj.demo_url, projectObj.imagen_url, projectObj.destacado, projectObj.en_mantenimiento, numId]
               );
             } else {
               await queryTurso(
@@ -640,8 +641,9 @@
         form.reset();
         document.getElementById('proj-id').value = '';
         formTitle.textContent = 'Agregar Nuevo Proyecto';
-        loadProjects();
+        await loadProjects();
         refreshIframe();
+        alert(id ? '✅ Proyecto actualizado correctamente.' : '✅ Proyecto guardado correctamente.');
       });
 
       document.getElementById('btn-open-site').addEventListener('click', () => {
@@ -803,7 +805,8 @@
       const hasTurso = localStorage.getItem('sgnia_turso_url') && localStorage.getItem('sgnia_turso_token');
       if (hasTurso) {
         try {
-          await queryTurso('DELETE FROM proyectos WHERE id = ?', [id]);
+          const numId = (!id || isNaN(parseInt(id, 10))) ? id : parseInt(id, 10);
+          await queryTurso('DELETE FROM proyectos WHERE id = ?', [numId]);
         } catch (e) {
           alert('Error eliminando en Turso: ' + e.message);
         }
