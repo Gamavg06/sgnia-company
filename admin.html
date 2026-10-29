@@ -42,13 +42,9 @@
     }
   </script>
 
-  <!-- Supabase JS Client CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
   <style>
     body { font-family: 'Plus Jakarta Sans', sans-serif; }
     h1, h2, h3, h4, .font-heading { font-family: 'Outfit', sans-serif; }
-    /* Scrollbar sutil */
     ::-webkit-scrollbar { width: 6px; height: 6px; }
     ::-webkit-scrollbar-track { background: #F1F5F9; }
     ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
@@ -58,36 +54,28 @@
 <body class="h-full flex flex-col text-slate-800 antialiased overflow-hidden">
 
   <!-- ==================================================================== -->
-  <!-- PANTALLA 1: MODAL DE INICIO DE SESIÓN (PROTEGIDO CON CONTRASEÑA)      -->
+  <!-- MODAL DE ACCESO / LOGIN (PROTEGIDO)                                  -->
   <!-- ==================================================================== -->
   <div id="login-modal" class="fixed inset-0 z-50 bg-brandNavy/80 backdrop-blur-md flex items-center justify-center p-4">
     <div class="bg-white rounded-3xl p-8 sm:p-10 max-w-md w-full shadow-2xl border border-slate-200 text-center space-y-6">
       
-      <!-- Escudo oficial -->
       <div class="flex flex-col items-center">
         <div class="w-16 h-16 rounded-2xl bg-slate-50 border border-slate-200 p-2.5 flex items-center justify-center shadow-inner mb-3">
           <img src="assets/Logosgnia.png" alt="SGNIA" class="w-full h-full object-contain">
         </div>
         <h1 class="font-heading text-2xl font-extrabold text-brandNavy">Panel de Control</h1>
-        <p class="text-xs text-slate-500 mt-1">Acceso privado y exclusivo para el administrador de SGNIA</p>
+        <p class="text-xs text-slate-500 mt-1">Acceso privado para el administrador de SGNIA</p>
       </div>
 
-      <!-- Formulario de Login -->
       <form id="login-form" class="space-y-4 text-left">
         <div>
-          <label class="block text-xs font-semibold text-slate-700 mb-1" for="login-email">Correo Electrónico</label>
-          <input type="email" id="login-email" required value="gmlvega0025@gmail.com"
-                 class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-brandNavy">
-        </div>
-
-        <div>
           <label class="block text-xs font-semibold text-slate-700 mb-1" for="login-password">Contraseña de Administrador</label>
-          <input type="password" id="login-password" required placeholder="••••••••••••"
+          <input type="password" id="login-password" required placeholder="••••••••••••" autofocus
                  class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-brandNavy">
         </div>
 
-        <div id="login-error" class="hidden text-xs text-red-600 bg-red-50 p-2.5 rounded-xl border border-red-200">
-          Credenciales incorrectas o error de conexión con Supabase.
+        <div id="login-error" class="hidden text-xs text-red-600 bg-red-50 p-2.5 rounded-xl border border-red-200 text-center font-medium">
+          Contraseña incorrecta. Inténtalo de nuevo.
         </div>
 
         <button type="submit" id="btn-login"
@@ -98,7 +86,7 @@
 
         <div class="pt-2 text-center">
           <button type="button" id="btn-config-toggle" class="text-[11px] font-semibold text-brandTeal-accessible hover:underline">
-            ⚙️ Configurar claves de Supabase (URL y Anon Key)
+            ⚙️ Configurar Base de Datos Turso (URL y Token)
           </button>
         </div>
       </form>
@@ -107,34 +95,40 @@
   </div>
 
   <!-- ==================================================================== -->
-  <!-- MODAL DE CONFIGURACIÓN SUPABASE                                      -->
+  <!-- MODAL DE CONFIGURACIÓN TURSO                                         -->
   <!-- ==================================================================== -->
   <div id="config-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
     <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-lg w-full shadow-2xl border border-slate-200 space-y-5">
       <div class="flex items-center justify-between border-b border-slate-200 pb-3">
-        <h2 class="font-heading font-bold text-lg text-brandNavy">Conexión con Supabase</h2>
+        <h2 class="font-heading font-bold text-lg text-brandNavy flex items-center gap-2">
+          <span>Conexión con Turso</span>
+          <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">libSQL</span>
+        </h2>
         <button id="btn-config-close" class="text-slate-400 hover:text-slate-600 text-lg font-bold">✕</button>
       </div>
 
       <p class="text-xs text-slate-600 leading-relaxed">
-        Ingresa las credenciales que encuentras en tu panel de Supabase en <strong>Project Settings > API</strong>:
+        Ingresa las credenciales de tu base de datos de Turso ([app.turso.tech](https://app.turso.tech)):
       </p>
 
       <div class="space-y-3 text-xs">
         <div>
-          <label class="block font-semibold text-slate-700 mb-1">Project URL</label>
-          <input type="text" id="cfg-supabase-url" placeholder="https://xyzcompany.supabase.co"
+          <label class="block font-semibold text-slate-700 mb-1">Database URL (libSQL o HTTPS)</label>
+          <input type="text" id="cfg-turso-url" placeholder="libsql://sgnia-db-usuario.turso.io"
                  class="w-full px-3 py-2 rounded-xl border border-slate-300 font-mono text-xs">
         </div>
 
         <div>
-          <label class="block font-semibold text-slate-700 mb-1">Anon / Public Key</label>
-          <input type="password" id="cfg-supabase-key" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-                 class="w-full px-3 py-2 rounded-xl border border-slate-300 font-mono text-xs">
+          <label class="block font-semibold text-slate-700 mb-1">Auth Token (JWT)</label>
+          <textarea id="cfg-turso-token" rows="3" placeholder="eyJhbGciOiJFZERTQ..."
+                 class="w-full px-3 py-2 rounded-xl border border-slate-300 font-mono text-xs resize-none"></textarea>
         </div>
       </div>
 
-      <div class="flex justify-end gap-2 pt-2">
+      <div class="flex justify-between items-center pt-2">
+        <button id="btn-test-turso" class="px-3.5 py-2 rounded-xl border border-slate-300 text-slate-700 font-semibold text-xs hover:bg-slate-50">
+          Probar Conexión
+        </button>
         <button id="btn-config-save" class="px-5 py-2.5 rounded-xl bg-brandNavy text-white font-bold text-xs hover:bg-brandNavy-dark">
           Guardar Credenciales
         </button>
@@ -143,47 +137,47 @@
   </div>
 
   <!-- ==================================================================== -->
-  <!-- CABECERA SUPERIOR DEL DASHBOARD                                      -->
+  <!-- CABECERA DEL DASHBOARD                                               -->
   <!-- ==================================================================== -->
   <header class="h-16 bg-white border-b border-slate-200 px-4 sm:px-6 flex items-center justify-between shrink-0 z-20">
     <div class="flex items-center gap-3">
       <img src="assets/Logosgnia.png" alt="SGNIA" class="w-8 h-8 object-contain">
       <div>
         <span class="font-heading font-extrabold text-brandNavy text-base">SGNIA</span>
-        <span class="text-[10px] font-bold text-brandTeal-accessible uppercase ml-1">Panel de Administración</span>
+        <span class="text-[10px] font-bold text-brandTeal-accessible uppercase ml-1">Panel de Control (Turso)</span>
       </div>
     </div>
 
-    <!-- Acciones de Cabecera -->
     <div class="flex items-center gap-3 text-xs">
-      <span class="hidden sm:inline text-slate-500 font-semibold" id="user-display">Gamaliel (Admin)</span>
-      
-      <button id="btn-open-site" class="px-3 py-1.5 rounded-lg border border-slate-200 text-slate-700 hover:text-brandNavy flex items-center gap-1.5 font-semibold transition-colors" title="Abrir sitio público en pestaña nueva">
+      <div id="db-status-badge" class="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 text-[11px] font-medium border border-slate-200">
+        <span class="w-2 h-2 rounded-full bg-amber-400" id="db-status-dot"></span>
+        <span id="db-status-text">Modo Local</span>
+      </div>
+
+      <button id="btn-open-site" class="px-3 py-1.5 rounded-lg border border-slate-200 text-slate-700 hover:text-brandNavy flex items-center gap-1.5 font-semibold transition-colors" title="Abrir sitio público">
         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-        <span>Ver Web Pública</span>
+        <span>Ver Web</span>
       </button>
 
       <button id="btn-logout" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-red-50 text-slate-600 hover:text-red-600 font-semibold transition-colors">
-        Cerrar Sesión
+        Salir
       </button>
     </div>
   </header>
 
   <!-- ==================================================================== -->
-  <!-- CONTENEDOR PRINCIPAL: PANTALLA DIVIDIDA (SPLIT SCREEN)               -->
+  <!-- CONTENEDOR PANTALLA DIVIDIDA (SPLIT SCREEN)                          -->
   <!-- ==================================================================== -->
   <main class="flex-1 flex flex-col lg:flex-row overflow-hidden relative">
 
-    <!-- COLUMNA IZQUIERDA: GESTOR DE PROYECTOS (FORMULARIOS Y LISTA) -->
+    <!-- COLUMNA IZQUIERDA: GESTIÓN DE PROYECTOS -->
     <section class="w-full lg:w-[48%] xl:w-[45%] h-full flex flex-col bg-white border-r border-slate-200 overflow-y-auto">
-      
       <div class="p-6 space-y-6">
         
-        <!-- Barra de Estado y Botón Nuevo -->
         <div class="flex items-center justify-between pb-4 border-b border-slate-100">
           <div>
             <h2 class="font-heading font-bold text-xl text-brandNavy">Gestión de Proyectos</h2>
-            <p class="text-xs text-slate-500">Agrega, edita o modifica los proyectos visibles en tu web.</p>
+            <p class="text-xs text-slate-500">Agrega, edita o modifica proyectos en tiempo real.</p>
           </div>
           <button id="btn-new-project" class="px-4 py-2 rounded-xl bg-brandNavy text-white font-bold text-xs hover:bg-brandNavy-dark flex items-center gap-1.5 transition-all shadow-sm">
             <svg class="w-3.5 h-3.5 text-brandTeal-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
@@ -191,7 +185,7 @@
           </button>
         </div>
 
-        <!-- FORMULARIO DE EDICIÓN / CREACIÓN (Oculto por defecto o expandible) -->
+        <!-- FORMULARIO -->
         <div id="project-form-container" class="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-4">
           <div class="flex items-center justify-between border-b border-slate-200 pb-2">
             <h3 class="font-heading font-bold text-sm text-brandNavy" id="form-title">Agregar Nuevo Proyecto</h3>
@@ -201,14 +195,12 @@
           <form id="project-form" class="space-y-3 text-xs">
             <input type="hidden" id="proj-id">
 
-            <!-- Título -->
             <div>
               <label class="block font-semibold text-slate-700 mb-1" for="proj-title">Título del Proyecto *</label>
               <input type="text" id="proj-title" required placeholder="Ej. Hotel Booking System 2.0"
                      class="w-full px-3 py-2 rounded-xl bg-white border border-slate-300 text-slate-900 focus:outline-none focus:border-brandNavy">
             </div>
 
-            <!-- Categoría y Subtítulo -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
                 <label class="block font-semibold text-slate-700 mb-1" for="proj-category">Categoría</label>
@@ -227,87 +219,77 @@
               </div>
             </div>
 
-            <!-- Tecnologías -->
             <div>
-              <label class="block font-semibold text-slate-700 mb-1" for="proj-tech">Tecnologías Usadas *</label>
+              <label class="block font-semibold text-slate-700 mb-1" for="proj-tech">Tecnologías *</label>
               <input type="text" id="proj-tech" required placeholder="Ej. C#, .NET Core, SQL Server, Windows Forms"
                      class="w-full px-3 py-2 rounded-xl bg-white border border-slate-300 text-slate-900 focus:outline-none focus:border-brandNavy">
             </div>
 
-            <!-- Descripción -->
             <div>
               <label class="block font-semibold text-slate-700 mb-1" for="proj-desc">Descripción *</label>
-              <textarea id="proj-desc" rows="3" required placeholder="Describe brevemente la solución, funciones y qué problema resuelve..."
+              <textarea id="proj-desc" rows="3" required placeholder="Describe brevemente la solución y características principales..."
                         class="w-full px-3 py-2 rounded-xl bg-white border border-slate-300 text-slate-900 focus:outline-none focus:border-brandNavy resize-none"></textarea>
             </div>
 
-            <!-- Enlaces (Demo y GitHub) -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
-                <label class="block font-semibold text-slate-700 mb-1" for="proj-github">Enlace a GitHub</label>
+                <label class="block font-semibold text-slate-700 mb-1" for="proj-github">Enlace GitHub</label>
                 <input type="url" id="proj-github" placeholder="https://github.com/Gamavg06/..."
                        class="w-full px-3 py-2 rounded-xl bg-white border border-slate-300 text-slate-900 focus:outline-none focus:border-brandNavy">
               </div>
 
               <div>
-                <label class="block font-semibold text-slate-700 mb-1" for="proj-demo">Enlace a Demo en Vivo</label>
+                <label class="block font-semibold text-slate-700 mb-1" for="proj-demo">Enlace Demo en Vivo</label>
                 <input type="url" id="proj-demo" placeholder="https://..."
                        class="w-full px-3 py-2 rounded-xl bg-white border border-slate-300 text-slate-900 focus:outline-none focus:border-brandNavy">
               </div>
             </div>
 
-            <!-- Imagen / Captura -->
             <div>
-              <label class="block font-semibold text-slate-700 mb-1" for="proj-image">Ruta de Imagen o Captura</label>
-              <input type="text" id="proj-image" placeholder="assets/hotelbookingsystem.png o URL externa"
+              <label class="block font-semibold text-slate-700 mb-1" for="proj-image">Ruta de Imagen / Captura</label>
+              <input type="text" id="proj-image" placeholder="assets/hotelbookingsystem.png"
                      class="w-full px-3 py-2 rounded-xl bg-white border border-slate-300 text-slate-900 focus:outline-none focus:border-brandNavy">
             </div>
 
-            <!-- Checkboxes de Estado -->
             <div class="flex items-center gap-6 pt-1">
               <label class="flex items-center gap-2 cursor-pointer">
-                <input type="checkbox" id="proj-featured" class="rounded text-brandNavy focus:ring-0">
-                <span class="text-xs text-slate-700 font-semibold">Destacado (Formato horizontal amplio)</span>
+                <input type="checkbox" id="proj-featured" class="rounded text-brandNavy">
+                <span class="text-xs text-slate-700 font-semibold">Destacado (Ancho completo)</span>
               </label>
 
               <label class="flex items-center gap-2 cursor-pointer">
-                <input type="checkbox" id="proj-maintenance" class="rounded text-brandNavy focus:ring-0">
+                <input type="checkbox" id="proj-maintenance" class="rounded text-brandNavy">
                 <span class="text-xs text-amber-700 font-semibold">En Mantenimiento</span>
               </label>
             </div>
 
-            <!-- Botones Guardar -->
-            <div class="pt-3 flex gap-2">
+            <div class="pt-3">
               <button type="submit" id="btn-save-project"
-                      class="flex-1 py-2.5 px-4 rounded-xl bg-brandNavy text-white font-heading font-bold text-xs hover:bg-brandNavy-dark transition-all shadow-sm flex items-center justify-center gap-2">
+                      class="w-full py-2.5 px-4 rounded-xl bg-brandNavy text-white font-heading font-bold text-xs hover:bg-brandNavy-dark transition-all shadow-sm flex items-center justify-center gap-2">
                 <svg class="w-4 h-4 text-brandTeal-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                <span>Guardar y Publicar Cambio</span>
+                <span>Guardar y Publicar en la Web</span>
               </button>
             </div>
           </form>
         </div>
 
-        <!-- LISTA DE PROYECTOS EXISTENTES -->
+        <!-- LISTADO -->
         <div class="space-y-3">
           <div class="flex items-center justify-between text-xs font-semibold text-slate-500">
             <span>Proyectos Registrados (<span id="project-count">0</span>)</span>
-            <span class="text-[11px] text-brandTeal-accessible font-medium">Sincronizado</span>
+            <button id="btn-refresh-list" class="text-brandTeal-accessible hover:underline">Recargar</button>
           </div>
 
           <div id="projects-list" class="space-y-2.5">
-            <!-- Cargado dinámicamente con JS -->
             <div class="p-8 text-center text-xs text-slate-400">Cargando proyectos...</div>
           </div>
         </div>
 
       </div>
-
     </section>
 
-    <!-- COLUMNA DERECHA: VISTA PREVIA EN VIVO DE SGNIA.XYZ (IFRAME INTERACTIVO) -->
+    <!-- COLUMNA DERECHA: VISTA PREVIA EN VIVO (PC Y CELULAR) -->
     <section class="hidden lg:flex flex-1 h-full flex-col bg-slate-900 relative">
-      
-      <!-- Barra superior de la vista previa -->
       <div class="h-12 bg-slate-800 border-b border-slate-700 px-4 flex items-center justify-between shrink-0 text-xs text-slate-300">
         <div class="flex items-center gap-2">
           <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
@@ -315,7 +297,6 @@
           <span class="text-slate-400 font-mono text-[11px]">sgnia.xyz/#proyectos</span>
         </div>
 
-        <!-- Conmutador Computadora / Celular -->
         <div class="flex items-center gap-2">
           <div class="flex items-center bg-slate-900 p-0.5 rounded-lg border border-slate-700">
             <button id="view-desktop" class="px-2.5 py-1 rounded-md text-[11px] font-semibold bg-slate-700 text-white flex items-center gap-1 transition-all">
@@ -334,44 +315,87 @@
         </div>
       </div>
 
-      <!-- Contenedor del Iframe con ajuste de tamaño -->
       <div class="flex-1 flex items-center justify-center p-3 overflow-hidden bg-slate-950">
         <div id="preview-wrapper" class="w-full h-full rounded-xl overflow-hidden shadow-2xl transition-all duration-300 bg-white">
           <iframe id="preview-iframe" src="index.html#proyectos" class="w-full h-full border-0"></iframe>
         </div>
       </div>
-
     </section>
 
   </main>
 
   <!-- ==================================================================== -->
-  <!-- SCRIPT DEL PANEL DE CONTROL                                          -->
+  <!-- CLIENTE TURSO / LIBSQL HTTP NATIVO                                   -->
   <!-- ==================================================================== -->
   <script>
-    // Configuración local predeterminada o guardada
-    let supabaseClient = null;
     let projectsData = [];
 
-    // Cargar credenciales guardadas
-    function getStoredCredentials() {
-      return {
-        url: localStorage.getItem('sgnia_sb_url') || '',
-        key: localStorage.getItem('sgnia_sb_key') || ''
-      };
-    }
+    // Helper para conectar con Turso a través de su API HTTP Pipeline v2
+    async function queryTurso(sql, args = []) {
+      const urlRaw = localStorage.getItem('sgnia_turso_url') || '';
+      const token = localStorage.getItem('sgnia_turso_token') || '';
 
-    function initSupabase() {
-      const creds = getStoredCredentials();
-      if (creds.url && creds.key && window.supabase) {
-        supabaseClient = window.supabase.createClient(creds.url, creds.key);
+      if (!urlRaw || !token) {
+        throw new Error('Credenciales de Turso no configuradas.');
       }
+
+      let httpUrl = urlRaw.trim().replace(/^libsql:\/\//, 'https://');
+      if (!httpUrl.startsWith('https://')) httpUrl = 'https://' + httpUrl;
+      httpUrl = httpUrl.replace(/\/$/, '') + '/v2/pipeline';
+
+      const formattedArgs = args.map(arg => {
+        if (arg === null || arg === undefined) return { type: 'null' };
+        if (typeof arg === 'number') return { type: 'integer', value: arg.toString() };
+        if (typeof arg === 'boolean') return { type: 'integer', value: arg ? '1' : '0' };
+        return { type: 'text', value: arg.toString() };
+      });
+
+      const res = await fetch(httpUrl, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token.trim()}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          requests: [
+            { type: 'execute', stmt: { sql, args: formattedArgs } },
+            { type: 'close' }
+          ]
+        })
+      });
+
+      if (!res.ok) {
+        const errText = await res.text();
+        throw new Error(`Error Turso (${res.status}): ${errText}`);
+      }
+
+      const body = await res.json();
+      const firstResult = body.results && body.results[0];
+      if (!firstResult || firstResult.type !== 'ok') {
+        const errorMsg = firstResult && firstResult.error ? firstResult.error.message : 'Error ejecutando consulta';
+        throw new Error(errorMsg);
+      }
+
+      const result = firstResult.response.result;
+      const colNames = result.cols.map(c => c.name);
+      return result.rows.map(row => {
+        const obj = {};
+        row.forEach((cell, i) => {
+          let val = cell.value;
+          // Normalizar enteros/booleanos
+          if (cell.type === 'integer') {
+            val = parseInt(cell.value, 10);
+          }
+          obj[colNames[i]] = val;
+        });
+        return obj;
+      });
     }
 
-    // Proyectos iniciales locales de respaldo (por si aún no conecta Supabase)
+    // Proyectos iniciales de respaldo
     const fallbackProjects = [
       {
-        id: '1',
+        id: 1,
         titulo: 'Hotel Booking System',
         categoria: 'web',
         subtitulo: 'Sistema de Gestión · v2.0',
@@ -380,11 +404,11 @@
         github_url: 'https://github.com/Gamavg06/HotelBookingSystem2.0',
         demo_url: 'https://gamavg06.github.io/HotelBookingSystem2.0',
         imagen_url: 'assets/hotelbookingsystem.png',
-        destacado: true,
-        en_mantenimiento: false
+        destacado: 1,
+        en_mantenimiento: 0
       },
       {
-        id: '2',
+        id: 2,
         titulo: 'Portal Inmobiliario',
         categoria: 'web',
         subtitulo: 'Plataforma Inmobiliaria',
@@ -393,11 +417,11 @@
         github_url: 'https://github.com/Gamavg06/portalInmobiliario',
         demo_url: '',
         imagen_url: 'assets/portalInmobiliario.png',
-        destacado: false,
-        en_mantenimiento: true
+        destacado: 0,
+        en_mantenimiento: 1
       },
       {
-        id: '3',
+        id: 3,
         titulo: 'BioPlant',
         categoria: 'interactive',
         subtitulo: 'Frontend & Botánica',
@@ -406,11 +430,11 @@
         github_url: '',
         demo_url: 'https://bioplant.netlify.app',
         imagen_url: 'assets/bioplant.png',
-        destacado: false,
-        en_mantenimiento: false
+        destacado: 0,
+        en_mantenimiento: 0
       },
       {
-        id: '4',
+        id: 4,
         titulo: 'LearnMore',
         categoria: 'interactive',
         subtitulo: 'Plataforma de Aprendizaje',
@@ -419,55 +443,35 @@
         github_url: '',
         demo_url: 'https://learn-moree.netlify.app',
         imagen_url: 'assets/learnmore.png',
-        destacado: false,
-        en_mantenimiento: false
+        destacado: 0,
+        en_mantenimiento: 0
       }
     ];
 
     document.addEventListener('DOMContentLoaded', () => {
-      initSupabase();
       setupAuth();
       setupUIEvents();
       setupPreviewControls();
+      checkConnectionStatus();
       loadProjects();
     });
 
-    // -------------------------------------------------------------
-    // AUTENTICACIÓN
-    // -------------------------------------------------------------
     function setupAuth() {
       const loginModal = document.getElementById('login-modal');
       const loginForm = document.getElementById('login-form');
       const loginError = document.getElementById('login-error');
       const btnLogout = document.getElementById('btn-logout');
 
-      // Verificar si ya hay sesión activa
-      const savedAuth = sessionStorage.getItem('sgnia_admin_auth');
-      if (savedAuth === 'true') {
+      if (sessionStorage.getItem('sgnia_admin_auth') === 'true') {
         loginModal.classList.add('hidden');
       }
 
-      loginForm.addEventListener('submit', async (e) => {
+      loginForm.addEventListener('submit', (e) => {
         e.preventDefault();
         loginError.classList.add('hidden');
-        const email = document.getElementById('login-email').value.trim();
         const password = document.getElementById('login-password').value;
 
-        // Si Supabase está conectado, usamos Supabase Auth
-        if (supabaseClient) {
-          try {
-            const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
-            if (error) throw error;
-            sessionStorage.setItem('sgnia_admin_auth', 'true');
-            loginModal.classList.add('hidden');
-            loadProjects();
-            return;
-          } catch (err) {
-            console.warn('Fallo Supabase Auth, verificando contraseña local:', err.message);
-          }
-        }
-
-        // Acceso administrativo de emergencia (Gamaliel2026) mientras conecta Supabase
+        // Contraseña maestra de acceso al panel
         if (password === 'Gamaliel2026' || password === 'adminSgnia2026') {
           sessionStorage.setItem('sgnia_admin_auth', 'true');
           loginModal.classList.add('hidden');
@@ -477,46 +481,74 @@
         }
       });
 
-      btnLogout.addEventListener('click', async () => {
-        if (supabaseClient) {
-          await supabaseClient.auth.signOut();
-        }
+      btnLogout.addEventListener('click', () => {
         sessionStorage.removeItem('sgnia_admin_auth');
         window.location.reload();
       });
     }
 
-    // -------------------------------------------------------------
-    // EVENTOS DE LA INTERFAZ
-    // -------------------------------------------------------------
+    function checkConnectionStatus() {
+      const url = localStorage.getItem('sgnia_turso_url');
+      const token = localStorage.getItem('sgnia_turso_token');
+      const dot = document.getElementById('db-status-dot');
+      const text = document.getElementById('db-status-text');
+
+      if (url && token) {
+        dot.className = 'w-2 h-2 rounded-full bg-emerald-500';
+        text.textContent = 'Conectado a Turso';
+      } else {
+        dot.className = 'w-2 h-2 rounded-full bg-amber-400';
+        text.textContent = 'Modo Local (Sin Turso)';
+      }
+    }
+
     function setupUIEvents() {
-      // Modal de configuración
       const configModal = document.getElementById('config-modal');
       const btnConfigToggle = document.getElementById('btn-config-toggle');
       const btnConfigClose = document.getElementById('btn-config-close');
       const btnConfigSave = document.getElementById('btn-config-save');
-      const cfgUrl = document.getElementById('cfg-supabase-url');
-      const cfgKey = document.getElementById('cfg-supabase-key');
+      const btnTest = document.getElementById('btn-test-turso');
+      const cfgUrl = document.getElementById('cfg-turso-url');
+      const cfgToken = document.getElementById('cfg-turso-token');
 
-      const creds = getStoredCredentials();
-      cfgUrl.value = creds.url;
-      cfgKey.value = creds.key;
+      cfgUrl.value = localStorage.getItem('sgnia_turso_url') || '';
+      cfgToken.value = localStorage.getItem('sgnia_turso_token') || '';
 
       btnConfigToggle.addEventListener('click', () => configModal.classList.remove('hidden'));
       btnConfigClose.addEventListener('click', () => configModal.classList.add('hidden'));
 
-      btnConfigSave.addEventListener('click', () => {
-        localStorage.setItem('sgnia_sb_url', cfgUrl.value.trim());
-        localStorage.setItem('sgnia_sb_key', cfgKey.value.trim());
-        configModal.classList.add('hidden');
-        initSupabase();
-        loadProjects();
-        alert('Credenciales de Supabase guardadas correctamente.');
+      btnTest.addEventListener('click', async () => {
+        const url = cfgUrl.value.trim();
+        const token = cfgToken.value.trim();
+        if (!url || !token) {
+          alert('Por favor ingresa URL y Token primero.');
+          return;
+        }
+        btnTest.textContent = 'Probando...';
+        try {
+          // Guardar temporalmente para probar
+          localStorage.setItem('sgnia_turso_url', url);
+          localStorage.setItem('sgnia_turso_token', token);
+          const rows = await queryTurso('SELECT 1 as test');
+          alert('¡Conexión exitosa con Turso! 🎉');
+        } catch (err) {
+          alert('Error de conexión: ' + err.message);
+        } finally {
+          btnTest.textContent = 'Probar Conexión';
+        }
       });
 
-      // Botón nuevo proyecto
+      btnConfigSave.addEventListener('click', () => {
+        localStorage.setItem('sgnia_turso_url', cfgUrl.value.trim());
+        localStorage.setItem('sgnia_turso_token', cfgToken.value.trim());
+        configModal.classList.add('hidden');
+        checkConnectionStatus();
+        loadProjects();
+        alert('Credenciales de Turso guardadas.');
+      });
+
+      // Formulario de proyecto
       const btnNew = document.getElementById('btn-new-project');
-      const formContainer = document.getElementById('project-form-container');
       const form = document.getElementById('project-form');
       const formTitle = document.getElementById('form-title');
       const btnCancel = document.getElementById('btn-cancel-edit');
@@ -525,7 +557,7 @@
         form.reset();
         document.getElementById('proj-id').value = '';
         formTitle.textContent = 'Agregar Nuevo Proyecto';
-        formContainer.scrollIntoView({ behavior: 'smooth' });
+        document.getElementById('project-form-container').scrollIntoView({ behavior: 'smooth' });
       });
 
       btnCancel.addEventListener('click', () => {
@@ -534,7 +566,8 @@
         formTitle.textContent = 'Agregar Nuevo Proyecto';
       });
 
-      // Guardar formulario
+      document.getElementById('btn-refresh-list').addEventListener('click', loadProjects);
+
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
         const id = document.getElementById('proj-id').value;
@@ -547,29 +580,36 @@
           github_url: document.getElementById('proj-github').value.trim(),
           demo_url: document.getElementById('proj-demo').value.trim(),
           imagen_url: document.getElementById('proj-image').value.trim(),
-          destacado: document.getElementById('proj-featured').checked,
-          en_mantenimiento: document.getElementById('proj-maintenance').checked
+          destacado: document.getElementById('proj-featured').checked ? 1 : 0,
+          en_mantenimiento: document.getElementById('proj-maintenance').checked ? 1 : 0
         };
 
-        if (supabaseClient) {
+        const hasTurso = localStorage.getItem('sgnia_turso_url') && localStorage.getItem('sgnia_turso_token');
+
+        if (hasTurso) {
           try {
             if (id) {
-              const { error } = await supabaseClient.from('proyectos').update(projectObj).eq('id', id);
-              if (error) throw error;
+              await queryTurso(
+                `UPDATE proyectos SET titulo=?, categoria=?, subtitulo=?, tecnologias=?, descripcion=?, github_url=?, demo_url=?, imagen_url=?, destacado=?, en_mantenimiento=? WHERE id=?`,
+                [projectObj.titulo, projectObj.categoria, projectObj.subtitulo, projectObj.tecnologias, projectObj.descripcion, projectObj.github_url, projectObj.demo_url, projectObj.imagen_url, projectObj.destacado, projectObj.en_mantenimiento, id]
+              );
             } else {
-              const { error } = await supabaseClient.from('proyectos').insert([projectObj]);
-              if (error) throw error;
+              await queryTurso(
+                `INSERT INTO proyectos (titulo, categoria, subtitulo, tecnologias, descripcion, github_url, demo_url, imagen_url, destacado, en_mantenimiento, orden) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+                [projectObj.titulo, projectObj.categoria, projectObj.subtitulo, projectObj.tecnologias, projectObj.descripcion, projectObj.github_url, projectObj.demo_url, projectObj.imagen_url, projectObj.destacado, projectObj.en_mantenimiento, 0]
+              );
             }
           } catch (err) {
-            alert('Error guardando en Supabase: ' + err.message);
+            alert('Error guardando en Turso: ' + err.message);
+            return;
           }
         } else {
-          // Modo local
+          // Guardar en almacenamiento local
           if (id) {
-            const idx = projectsData.findIndex(p => p.id === id);
+            const idx = projectsData.findIndex(p => p.id == id);
             if (idx !== -1) projectsData[idx] = { ...projectsData[idx], ...projectObj };
           } else {
-            projectsData.push({ id: Date.now().toString(), ...projectObj });
+            projectsData.push({ id: Date.now(), ...projectObj });
           }
           localStorage.setItem('sgnia_local_projects', JSON.stringify(projectsData));
         }
@@ -581,15 +621,11 @@
         refreshIframe();
       });
 
-      // Botón ver sitio público
       document.getElementById('btn-open-site').addEventListener('click', () => {
         window.open('index.html', '_blank');
       });
     }
 
-    // -------------------------------------------------------------
-    // VISTA PREVIA (DESKTOP / MOBILE / REFRESH)
-    // -------------------------------------------------------------
     function setupPreviewControls() {
       const wrapper = document.getElementById('preview-wrapper');
       const btnDesktop = document.getElementById('view-desktop');
@@ -624,22 +660,18 @@
       }
     }
 
-    // -------------------------------------------------------------
-    // CARGAR Y RENDERIZAR PROYECTOS
-    // -------------------------------------------------------------
     async function loadProjects() {
       const listContainer = document.getElementById('projects-list');
       const countDisplay = document.getElementById('project-count');
+      const hasTurso = localStorage.getItem('sgnia_turso_url') && localStorage.getItem('sgnia_turso_token');
 
-      if (supabaseClient) {
+      if (hasTurso) {
         try {
-          const { data, error } = await supabaseClient.from('proyectos').select('*').order('created_at', { ascending: false });
-          if (!error && data && data.length) {
-            projectsData = data;
-          } else {
-            projectsData = JSON.parse(localStorage.getItem('sgnia_local_projects')) || fallbackProjects;
-          }
+          const rows = await queryTurso('SELECT * FROM proyectos ORDER BY orden ASC, id DESC');
+          projectsData = rows;
+          localStorage.setItem('sgnia_local_projects', JSON.stringify(projectsData));
         } catch (e) {
+          console.warn('Error al leer de Turso:', e);
           projectsData = JSON.parse(localStorage.getItem('sgnia_local_projects')) || fallbackProjects;
         }
       } else {
@@ -677,14 +709,9 @@
           </div>
         `;
 
-        // Evento Editar
-        item.querySelector('.btn-edit').addEventListener('click', () => {
-          editProject(p);
-        });
-
-        // Evento Eliminar
+        item.querySelector('.btn-edit').addEventListener('click', () => editProject(p));
         item.querySelector('.btn-delete').addEventListener('click', async () => {
-          if (confirm(`¿Estás seguro de eliminar el proyecto "${p.titulo}"?`)) {
+          if (confirm(`¿Estás seguro de eliminar "${p.titulo}"?`)) {
             await deleteProject(p.id);
           }
         });
@@ -703,22 +730,23 @@
       document.getElementById('proj-github').value = p.github_url || '';
       document.getElementById('proj-demo').value = p.demo_url || '';
       document.getElementById('proj-image').value = p.imagen_url || '';
-      document.getElementById('proj-featured').checked = !!p.destacado;
-      document.getElementById('proj-maintenance').checked = !!p.en_mantenimiento;
+      document.getElementById('proj-featured').checked = (p.destacado == 1);
+      document.getElementById('proj-maintenance').checked = (p.en_mantenimiento == 1);
 
       document.getElementById('form-title').textContent = 'Editar: ' + p.titulo;
       document.getElementById('project-form-container').scrollIntoView({ behavior: 'smooth' });
     }
 
     async function deleteProject(id) {
-      if (supabaseClient) {
+      const hasTurso = localStorage.getItem('sgnia_turso_url') && localStorage.getItem('sgnia_turso_token');
+      if (hasTurso) {
         try {
-          await supabaseClient.from('proyectos').delete().eq('id', id);
+          await queryTurso('DELETE FROM proyectos WHERE id = ?', [id]);
         } catch (e) {
-          alert('Error eliminando en Supabase: ' + e.message);
+          alert('Error eliminando en Turso: ' + e.message);
         }
       }
-      projectsData = projectsData.filter(p => p.id !== id);
+      projectsData = projectsData.filter(p => p.id != id);
       localStorage.setItem('sgnia_local_projects', JSON.stringify(projectsData));
       loadProjects();
       refreshIframe();
