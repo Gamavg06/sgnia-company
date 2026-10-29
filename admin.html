@@ -377,8 +377,11 @@
       }
 
       const result = firstResult.response.result;
+      if (!result || !result.cols || !result.cols.length) {
+        return [];
+      }
       const colNames = result.cols.map(c => c.name);
-      return result.rows.map(row => {
+      return (result.rows || []).map(row => {
         const obj = {};
         row.forEach((cell, i) => {
           let val = cell.value;
@@ -538,13 +541,23 @@
         }
       });
 
-      btnConfigSave.addEventListener('click', () => {
-        localStorage.setItem('sgnia_turso_url', cfgUrl.value.trim());
-        localStorage.setItem('sgnia_turso_token', cfgToken.value.trim());
+      btnConfigSave.addEventListener('click', async () => {
+        const url = cfgUrl.value.trim();
+        const token = cfgToken.value.trim();
+        localStorage.setItem('sgnia_turso_url', url);
+        localStorage.setItem('sgnia_turso_token', token);
         configModal.classList.add('hidden');
         checkConnectionStatus();
-        loadProjects();
-        alert('Credenciales de Turso guardadas.');
+        if (url && token) {
+          try {
+            await ensureTursoSchemaAndSeed();
+          } catch (e) {
+            console.warn('Error inicializando esquema:', e);
+          }
+        }
+        await loadProjects();
+        refreshIframe();
+        alert('Credenciales de Turso guardadas y tabla sincronizada.');
       });
 
       // Formulario de proyecto
@@ -660,6 +673,44 @@
       }
     }
 
+    async function ensureTursoSchemaAndSeed() {
+      // 1. Crear tabla si no existe
+      await queryTurso(`
+        CREATE TABLE IF NOT EXISTS proyectos (
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+          titulo TEXT NOT NULL,
+          categoria TEXT NOT NULL DEFAULT 'web',
+          subtitulo TEXT,
+          tecnologias TEXT NOT NULL,
+          descripcion TEXT NOT NULL,
+          github_url TEXT,
+          demo_url TEXT,
+          imagen_url TEXT,
+          destacado INTEGER DEFAULT 0,
+          en_mantenimiento INTEGER DEFAULT 0,
+          orden INTEGER DEFAULT 0
+        )
+      `);
+
+      // 2. Verificar si tiene registros; si está vacía, sembrar los iniciales
+      try {
+        const rows = await queryTurso('SELECT count(*) as total FROM proyectos');
+        const count = (rows && rows[0] && rows[0].total) ? rows[0].total : 0;
+        if (count === 0) {
+          for (let i = 0; i < fallbackProjects.length; i++) {
+            const p = fallbackProjects[i];
+            await queryTurso(
+              `INSERT INTO proyectos (titulo, categoria, subtitulo, tecnologias, descripcion, github_url, demo_url, imagen_url, destacado, en_mantenimiento, orden) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+              [p.titulo, p.categoria, p.subtitulo, p.tecnologias, p.descripcion, p.github_url || '', p.demo_url || '', p.imagen_url || '', p.destacado || 0, p.en_mantenimiento || 0, i + 1]
+            );
+          }
+        }
+      } catch (err) {
+        console.warn('Verificando inicialización de tabla:', err);
+      }
+    }
+
     async function loadProjects() {
       const listContainer = document.getElementById('projects-list');
       const countDisplay = document.getElementById('project-count');
@@ -667,6 +718,7 @@
 
       if (hasTurso) {
         try {
+          await ensureTursoSchemaAndSeed();
           const rows = await queryTurso('SELECT * FROM proyectos ORDER BY orden ASC, id DESC');
           projectsData = rows;
           localStorage.setItem('sgnia_local_projects', JSON.stringify(projectsData));
