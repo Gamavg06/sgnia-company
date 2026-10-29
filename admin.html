@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="es" class="h-full bg-slate-100">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Administración | SGNIA COMPANY</title>
+  <meta name="robots" content="noindex, nofollow">
+  
+  <!-- Favicon oficial -->
+  <link rel="icon" type="image/png" href="assets/Logosgnia.png">
+
+  <!-- Google Fonts: Outfit y Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandNavy: {
+              DEFAULT: '#142A42',
+              dark: '#0E1F31',
+              light: '#1D3A5C'
+            },
+            brandTeal: {
+              DEFAULT: '#1F8E8F',
+              dark: '#0F6364',
+              accessible: '#157172',
+              light: '#6BE5E8'
+            }
+          },
+          fontFamily: {
+            heading: ['"Outfit"', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Supabase JS Client CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    h1, h2, h3, h4, .font-heading { font-family: 'Outfit', sans-serif; }
+    /* Scrollbar sutil */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #F1F5F9; }
+    ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #1F8E8F; }
+  </style>
+</head>
+<body class="h-full flex flex-col text-slate-800 antialiased overflow-hidden">
+
+  <!-- ==================================================================== -->
+  <!-- PANTALLA 1: MODAL DE INICIO DE SESIÓN (PROTEGIDO CON CONTRASEÑA)      -->
+  <!-- ==================================================================== -->
+  <div id="login-modal" class="fixed inset-0 z-50 bg-brandNavy/80 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl p-8 sm:p-10 max-w-md w-full shadow-2xl border border-slate-200 text-center space-y-6">
+      
+      <!-- Escudo oficial -->
+      <div class="flex flex-col items-center">
+        <div class="w-16 h-16 rounded-2xl bg-slate-50 border border-slate-200 p-2.5 flex items-center justify-center shadow-inner mb-3">
+          <img src="assets/Logosgnia.png" alt="SGNIA" class="w-full h-full object-contain">
+        </div>
+        <h1 class="font-heading text-2xl font-extrabold text-brandNavy">Panel de Control</h1>
+        <p class="text-xs text-slate-500 mt-1">Acceso privado y exclusivo para el administrador de SGNIA</p>
+      </div>
+
+      <!-- Formulario de Login -->
+      <form id="login-form" class="space-y-4 text-left">
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1" for="login-email">Correo Electrónico</label>
+          <input type="email" id="login-email" required value="gmlvega0025@gmail.com"
+                 class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-brandNavy">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1" for="login-password">Contraseña de Administrador</label>
+          <input type="password" id="login-password" required placeholder="••••••••••••"
+                 class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-brandNavy">
+        </div>
+
+        <div id="login-error" class="hidden text-xs text-red-600 bg-red-50 p-2.5 rounded-xl border border-red-200">
+          Credenciales incorrectas o error de conexión con Supabase.
+        </div>
+
+        <button type="submit" id="btn-login"
+                class="w-full py-3 rounded-xl bg-brandNavy text-white font-heading font-bold text-sm hover:bg-brandNavy-dark transition-all shadow-md flex items-center justify-center gap-2">
+          <span>Acceder al Panel</span>
+          <svg class="w-4 h-4 text-brandTeal-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </button>
+
+        <div class="pt-2 text-center">
+          <button type="button" id="btn-config-toggle" class="text-[11px] font-semibold text-brandTeal-accessible hover:underline">
+            ⚙️ Configurar claves de Supabase (URL y Anon Key)
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- ==================================================================== -->
+  <!-- MODAL DE CONFIGURACIÓN SUPABASE                                      -->
+  <!-- ==================================================================== -->
+  <div id="config-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-lg w-full shadow-2xl border border-slate-200 space-y-5">
+      <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+        <h2 class="font-heading font-bold text-lg text-brandNavy">Conexión con Supabase</h2>
+        <button id="btn-config-close" class="text-slate-400 hover:text-slate-600 text-lg font-bold">✕</button>
+      </div>
+
+      <p class="text-xs text-slate-600 leading-relaxed">
+        Ingresa las credenciales que encuentras en tu panel de Supabase en <strong>Project Settings > API</strong>:
+      </p>
+
+      <div class="space-y-3 text-xs">
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Project URL</label>
+          <input type="text" id="cfg-supabase-url" placeholder="https://xyzcompany.supabase.co"
+                 class="w-full px-3 py-2 rounded-xl border border-slate-300 font-mono text-xs">
+        </div>
+
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Anon / Public Key</label>
+          <input type="password" id="cfg-supabase-key" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+                 class="w-full px-3 py-2 rounded-xl border border-slate-300 font-mono text-xs">
+        </div>
+      </div>
+
+      <div class="flex justify-end gap-2 pt-2">
+        <button id="btn-config-save" class="px-5 py-2.5 rounded-xl bg-brandNavy text-white font-bold text-xs hover:bg-brandNavy-dark">
+          Guardar Credenciales
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================================================================== -->
+  <!-- CABECERA SUPERIOR DEL DASHBOARD                                      -->
+  <!-- ==================================================================== -->
+  <header class="h-16 bg-white border-b border-slate-200 px-4 sm:px-6 flex items-center justify-between shrink-0 z-20">
+    <div class="flex items-center gap-3">
+      <img src="assets/Logosgnia.png" alt="SGNIA" class="w-8 h-8 object-contain">
+      <div>
+        <span class="font-heading font-extrabold text-brandNavy text-base">SGNIA</span>
+        <span class="text-[10px] font-bold text-brandTeal-accessible uppercase ml-1">Panel de Administración</span>
+      </div>
+    </div>
+
+    <!-- Acciones de Cabecera -->
+    <div class="flex items-center gap-3 text-xs">
+      <span class="hidden sm:inline text-slate-500 font-semibold" id="user-display">Gamaliel (Admin)</span>
+      
+      <button id="btn-open-site" class="px-3 py-1.5 rounded-lg border border-slate-200 text-slate-700 hover:text-brandNavy flex items-center gap-1.5 font-semibold transition-colors" title="Abrir sitio público en pestaña nueva">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        <span>Ver Web Pública</span>
+      </button>
+
+      <button id="btn-logout" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-red-50 text-slate-600 hover:text-red-600 font-semibold transition-colors">
+        Cerrar Sesión
+      </button>
+    </div>
+  </header>
+
+  <!-- ==================================================================== -->
+  <!-- CONTENEDOR PRINCIPAL: PANTALLA DIVIDIDA (SPLIT SCREEN)               -->
+  <!-- ==================================================================== -->
+  <main class="flex-1 flex flex-col lg:flex-row overflow-hidden relative">
+
+    <!-- COLUMNA IZQUIERDA: GESTOR DE PROYECTOS (FORMULARIOS Y LISTA) -->
+    <section class="w-full lg:w-[48%] xl:w-[45%] h-full flex flex-col bg-white border-r border-slate-200 overflow-y-auto">
+      
+      <div class="p-6 space-y-6">
+        
+        <!-- Barra de Estado y Botón Nuevo -->
+        <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+          <div>
+            <h2 class="font-heading font-bold text-xl text-brandNavy">Gestión de Proyectos</h2>
+            <p class="text-xs text-slate-500">Agrega, edita o modifica los proyectos visibles en tu web.</p>
+          </div>
+          <button id="btn-new-project" class="px-4 py-2 rounded-xl bg-brandNavy text-white font-bold text-xs hover:bg-brandNavy-dark flex items-center gap-1.5 transition-all shadow-sm">
+            <svg class="w-3.5 h-3.5 text-brandTeal-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
+            <span>Nuevo Proyecto</span>
+          </button>
+        </div>
+
+        <!-- FORMULARIO DE EDICIÓN / CREACIÓN (Oculto por defecto o expandible) -->
+        <div id="project-form-container" class="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+            <h3 class="font-heading font-bold text-sm text-brandNavy" id="form-title">Agregar Nuevo Proyecto</h3>
+            <button id="btn-cancel-edit" type="button" class="text-xs text-slate-400 hover:text-slate-600">Cancelar</button>
+          </div>
+
+          <form id="project-form" class="space-y-3 text-xs">
+            <input type="hidden" id="proj-id">
+
+            <!-- Título -->
+            <div>
+              <label class="block font-semibold text-slate-700 mb-1" for="proj-title">Título del Proyecto *</label>
+              <input type="text" id="proj-title" required placeholder="Ej. Hotel Booking System 2.0"
+                     class="w-full px-3 py-2 rounded-xl bg-white border border-slate-300 text-slate-900 focus:outline-none focus:border-brandNavy">
+            </div>
+
+            <!-- Categoría y Subtítulo -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label class="block font-semibold text-slate-700 mb-1" for="proj-category">Categoría</label>
+                <select id="proj-category" class="w-full px-3 py-2 rounded-xl bg-white border border-slate-300 text-slate-900 focus:outline-none focus:border-brandNavy">
+                  <option value="web">Web & Sistemas</option>
+                  <option value="interactive">Interactivos & Canvas</option>
+                  <option value="movil">Móvil (Android / Kotlin)</option>
+                  <option value="desktop">Desktop / Escritorio</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block font-semibold text-slate-700 mb-1" for="proj-subtitle">Etiqueta / Subtítulo</label>
+                <input type="text" id="proj-subtitle" placeholder="Ej. Sistema de Gestión · v2.0"
+                       class="w-full px-3 py-2 rounded-xl bg-white border border-slate-300 text-slate-900 focus:outline-none focus:border-brandNavy">
+              </div>
+            </div>
+
+            <!-- Tecnologías -->
+            <div>
+              <label class="block font-semibold text-slate-700 mb-1" for="proj-tech">Tecnologías Usadas *</label>
+              <input type="text" id="proj-tech" required placeholder="Ej. C#, .NET Core, SQL Server, Windows Forms"
+                     class="w-full px-3 py-2 rounded-xl bg-white border border-slate-300 text-slate-900 focus:outline-none focus:border-brandNavy">
+            </div>
+
+            <!-- Descripción -->
+            <div>
+              <label class="block font-semibold text-slate-700 mb-1" for="proj-desc">Descripción *</label>
+              <textarea id="proj-desc" rows="3" required placeholder="Describe brevemente la solución, funciones y qué problema resuelve..."
+                        class="w-full px-3 py-2 rounded-xl bg-white border border-slate-300 text-slate-900 focus:outline-none focus:border-brandNavy resize-none"></textarea>
+            </div>
+
+            <!-- Enlaces (Demo y GitHub) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label class="block font-semibold text-slate-700 mb-1" for="proj-github">Enlace a GitHub</label>
+                <input type="url" id="proj-github" placeholder="https://github.com/Gamavg06/..."
+                       class="w-full px-3 py-2 rounded-xl bg-white border border-slate-300 text-slate-900 focus:outline-none focus:border-brandNavy">
+              </div>
+
+              <div>
+                <label class="block font-semibold text-slate-700 mb-1" for="proj-demo">Enlace a Demo en Vivo</label>
+                <input type="url" id="proj-demo" placeholder="https://..."
+                       class="w-full px-3 py-2 rounded-xl bg-white border border-slate-300 text-slate-900 focus:outline-none focus:border-brandNavy">
+              </div>
+            </div>
+
+            <!-- Imagen / Captura -->
+            <div>
+              <label class="block font-semibold text-slate-700 mb-1" for="proj-image">Ruta de Imagen o Captura</label>
+              <input type="text" id="proj-image" placeholder="assets/hotelbookingsystem.png o URL externa"
+                     class="w-full px-3 py-2 rounded-xl bg-white border border-slate-300 text-slate-900 focus:outline-none focus:border-brandNavy">
+            </div>
+
+            <!-- Checkboxes de Estado -->
+            <div class="flex items-center gap-6 pt-1">
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" id="proj-featured" class="rounded text-brandNavy focus:ring-0">
+                <span class="text-xs text-slate-700 font-semibold">Destacado (Formato horizontal amplio)</span>
+              </label>
+
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" id="proj-maintenance" class="rounded text-brandNavy focus:ring-0">
+                <span class="text-xs text-amber-700 font-semibold">En Mantenimiento</span>
+              </label>
+            </div>
+
+            <!-- Botones Guardar -->
+            <div class="pt-3 flex gap-2">
+              <button type="submit" id="btn-save-project"
+                      class="flex-1 py-2.5 px-4 rounded-xl bg-brandNavy text-white font-heading font-bold text-xs hover:bg-brandNavy-dark transition-all shadow-sm flex items-center justify-center gap-2">
+                <svg class="w-4 h-4 text-brandTeal-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                <span>Guardar y Publicar Cambio</span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- LISTA DE PROYECTOS EXISTENTES -->
+        <div class="space-y-3">
+          <div class="flex items-center justify-between text-xs font-semibold text-slate-500">
+            <span>Proyectos Registrados (<span id="project-count">0</span>)</span>
+            <span class="text-[11px] text-brandTeal-accessible font-medium">Sincronizado</span>
+          </div>
+
+          <div id="projects-list" class="space-y-2.5">
+            <!-- Cargado dinámicamente con JS -->
+            <div class="p-8 text-center text-xs text-slate-400">Cargando proyectos...</div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- COLUMNA DERECHA: VISTA PREVIA EN VIVO DE SGNIA.XYZ (IFRAME INTERACTIVO) -->
+    <section class="hidden lg:flex flex-1 h-full flex-col bg-slate-900 relative">
+      
+      <!-- Barra superior de la vista previa -->
+      <div class="h-12 bg-slate-800 border-b border-slate-700 px-4 flex items-center justify-between shrink-0 text-xs text-slate-300">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span class="font-semibold text-slate-200">Vista Previa Pública en Vivo</span>
+          <span class="text-slate-400 font-mono text-[11px]">sgnia.xyz/#proyectos</span>
+        </div>
+
+        <!-- Conmutador Computadora / Celular -->
+        <div class="flex items-center gap-2">
+          <div class="flex items-center bg-slate-900 p-0.5 rounded-lg border border-slate-700">
+            <button id="view-desktop" class="px-2.5 py-1 rounded-md text-[11px] font-semibold bg-slate-700 text-white flex items-center gap-1 transition-all">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              <span>PC</span>
+            </button>
+            <button id="view-mobile" class="px-2.5 py-1 rounded-md text-[11px] font-semibold text-slate-400 hover:text-white flex items-center gap-1 transition-all">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+              <span>Móvil</span>
+            </button>
+          </div>
+
+          <button id="btn-refresh-preview" class="p-1.5 rounded-lg bg-slate-700 text-slate-300 hover:text-white" title="Recargar vista previa">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Contenedor del Iframe con ajuste de tamaño -->
+      <div class="flex-1 flex items-center justify-center p-3 overflow-hidden bg-slate-950">
+        <div id="preview-wrapper" class="w-full h-full rounded-xl overflow-hidden shadow-2xl transition-all duration-300 bg-white">
+          <iframe id="preview-iframe" src="index.html#proyectos" class="w-full h-full border-0"></iframe>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ==================================================================== -->
+  <!-- SCRIPT DEL PANEL DE CONTROL                                          -->
+  <!-- ==================================================================== -->
+  <script>
+    // Configuración local predeterminada o guardada
+    let supabaseClient = null;
+    let projectsData = [];
+
+    // Cargar credenciales guardadas
+    function getStoredCredentials() {
+      return {
+        url: localStorage.getItem('sgnia_sb_url') || '',
+        key: localStorage.getItem('sgnia_sb_key') || ''
+      };
+    }
+
+    function initSupabase() {
+      const creds = getStoredCredentials();
+      if (creds.url && creds.key && window.supabase) {
+        supabaseClient = window.supabase.createClient(creds.url, creds.key);
+      }
+    }
+
+    // Proyectos iniciales locales de respaldo (por si aún no conecta Supabase)
+    const fallbackProjects = [
+      {
+        id: '1',
+        titulo: 'Hotel Booking System',
+        categoria: 'web',
+        subtitulo: 'Sistema de Gestión · v2.0',
+        tecnologias: 'C#, .NET, SQL Server, Windows Forms, GitHub Pages',
+        descripcion: 'Plataforma completa para administración hotelera, reserva de habitaciones, control de huéspedes y reportería contable desarrollada con arquitectura sólida y base de datos relacional.',
+        github_url: 'https://github.com/Gamavg06/HotelBookingSystem2.0',
+        demo_url: 'https://gamavg06.github.io/HotelBookingSystem2.0',
+        imagen_url: 'assets/hotelbookingsystem.png',
+        destacado: true,
+        en_mantenimiento: false
+      },
+      {
+        id: '2',
+        titulo: 'Portal Inmobiliario',
+        categoria: 'web',
+        subtitulo: 'Plataforma Inmobiliaria',
+        tecnologias: 'PHP, Laravel, MySQL, Bootstrap',
+        descripcion: 'Plataforma web para publicación, búsqueda y administración de propiedades inmobiliarias con panel de control y base de datos relacional.',
+        github_url: 'https://github.com/Gamavg06/portalInmobiliario',
+        demo_url: '',
+        imagen_url: 'assets/portalInmobiliario.png',
+        destacado: false,
+        en_mantenimiento: true
+      },
+      {
+        id: '3',
+        titulo: 'BioPlant',
+        categoria: 'interactive',
+        subtitulo: 'Frontend & Botánica',
+        tecnologias: 'HTML5, CSS3, JavaScript Dinámico',
+        descripcion: 'Sitio interactivo enfocado en botánica, monitoreo y cuidado sustentable de plantas con diseño responsivo y animaciones fluidas.',
+        github_url: '',
+        demo_url: 'https://bioplant.netlify.app',
+        imagen_url: 'assets/bioplant.png',
+        destacado: false,
+        en_mantenimiento: false
+      },
+      {
+        id: '4',
+        titulo: 'LearnMore',
+        categoria: 'interactive',
+        subtitulo: 'Plataforma de Aprendizaje',
+        tecnologias: 'JavaScript, UI Dinámica, CSS Moderno',
+        descripcion: 'Entorno interactivo para recopilar, centralizar y organizar recursos educativos y documentación de aprendizaje continuo.',
+        github_url: '',
+        demo_url: 'https://learn-moree.netlify.app',
+        imagen_url: 'assets/learnmore.png',
+        destacado: false,
+        en_mantenimiento: false
+      }
+    ];
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initSupabase();
+      setupAuth();
+      setupUIEvents();
+      setupPreviewControls();
+      loadProjects();
+    });
+
+    // -------------------------------------------------------------
+    // AUTENTICACIÓN
+    // -------------------------------------------------------------
+    function setupAuth() {
+      const loginModal = document.getElementById('login-modal');
+      const loginForm = document.getElementById('login-form');
+      const loginError = document.getElementById('login-error');
+      const btnLogout = document.getElementById('btn-logout');
+
+      // Verificar si ya hay sesión activa
+      const savedAuth = sessionStorage.getItem('sgnia_admin_auth');
+      if (savedAuth === 'true') {
+        loginModal.classList.add('hidden');
+      }
+
+      loginForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        loginError.classList.add('hidden');
+        const email = document.getElementById('login-email').value.trim();
+        const password = document.getElementById('login-password').value;
+
+        // Si Supabase está conectado, usamos Supabase Auth
+        if (supabaseClient) {
+          try {
+            const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
+            if (error) throw error;
+            sessionStorage.setItem('sgnia_admin_auth', 'true');
+            loginModal.classList.add('hidden');
+            loadProjects();
+            return;
+          } catch (err) {
+            console.warn('Fallo Supabase Auth, verificando contraseña local:', err.message);
+          }
+        }
+
+        // Acceso administrativo de emergencia (Gamaliel2026) mientras conecta Supabase
+        if (password === 'Gamaliel2026' || password === 'adminSgnia2026') {
+          sessionStorage.setItem('sgnia_admin_auth', 'true');
+          loginModal.classList.add('hidden');
+          loadProjects();
+        } else {
+          loginError.classList.remove('hidden');
+        }
+      });
+
+      btnLogout.addEventListener('click', async () => {
+        if (supabaseClient) {
+          await supabaseClient.auth.signOut();
+        }
+        sessionStorage.removeItem('sgnia_admin_auth');
+        window.location.reload();
+      });
+    }
+
+    // -------------------------------------------------------------
+    // EVENTOS DE LA INTERFAZ
+    // -------------------------------------------------------------
+    function setupUIEvents() {
+      // Modal de configuración
+      const configModal = document.getElementById('config-modal');
+      const btnConfigToggle = document.getElementById('btn-config-toggle');
+      const btnConfigClose = document.getElementById('btn-config-close');
+      const btnConfigSave = document.getElementById('btn-config-save');
+      const cfgUrl = document.getElementById('cfg-supabase-url');
+      const cfgKey = document.getElementById('cfg-supabase-key');
+
+      const creds = getStoredCredentials();
+      cfgUrl.value = creds.url;
+      cfgKey.value = creds.key;
+
+      btnConfigToggle.addEventListener('click', () => configModal.classList.remove('hidden'));
+      btnConfigClose.addEventListener('click', () => configModal.classList.add('hidden'));
+
+      btnConfigSave.addEventListener('click', () => {
+        localStorage.setItem('sgnia_sb_url', cfgUrl.value.trim());
+        localStorage.setItem('sgnia_sb_key', cfgKey.value.trim());
+        configModal.classList.add('hidden');
+        initSupabase();
+        loadProjects();
+        alert('Credenciales de Supabase guardadas correctamente.');
+      });
+
+      // Botón nuevo proyecto
+      const btnNew = document.getElementById('btn-new-project');
+      const formContainer = document.getElementById('project-form-container');
+      const form = document.getElementById('project-form');
+      const formTitle = document.getElementById('form-title');
+      const btnCancel = document.getElementById('btn-cancel-edit');
+
+      btnNew.addEventListener('click', () => {
+        form.reset();
+        document.getElementById('proj-id').value = '';
+        formTitle.textContent = 'Agregar Nuevo Proyecto';
+        formContainer.scrollIntoView({ behavior: 'smooth' });
+      });
+
+      btnCancel.addEventListener('click', () => {
+        form.reset();
+        document.getElementById('proj-id').value = '';
+        formTitle.textContent = 'Agregar Nuevo Proyecto';
+      });
+
+      // Guardar formulario
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const id = document.getElementById('proj-id').value;
+        const projectObj = {
+          titulo: document.getElementById('proj-title').value.trim(),
+          categoria: document.getElementById('proj-category').value,
+          subtitulo: document.getElementById('proj-subtitle').value.trim(),
+          tecnologias: document.getElementById('proj-tech').value.trim(),
+          descripcion: document.getElementById('proj-desc').value.trim(),
+          github_url: document.getElementById('proj-github').value.trim(),
+          demo_url: document.getElementById('proj-demo').value.trim(),
+          imagen_url: document.getElementById('proj-image').value.trim(),
+          destacado: document.getElementById('proj-featured').checked,
+          en_mantenimiento: document.getElementById('proj-maintenance').checked
+        };
+
+        if (supabaseClient) {
+          try {
+            if (id) {
+              const { error } = await supabaseClient.from('proyectos').update(projectObj).eq('id', id);
+              if (error) throw error;
+            } else {
+              const { error } = await supabaseClient.from('proyectos').insert([projectObj]);
+              if (error) throw error;
+            }
+          } catch (err) {
+            alert('Error guardando en Supabase: ' + err.message);
+          }
+        } else {
+          // Modo local
+          if (id) {
+            const idx = projectsData.findIndex(p => p.id === id);
+            if (idx !== -1) projectsData[idx] = { ...projectsData[idx], ...projectObj };
+          } else {
+            projectsData.push({ id: Date.now().toString(), ...projectObj });
+          }
+          localStorage.setItem('sgnia_local_projects', JSON.stringify(projectsData));
+        }
+
+        form.reset();
+        document.getElementById('proj-id').value = '';
+        formTitle.textContent = 'Agregar Nuevo Proyecto';
+        loadProjects();
+        refreshIframe();
+      });
+
+      // Botón ver sitio público
+      document.getElementById('btn-open-site').addEventListener('click', () => {
+        window.open('index.html', '_blank');
+      });
+    }
+
+    // -------------------------------------------------------------
+    // VISTA PREVIA (DESKTOP / MOBILE / REFRESH)
+    // -------------------------------------------------------------
+    function setupPreviewControls() {
+      const wrapper = document.getElementById('preview-wrapper');
+      const btnDesktop = document.getElementById('view-desktop');
+      const btnMobile = document.getElementById('view-mobile');
+      const btnRefresh = document.getElementById('btn-refresh-preview');
+
+      btnDesktop.addEventListener('click', () => {
+        wrapper.style.width = '100%';
+        wrapper.style.maxWidth = '100%';
+        btnDesktop.classList.add('bg-slate-700', 'text-white');
+        btnDesktop.classList.remove('text-slate-400');
+        btnMobile.classList.remove('bg-slate-700', 'text-white');
+        btnMobile.classList.add('text-slate-400');
+      });
+
+      btnMobile.addEventListener('click', () => {
+        wrapper.style.width = '375px';
+        wrapper.style.maxWidth = '375px';
+        btnMobile.classList.add('bg-slate-700', 'text-white');
+        btnMobile.classList.remove('text-slate-400');
+        btnDesktop.classList.remove('bg-slate-700', 'text-white');
+        btnDesktop.classList.add('text-slate-400');
+      });
+
+      btnRefresh.addEventListener('click', refreshIframe);
+    }
+
+    function refreshIframe() {
+      const iframe = document.getElementById('preview-iframe');
+      if (iframe) {
+        iframe.src = 'index.html?t=' + Date.now() + '#proyectos';
+      }
+    }
+
+    // -------------------------------------------------------------
+    // CARGAR Y RENDERIZAR PROYECTOS
+    // -------------------------------------------------------------
+    async function loadProjects() {
+      const listContainer = document.getElementById('projects-list');
+      const countDisplay = document.getElementById('project-count');
+
+      if (supabaseClient) {
+        try {
+          const { data, error } = await supabaseClient.from('proyectos').select('*').order('created_at', { ascending: false });
+          if (!error && data && data.length) {
+            projectsData = data;
+          } else {
+            projectsData = JSON.parse(localStorage.getItem('sgnia_local_projects')) || fallbackProjects;
+          }
+        } catch (e) {
+          projectsData = JSON.parse(localStorage.getItem('sgnia_local_projects')) || fallbackProjects;
+        }
+      } else {
+        projectsData = JSON.parse(localStorage.getItem('sgnia_local_projects')) || fallbackProjects;
+      }
+
+      countDisplay.textContent = projectsData.length;
+      listContainer.innerHTML = '';
+
+      if (!projectsData.length) {
+        listContainer.innerHTML = '<div class="p-6 text-center text-xs text-slate-400 bg-slate-50 rounded-xl">No hay proyectos registrados aún.</div>';
+        return;
+      }
+
+      projectsData.forEach(p => {
+        const item = document.createElement('div');
+        item.className = 'p-3.5 rounded-xl bg-white border border-slate-200 hover:border-slate-300 transition-all flex items-start justify-between gap-3 shadow-xs';
+        item.innerHTML = `
+          <div class="space-y-1 min-w-0">
+            <div class="flex items-center gap-2">
+              <span class="font-heading font-bold text-xs text-brandNavy truncate">${p.titulo}</span>
+              ${p.destacado ? '<span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200">Destacado</span>' : ''}
+              ${p.en_mantenimiento ? '<span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-amber-50 text-amber-700 border border-amber-200">Mantenimiento</span>' : ''}
+            </div>
+            <div class="text-[11px] text-slate-500 truncate">${p.tecnologias}</div>
+          </div>
+
+          <div class="flex items-center gap-1 shrink-0">
+            <button class="btn-edit px-2.5 py-1 rounded-lg text-xs font-semibold text-slate-700 hover:bg-slate-100 transition-colors" data-id="${p.id}">
+              Editar
+            </button>
+            <button class="btn-delete px-2 py-1 rounded-lg text-xs font-semibold text-red-600 hover:bg-red-50 transition-colors" data-id="${p.id}">
+              ✕
+            </button>
+          </div>
+        `;
+
+        // Evento Editar
+        item.querySelector('.btn-edit').addEventListener('click', () => {
+          editProject(p);
+        });
+
+        // Evento Eliminar
+        item.querySelector('.btn-delete').addEventListener('click', async () => {
+          if (confirm(`¿Estás seguro de eliminar el proyecto "${p.titulo}"?`)) {
+            await deleteProject(p.id);
+          }
+        });
+
+        listContainer.appendChild(item);
+      });
+    }
+
+    function editProject(p) {
+      document.getElementById('proj-id').value = p.id;
+      document.getElementById('proj-title').value = p.titulo || '';
+      document.getElementById('proj-category').value = p.categoria || 'web';
+      document.getElementById('proj-subtitle').value = p.subtitulo || '';
+      document.getElementById('proj-tech').value = p.tecnologias || '';
+      document.getElementById('proj-desc').value = p.descripcion || '';
+      document.getElementById('proj-github').value = p.github_url || '';
+      document.getElementById('proj-demo').value = p.demo_url || '';
+      document.getElementById('proj-image').value = p.imagen_url || '';
+      document.getElementById('proj-featured').checked = !!p.destacado;
+      document.getElementById('proj-maintenance').checked = !!p.en_mantenimiento;
+
+      document.getElementById('form-title').textContent = 'Editar: ' + p.titulo;
+      document.getElementById('project-form-container').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    async function deleteProject(id) {
+      if (supabaseClient) {
+        try {
+          await supabaseClient.from('proyectos').delete().eq('id', id);
+        } catch (e) {
+          alert('Error eliminando en Supabase: ' + e.message);
+        }
+      }
+      projectsData = projectsData.filter(p => p.id !== id);
+      localStorage.setItem('sgnia_local_projects', JSON.stringify(projectsData));
+      loadProjects();
+      refreshIframe();
+    }
+  </script>
+</body>
+</html>

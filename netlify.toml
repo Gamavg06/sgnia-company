@@ -2,17 +2,27 @@
 [build]
   publish = "."
 
-# Ruta limpia para la biografía del fundador
+# Rutas limpias
 [[redirects]]
   from = "/fundador"
   to = "/fundador.html"
+  status = 200
+
+[[redirects]]
+  from = "/admin"
+  to = "/admin.html"
+  status = 200
+
+[[redirects]]
+  from = "/panel"
+  to = "/admin.html"
   status = 200
 
 # Encabezados de seguridad y optimización de caché
 [[headers]]
   for = "/*"
   [headers.values]
-    X-Frame-Options = "DENY"
+    X-Frame-Options = "SAMEORIGIN"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
 
